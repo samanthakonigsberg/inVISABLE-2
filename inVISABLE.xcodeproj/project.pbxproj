@@ -39,6 +39,7 @@
 		1BA9D5F31FE582B900D6E512 /* TestFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* TestFormTableViewController.swift */; };
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
+		D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */; };
 		E464768C55D13F342B8D36D2 /* Pods_inVISABLETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		954BB9A5482B0486D71A4375 /* Pods-inVISABLE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLE/Pods-inVISABLE.debug.xcconfig"; sourceTree = "<group>"; };
 		C70A4B75900710227E56B562 /* Pods-inVISABLETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLETests/Pods-inVISABLETests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD6062F53D8004B0C3A44FCE /* Pods-inVISABLETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLETests/Pods-inVISABLETests.release.xcconfig"; sourceTree = "<group>"; };
+		D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormTextFieldCell.swift; sourceTree = "<group>"; };
 		E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				1B3687251FDC43CD00CC734D /* Assets.xcassets */,
 				1B3687271FDC43CD00CC734D /* LaunchScreen.storyboard */,
 				1B36872A1FDC43CD00CC734D /* Info.plist */,
+				D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				1B36871F1FDC43CD00CC734D /* AppDelegate.swift in Sources */,
 				1BA9D5E21FDC477D00D6E512 /* TesterViewController.swift in Sources */,
 				1BA9D5E41FDC477D00D6E512 /* WelcomeViewController.swift in Sources */,
+				D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */,
 				1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */,
 				1BA9D5E31FDC477D00D6E512 /* SetUpFinishedViewController.swift in Sources */,
 				1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */,

@@ -94,14 +94,25 @@ class TestFormTableViewController: FormViewController, UIImagePickerControllerDe
         let section1 = FormSectionDescriptor(headerTitle: "Basics", footerTitle: nil)
         
         let firstNameRow = FormRowDescriptor(tag: FormTags.firstNameTag, type: .name, title: "First Name")
+        firstNameRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
+        firstNameRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         
         let lastNameRow = FormRowDescriptor(tag: FormTags.lastNameTag, type: .name, title: "Last Name")
+        lastNameRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
+        lastNameRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         
         let emailRow = FormRowDescriptor(tag: FormTags.emailTag, type: .email, title: "Email")
+        emailRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
+        emailRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         
         let passwordRow = FormRowDescriptor(tag: FormTags.passwordTag, type: .password, title: "Password")
+        passwordRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
+        passwordRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         
         let confirmPasswordRow = FormRowDescriptor(tag: FormTags.confirmPasswordTag, type: .password, title: "Confirm Password")
+        confirmPasswordRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
+        confirmPasswordRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
+        
         
         let birthdayRow = FormRowDescriptor(tag: FormTags.birthdayTag, type: .date, title: "Date of Birth")
             birthdayRow.configuration.cell.showsInputToolbar = true
