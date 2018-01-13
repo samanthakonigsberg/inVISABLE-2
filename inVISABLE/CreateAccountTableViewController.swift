@@ -1,5 +1,5 @@
 //
-//  TestFormTableViewController.swift
+//  CreateAccountTableViewController.swift
 //  inVISABLE
 //
 //  Created by Samantha Konigsberg on 12/16/17.
@@ -10,7 +10,7 @@ import UIKit
 import SwiftForms
 import FirebaseAuth
 
-class TestFormTableViewController: FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateAccountTableViewController: FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var name: NSString = ""
     
@@ -32,9 +32,9 @@ class TestFormTableViewController: FormViewController, UIImagePickerControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(TestFormTableViewController.submit(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(CreateAccountTableViewController.submit(_:)))
     }
-    //    }
+    
     func createUser(email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> Void {
         
         
@@ -88,7 +88,7 @@ class TestFormTableViewController: FormViewController, UIImagePickerControllerDe
     fileprivate func loadForm(){
         //form descriptor
         let form = FormDescriptor()
-        form.title = "Test Form"
+        form.title = "Create an account"
         
         //first section
         let section1 = FormSectionDescriptor(headerTitle: "Basics", footerTitle: nil)

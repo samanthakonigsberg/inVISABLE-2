@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3467152009AA37003A3EDE /* MoreInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */; };
 		1B36871F1FDC43CD00CC734D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36871E1FDC43CD00CC734D /* AppDelegate.swift */; };
 		1B3687211FDC43CD00CC734D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3687201FDC43CD00CC734D /* ViewController.swift */; };
 		1B3687241FDC43CD00CC734D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3687221FDC43CD00CC734D /* Main.storyboard */; };
@@ -36,7 +37,7 @@
 		1BA9D5EC1FDC477D00D6E512 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5DF1FDC477D00D6E512 /* Post.swift */; };
 		1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */; };
 		1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */; };
-		1BA9D5F31FE582B900D6E512 /* TestFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* TestFormTableViewController.swift */; };
+		1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */; };
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
 		D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		17C33D94429259E38FCE7363 /* Pods-inVISABLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLE.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLE/Pods-inVISABLE.release.xcconfig"; sourceTree = "<group>"; };
+		1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoTableViewController.swift; sourceTree = "<group>"; };
 		1B36871B1FDC43CD00CC734D /* inVISABLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inVISABLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B36871E1FDC43CD00CC734D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3687201FDC43CD00CC734D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		1BA9D5DF1FDC477D00D6E512 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
 		1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		1BA9D5F21FE582B900D6E512 /* TestFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFormTableViewController.swift; sourceTree = "<group>"; };
+		1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9D314021ABB467C0C8E1F1 /* Pods-inVISABLEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		43F81FE53000DD4942E30B22 /* Pods-inVISABLEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */,
-				1BA9D5F21FE582B900D6E512 /* TestFormTableViewController.swift */,
+				1BA9D5CA1FDC476900D6E512 /* Keys.plist */,
+				1B36872A1FDC43CD00CC734D /* Info.plist */,
+				1B3687251FDC43CD00CC734D /* Assets.xcassets */,
+				1B36871E1FDC43CD00CC734D /* AppDelegate.swift */,
 				1BA9D5DD1FDC477D00D6E512 /* NewPostViewController.swift */,
 				1BA9D5D81FDC477C00D6E512 /* PickerViewController.swift */,
 				1BA9D5DF1FDC477D00D6E512 /* Post.swift */,
@@ -192,16 +197,14 @@
 				1BA9D5C81FDC476900D6E512 /* ForgotPasswordViewController.swift */,
 				1BA9D5C41FDC476900D6E512 /* HomePostTableViewCell.swift */,
 				1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */,
-				1BA9D5CA1FDC476900D6E512 /* Keys.plist */,
 				1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */,
 				1BA9D5CB1FDC476900D6E512 /* MyPageTableViewController.swift */,
-				1B36871E1FDC43CD00CC734D /* AppDelegate.swift */,
 				1B3687201FDC43CD00CC734D /* ViewController.swift */,
 				1B3687221FDC43CD00CC734D /* Main.storyboard */,
-				1B3687251FDC43CD00CC734D /* Assets.xcassets */,
 				1B3687271FDC43CD00CC734D /* LaunchScreen.storyboard */,
-				1B36872A1FDC43CD00CC734D /* Info.plist */,
+				1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */,
 				D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */,
+				1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -560,13 +563,14 @@
 				1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */,
 				1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */,
 				1BA9D5EC1FDC477D00D6E512 /* Post.swift in Sources */,
+				1B3467152009AA37003A3EDE /* MoreInfoTableViewController.swift in Sources */,
 				1BA9D5CF1FDC476900D6E512 /* Constants.swift in Sources */,
 				1BA9D5E71FDC477D00D6E512 /* QuestionCatagories.swift in Sources */,
 				1BA9D5EB1FDC477D00D6E512 /* SignUpViewController.swift in Sources */,
 				1BA9D5E91FDC477D00D6E512 /* User.swift in Sources */,
 				1BA9D5E51FDC477D00D6E512 /* PickerViewController.swift in Sources */,
 				1BA9D5D11FDC476900D6E512 /* AboutPageViewController.swift in Sources */,
-				1BA9D5F31FE582B900D6E512 /* TestFormTableViewController.swift in Sources */,
+				1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */,
 				1BA9D5EA1FDC477D00D6E512 /* NewPostViewController.swift in Sources */,
 				1BA9D5E81FDC477D00D6E512 /* QuestionsViewController.swift in Sources */,
 			);
