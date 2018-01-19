@@ -32,7 +32,9 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(CreateAccountTableViewController.submit(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue", style: .plain, target: self, action: #selector(submit(_sender: )))
+        
+       
     }
     
     func createUser(email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> Void {
@@ -66,18 +68,8 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
     
     
 
-    @objc func submit(_: UIBarButtonItem!) {
-        //continue adding to user
-        
-        let message = self.form.formValues().description
-        
-        let alertController = UIAlertController(title: "Form output", message: message, preferredStyle: .alert)
-        
-        let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) in
-        }
-        alertController.addAction(cancel)
-        
-        self.present(alertController, animated: true, completion: nil)
+    @objc func submit(_sender: UIBarButtonItem!) {
+      self.performSegue(withIdentifier: "toMoreInfo", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
