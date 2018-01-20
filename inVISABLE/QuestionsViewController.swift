@@ -32,8 +32,8 @@ class QuestionsViewController: UIViewController, GMSAutocompleteViewControllerDe
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        illnessesLabel.text = makeArrayString(array: CurrentUser.shared.illnesses as! [String])
-        interestsLabel.text = makeArrayString(array: CurrentUser.shared.interests as! [String])
+        illnessesLabel.text = makeArrayString(array: INUser.shared.illnesses as! [String])
+        interestsLabel.text = makeArrayString(array: INUser.shared.interests as! [String])
 
     }
     override func didReceiveMemoryWarning() {
@@ -43,9 +43,9 @@ class QuestionsViewController: UIViewController, GMSAutocompleteViewControllerDe
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
 
-        if let currentUser = CurrentUser.shared.user {
+        if let currentUser = INUser.shared.user {
             let userNode = self.ref.child("users").child(currentUser.uid)
-            let dictionary: [NSString: Any] = CurrentUser.shared.createUserInfoDictionary()
+            let dictionary: [NSString: Any] = INUser.shared.createUserInfoDictionary()
             userNode.setValue(dictionary)
         }
         
@@ -122,7 +122,7 @@ extension QuestionsViewController{
             locationSelectedLabel.text = fullString as String
             
             //send to singleton here 
-            CurrentUser.shared.location =  fullString
+            INUser.shared.location =  fullString
             return true
         }
     }
