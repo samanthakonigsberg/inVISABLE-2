@@ -34,7 +34,9 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue", style: .plain, target: self, action: #selector(submit(_sender: )))
         
-       
+        //TODO: finalize colors
+        navigationController?.navigationBar.tintColor = .magenta
+        navigationController?.navigationBar.barTintColor = .clear
     }
 
     @objc func submit(_sender: UIBarButtonItem!) {
