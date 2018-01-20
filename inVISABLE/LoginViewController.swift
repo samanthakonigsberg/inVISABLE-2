@@ -47,44 +47,25 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginTapped(_ sender: UIButton) {
-        //Test Email and Password: user@gmail.com password
         
-        if let email = emailTextField.text, let password = passwordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            return
+        }
 
-                if let returnedUser = user {
-                    //TODO: use UID to reference realtime database to pull down user
-                    self.ref?.child("users").child(returnedUser.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                        let value = snapshot.value as? NSDictionary
-                        let name = value?["name"] as? NSString ?? ""
-                        let followers = value?["followers"] as? NSNumber ?? 0
-                        let following = value?["following"] as? NSNumber ?? 0
-                        let interests = value?["interests"] as? NSArray ?? []
-                        let illnesses = value?["illnesses"] as? NSArray ?? []
-                        let location = value?["location"] as? NSString ?? ""
-                        
-                        CurrentUser.shared = INUser(user: user, image: nil, bio: "", followers: followers, following: following, posts: [], illnesses: illnesses, interests: interests, location: location, name: name)
-
-                        print("")
-
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let controller = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
-                        self.present(controller, animated: true, completion: nil)
-
-                        
-                        }, withCancel: { (error) in
-                            //todo: handle error
-                    })
-                   // let myUser = User(user: returnedUser, image: nil, bio: "", followers: NSNumber(integerLiteral: 0), following: NSNumber(integerLiteral: 0), posts: [], illnesses: [], interests: [], location: "", name: self.name as NSString)
-                    
-                    //CurrentUser.shared = myUser
+        FirebaseManager.shared.login(email: email, password: password) { (success, error) in
+            if success {
+                //TODO: REMOVE THIS AFTER NAVIGATOR CLASS IS BUILT. DO NOT SHIP.
+                let alert = UIAlertController(title: "HURRAY", message: "You are logged in as \(INUser.shared.name)", preferredStyle: .alert)
+                let action = UIAlertAction(title: "COOL", style: .default, handler: nil)
+                alert.addAction(action)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
                 }
-            })}
+            }
+            // TODO: insert navigator class here to reveal tab bar controller
+        }
         
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       // let controller = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
-        //self.present(controller, animated: true, completion: nil)
-    //TODO: build out tab bar controller with table views
+//        //Test Email and Password: user@gmail.com password
     }
     
     @IBAction func signUpTapped(_ sender: AnyObject) {

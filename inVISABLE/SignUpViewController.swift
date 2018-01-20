@@ -55,13 +55,7 @@ class SignUpViewController: UIViewController {
         name = firstNameTextField.text! + " " + lastNameTextField.text!
 
         if let email = email, let password = password {
-            FirebaseManager.createUser(email: email, password: password, completion: { (user, error) in
-                
-                if let returnedUser = user {
-                    let myUser = INUser(user: returnedUser, image: nil, bio: "", followers: NSNumber(integerLiteral: 0), following: NSNumber(integerLiteral: 0), posts: [], illnesses: [], interests: [], location: "", name: self.name as NSString)
-                    
-                    CurrentUser.shared = myUser
-                }
+            FirebaseManager.shared.createUser(email: email, password: password, completion: { (user, error) in
                 
                 if let error = error {
                     let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)

@@ -37,15 +37,14 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
     
     @objc func submit(_: UIBarButtonItem!) {
         //continue adding to user
-        
         let message = self.form.formValues().description
-        
+
         let alertController = UIAlertController(title: "Form output", message: message, preferredStyle: .alert)
-        
+
         let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) in
         }
         alertController.addAction(cancel)
-        
+
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -66,13 +65,19 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
         illnessesRow.configuration.cell.showsInputToolbar = true
         illnessesRow.configuration.selection.options = illnesses as [AnyObject]
         illnessesRow.configuration.selection.allowsMultipleSelection = true
-        illnessesRow.configuration.selection.optionTitleClosure = illnesses as? ((AnyObject) -> String)
+        illnessesRow.configuration.selection.optionTitleClosure = { value in
+            guard let option = value as? String else { return "" }
+            return option
+        }
         
         let interestsRow = FormRowDescriptor(tag: FormTags.interestPickerTag, type: .multipleSelector, title: "Select Your Interests")
         interestsRow.configuration.cell.showsInputToolbar = true
         interestsRow.configuration.selection.options = interests as [AnyObject]
         interestsRow.configuration.selection.allowsMultipleSelection = true
-        interestsRow.configuration.selection.optionTitleClosure = interests as? ((AnyObject) -> String)
+        interestsRow.configuration.selection.optionTitleClosure = { value in
+            guard let option = value as? String else { return "" }
+            return option
+        }
         
         section1.rows.append(illnessesRow)
         section1.rows.append(interestsRow)
@@ -135,7 +140,7 @@ extension MoreInfoTableViewController{
         //locationLableRow.text = fullString as String
         
         //send to singleton here
-        CurrentUser.shared.location =  fullString
+        INUser.shared.location =  fullString
         return true
     }
 }

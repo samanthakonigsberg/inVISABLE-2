@@ -37,7 +37,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return CurrentUser.shared.posts.count
+        return INUser.shared.posts.count
     }
 
     
@@ -45,8 +45,8 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as?
             HomePostTableViewCell
         if let cell = cell {
-            cell.homeNameLabel.text = CurrentUser.shared.name as String
-            cell.homePostLabel.text = CurrentUser.shared.posts[indexPath.row] as? String }
+            cell.homeNameLabel.text = INUser.shared.name as String
+            cell.homePostLabel.text = INUser.shared.posts[indexPath.row] as? String }
             return cell!
     }
         

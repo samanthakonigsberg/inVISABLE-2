@@ -36,40 +36,28 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
         
        
     }
-    
-    func createUser(email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> Void {
-        
-        
-        let values = self.form.formValues()
-        if let firstname = values["firstname"] as? NSString , let lastname = values["lastname"] as? NSString {
-            
-            self.name = NSString(format: "%@ %@" , firstname , lastname)
-        }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if let returnedUser = user {
-                let myUser = INUser(user: returnedUser, image: nil, bio: "", followers: NSNumber(integerLiteral: 0), following: NSNumber(integerLiteral: 0), posts: [], illnesses: [], interests: [], location: "", name: self.name as NSString)
-                
-                CurrentUser.shared = myUser
-            }
-            
-            if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                
-                let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-                alert.addAction(okayAction)
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            completion(user, error)
-        }
-        
-    }
-    
-    
 
     @objc func submit(_sender: UIBarButtonItem!) {
-      self.performSegue(withIdentifier: "toMoreInfo", sender: self)
+        guard let email = valueForTag(FormTags.emailTag) as? String, let password = valueForTag(FormTags.passwordTag) as? String else {
+            return
+        }
+        
+        FirebaseManager.shared.createUser(email: email, password: password) { (success, error) in
+            DispatchQueue.main.async {
+                guard success else {
+                    let alert = UIAlertController(title: "Error", message: error.debugDescription, preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Okay", style: .default, handler: { (action) in
+                        //clear values
+                    })
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    return
+                }
+                
+                self.performSegue(withIdentifier: "toMoreInfo", sender: self)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
