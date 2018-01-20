@@ -48,29 +48,6 @@ class SignUpViewController: UIViewController {
 //            return "Something went wrong. Please try again."
 //        }
 //    }
-    func createUser(email: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) -> Void {
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            print(user)
-        
-            if let returnedUser = user {
-                let myUser = INUser(user: returnedUser, image: nil, bio: "", followers: NSNumber(integerLiteral: 0), following: NSNumber(integerLiteral: 0), posts: [], illnesses: [], interests: [], location: "", name: self.name as NSString)
-                
-                CurrentUser.shared = myUser
-            }
-            
-            if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                
-                let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-                alert.addAction(okayAction)
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            completion(user, error)
-        }
-
-    }
-    
     
     @IBAction func createAccountButtonTapped(_ sender: AnyObject) {
         email = emailTextField.text
@@ -78,8 +55,15 @@ class SignUpViewController: UIViewController {
         name = firstNameTextField.text! + " " + lastNameTextField.text!
 
         if let email = email, let password = password {
-            createUser(email: email, password: password, completion: { (user, error) in
-                //no op
+            FirebaseManager.shared.createUser(email: email, password: password, completion: { (user, error) in
+                
+                if let error = error {
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    
+                    let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                    alert.addAction(okayAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
             })
         
         }

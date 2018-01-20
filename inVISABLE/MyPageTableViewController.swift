@@ -37,7 +37,7 @@ class MyPageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return CurrentUser.shared.posts.count + 2
+        return INUser.shared.posts.count + 2
     }
 
     
@@ -45,10 +45,10 @@ class MyPageTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "profileCellID", for: indexPath) as? ProfileTableViewCell
             if let cell = cell {
-                cell.profileCellBio.text = CurrentUser.shared.bio as String
-                cell.profileCellName.text = CurrentUser.shared.name as String
-                cell.profileCellNumberOfFollowers.text = CurrentUser.shared.followers.stringValue
-                cell.profileCellNumberOfFollowing.text = CurrentUser.shared.following.stringValue
+                cell.profileCellBio.text = INUser.shared.bio as String
+                cell.profileCellName.text = INUser.shared.name as String
+                cell.profileCellNumberOfFollowers.text = INUser.shared.followers.stringValue
+                cell.profileCellNumberOfFollowing.text = INUser.shared.following.stringValue
                 return cell
             }
         } else if indexPath.row == 1 {
@@ -59,8 +59,8 @@ class MyPageTableViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCellID", for: indexPath) as? PostTableViewCell
             if let cell = cell {
-                cell.postCellName.text = CurrentUser.shared.name as String
-                cell.postPostLabel.text = CurrentUser.shared.posts[indexPath.row - 2] as? String
+                cell.postCellName.text = INUser.shared.name as String
+                cell.postPostLabel.text = INUser.shared.posts[indexPath.row - 2] as? String
                 return cell
             }
         }

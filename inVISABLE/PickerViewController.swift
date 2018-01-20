@@ -83,9 +83,9 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         if array == illnesses{
-            CurrentUser.shared.illnesses = selectedArray as NSArray
+            INUser.shared.illnesses = selectedArray as NSArray
         } else if array == interests {
-            CurrentUser.shared.interests = selectedArray as NSArray
+            INUser.shared.interests = selectedArray as NSArray
         }
         
         dismiss(animated: true, completion: nil)

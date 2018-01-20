@@ -29,11 +29,11 @@ class SetUpProfileViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if let text = bioTextView.text {
-            CurrentUser.shared.bio = text as NSString
+            INUser.shared.bio = text as NSString
         }
         
         if let image = profilePicture.image{
-            CurrentUser.shared.image = image
+            INUser.shared.image = image
         }
     }
 

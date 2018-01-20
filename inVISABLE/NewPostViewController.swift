@@ -12,8 +12,7 @@ class NewPostViewController: UIViewController {
     
     
     @IBAction func postButton(_ sender: UIButton) {
-        CurrentUser.shared.posts = CurrentUser.shared.posts.adding(newPostTextView.text as NSString) as NSArray
-        
+        INUser.shared.add(newPostTextView.text as NSString)
         dismiss(animated: true, completion: nil)
     }
 
