@@ -61,9 +61,13 @@ class FirebaseManager {
     
     func add(_ post: NSString) {
         guard let user = INUser.shared.user else { return }
-        let key = reference.child("users").child(user.uid).child("posts").childByAutoId().key
-        let post = [key: post]
-        reference.child("users").child(user.uid).child("posts").updateChildValues(post)
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let key = reference.child("user-posts").child(user.uid).childByAutoId().key
+        let postDict = ["date": formatter.string(from: date) as NSString,
+                        "text": post] as [String: Any]
+        reference.child("user-posts").child(user.uid).child(key).updateChildValues(postDict)
     }
     
     //TODO: Update firebase architecture to work with friend lists and feed

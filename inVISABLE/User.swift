@@ -53,12 +53,16 @@ struct INUser {
     }
     
     mutating func add(_ post: NSString) {
+        objc_sync_enter(self)
         mutablePosts.add(post)
+        objc_sync_exit(self)
+        FirebaseManager.shared.add(post)
     }
     
     mutating func update(with dictionary: NSDictionary) {
         self.bio = dictionary[bioKey] as? NSString ?? ""
-        self.mutablePosts = dictionary[postsKey] as? NSMutableArray ?? []
+        let postsDictionary = dictionary[postsKey] as? NSDictionary ?? [:]
+        self.mutablePosts = NSMutableArray(array: postsDictionary.allValues as NSArray)
         self.followers = dictionary[followersKey] as? NSNumber ?? NSNumber(integerLiteral: 0)
         self.following = dictionary[followingKey] as? NSNumber ?? NSNumber(integerLiteral: 0)
         self.illnesses = dictionary[illnessesKey] as? NSArray ?? []
@@ -68,7 +72,6 @@ struct INUser {
     }
     
     func createUserInfoDictionary() -> [NSString : Any] {
-        
         return [
          bioKey: bio,
          followersKey: followers,

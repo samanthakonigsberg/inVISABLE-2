@@ -25,6 +25,7 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(_ animated: Bool) {
+        PostOffice.manager.requestFeedPosts(for: INUser.shared.user!.uid)
         tableView.reloadData()
     }
 
@@ -36,23 +37,23 @@ class HomeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return INUser.shared.posts.count
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as?
             HomePostTableViewCell
-        if let cell = cell {
-            cell.homeNameLabel.text = INUser.shared.name as String
-            cell.homePostLabel.text = INUser.shared.posts[indexPath.row] as? String }
-            return cell!
+//        if let cell = cell {
+//            cell.homeNameLabel.text = ""
+//            cell.homePostLabel.text = "Test"
+//        }
+//
+        return cell!
     }
         
 
