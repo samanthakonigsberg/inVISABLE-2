@@ -12,6 +12,11 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: finalize colors
+        tabBarController?.tabBar.tintColor = .white
+        tabBarController?.tabBar.barTintColor = UIColor(white: 0.2, alpha: 1.0)
+        tabBarController?.tabBar.unselectedItemTintColor = UIColor(red: 224.0/255.0, green: 150.0/255.0, blue: 208.0/255.0, alpha: 1.0)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
