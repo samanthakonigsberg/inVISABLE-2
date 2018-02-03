@@ -70,6 +70,8 @@ class FirebaseManager {
         reference.child("user-posts").child(user.uid).child(key).updateChildValues(postDict)
     }
     
+    
+    
     //TODO: Update firebase architecture to work with friend lists and feed
     //TODO: Create function to populate feed and friend list; should not be attached to INUser.
 }
