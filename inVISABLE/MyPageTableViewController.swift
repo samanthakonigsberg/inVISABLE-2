@@ -20,6 +20,9 @@ class MyPageTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(_ animated: Bool) {
+        PostOffice.manager.requestUserPosts(for: INUser.shared.user!.uid) { (success) in
+            self.tableView.reloadData()
+        }
         tableView.reloadData()
     }
 
@@ -37,7 +40,7 @@ class MyPageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return INUser.shared.posts.count + 2
+        return PostOffice.manager.userPosts.count + 2
     }
 
     
@@ -47,8 +50,8 @@ class MyPageTableViewController: UITableViewController {
             if let cell = cell {
                 cell.profileCellBio.text = INUser.shared.bio as String
                 cell.profileCellName.text = INUser.shared.name as String
-                cell.profileCellNumberOfFollowers.text = INUser.shared.followers.stringValue
-                cell.profileCellNumberOfFollowing.text = INUser.shared.following.stringValue
+                cell.profileCellNumberOfFollowers.text = "\(INUser.shared.numFollowers)"
+                cell.profileCellNumberOfFollowing.text = "\(INUser.shared.numFollowing)"
                 return cell
             }
         } else if indexPath.row == 1 {
@@ -59,8 +62,8 @@ class MyPageTableViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCellID", for: indexPath) as? PostTableViewCell
             if let cell = cell {
-                cell.postCellName.text = INUser.shared.name as String
-                cell.postPostLabel.text = INUser.shared.posts[indexPath.row - 2] as? String
+                cell.postCellName.text = PostOffice.manager.userPosts[indexPath.row - 2].name as String
+                cell.postPostLabel.text = PostOffice.manager.userPosts[indexPath.row - 2].post as? String
                 return cell
             }
         }

@@ -9,8 +9,8 @@
 import UIKit
 
 struct Post {
-    
+    var date: Date
     var post: NSString
-    var image: UIImage
+    var image: UIImage?
     var name: NSString
 }
