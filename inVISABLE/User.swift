@@ -22,11 +22,12 @@ struct INUser {
         return mutablePosts
     }
     
-    //send bottom five to firebase as additional properties
     var image: UIImage?
     var bio: NSString
-    var followers: NSNumber
-    var following: NSNumber
+    var numFollowers: Int
+    var numFollowing: Int
+    var followers: NSArray
+    var following: NSArray
     var illnesses: NSArray
     var interests: NSArray
     var location: NSString
@@ -39,8 +40,10 @@ struct INUser {
         mutableUser = nil
         image = nil
         bio = ""
-        followers = NSNumber(integerLiteral: 0)
-        following = NSNumber(integerLiteral: 0)
+        numFollowers = 0
+        numFollowing = 0
+        followers = []
+        following = []
         mutablePosts = []
         illnesses = []
         interests = []
@@ -63,8 +66,10 @@ struct INUser {
         self.bio = dictionary[bioKey] as? NSString ?? ""
         let postsDictionary = dictionary[postsKey] as? NSDictionary ?? [:]
         self.mutablePosts = NSMutableArray(array: postsDictionary.allValues as NSArray)
-        self.followers = dictionary[followersKey] as? NSNumber ?? NSNumber(integerLiteral: 0)
-        self.following = dictionary[followingKey] as? NSNumber ?? NSNumber(integerLiteral: 0)
+        self.followers = dictionary[followersKey] as? NSArray ?? []
+        self.following = dictionary[followingKey] as? NSArray ?? []
+        self.numFollowers = self.followers.count
+        self.numFollowing = self.following.count
         self.illnesses = dictionary[illnessesKey] as? NSArray ?? []
         self.interests = dictionary[interestsKey] as? NSArray ?? []
         self.location = dictionary[locationKey] as? NSString ?? ""

@@ -65,9 +65,16 @@ class FirebaseManager {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let key = reference.child("user-posts").child(user.uid).childByAutoId().key
-        let postDict = ["date": formatter.string(from: date) as NSString,
-                        "text": post] as [String: Any]
-        reference.child("user-posts").child(user.uid).child(key).updateChildValues(postDict)
+        var userPostDict = ["date": formatter.string(from: date) as NSString,
+                        "text": post,
+                        "name": INUser.shared.name] as [String: Any]
+        reference.child("user-posts").child(user.uid).child(key).updateChildValues(userPostDict)
+        
+        userPostDict["user"] = user.uid
+        for follower in INUser.shared.followers {
+            guard let f = follower as? String else { continue }
+            reference.child("feed-posts").child(f).child(key).updateChildValues(userPostDict)
+        }
     }
     
     

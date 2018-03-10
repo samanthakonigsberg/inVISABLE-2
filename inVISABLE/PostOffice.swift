@@ -16,11 +16,26 @@ class PostOffice {
     var feedPosts = [Post]()
     var userPosts = [Post]()
     
-    //TODO: Figure out sort with firebase, observe events?
-    //TODO: Add 2 user to test multiple users in feed.
-    
-    func requestFeedPosts(for user: String) {
-        
+    func requestFeedPosts(for userID: String, completion: @escaping (_ success: Bool) -> Void) {
+        if feedPosts.count > 0 {
+            feedPosts.removeAll()
+        }
+        ref.child("feed-posts").child(userID).observeSingleEvent(of: .value) { (snapshot) in
+            if let dictionary = snapshot.value as? [AnyHashable: Any], let allFeedPosts = Array(dictionary.values) as? [[AnyHashable: Any]] {
+                for post in allFeedPosts {
+                    guard let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString else { return }
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    let date = formatter.date(from: dateString as String)
+                    let post = Post(date: date!, post: text, image: nil, name: name)
+                    self.feedPosts.append(post)
+                }
+                
+                self.feedPosts = self.feedPosts.sorted(by: { $0.date > $1.date })
+                completion(true)
+            }
+            completion(false)
+        }
     }
     
     func requestUserPosts(for userID: String, completion: @escaping (_ success: Bool) -> Void) {
@@ -28,8 +43,8 @@ class PostOffice {
             userPosts.removeAll()
         }
         ref.child("user-posts").child(userID).observeSingleEvent(of: .value) { (snapshot) in
-            if let dictionary = snapshot.value as? [AnyHashable: Any], let allPosts = Array(dictionary.values) as? [[AnyHashable: Any]] {
-                for post in allPosts {
+            if let dictionary = snapshot.value as? [AnyHashable: Any], let allUserPosts = Array(dictionary.values) as? [[AnyHashable: Any]] {
+                for post in allUserPosts {
                     guard let dateString = post["date"] as? NSString, let text = post["text"] else { return }
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -37,6 +52,8 @@ class PostOffice {
                     let post = Post(date: date!, post: text as! NSString, image: nil, name: INUser.shared.name)
                     self.userPosts.append(post)
                 }
+                
+                self.userPosts = self.userPosts.sorted(by: { $0.date > $1.date })
                 completion(true)
             }
             completion(false)

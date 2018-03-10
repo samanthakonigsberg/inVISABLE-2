@@ -25,7 +25,7 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(_ animated: Bool) {
-        PostOffice.manager.requestUserPosts(for: INUser.shared.user!.uid) { (success) in
+        PostOffice.manager.requestFeedPosts(for: INUser.shared.user!.uid) { (success) in
             self.tableView.reloadData()
         }
         tableView.reloadData()
@@ -43,7 +43,7 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PostOffice.manager.userPosts.count
+        return PostOffice.manager.feedPosts.count
     }
 
     
@@ -51,8 +51,8 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as?
             HomePostTableViewCell
         if let cell = cell {
-            cell.homeNameLabel.text = PostOffice.manager.userPosts[indexPath.row].name as String
-            cell.homePostLabel.text = PostOffice.manager.userPosts[indexPath.row].post as String
+            cell.homeNameLabel.text = PostOffice.manager.feedPosts[indexPath.row].name as String
+            cell.homePostLabel.text = PostOffice.manager.feedPosts[indexPath.row].post as String
         }
 
         return cell!

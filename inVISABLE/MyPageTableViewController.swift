@@ -50,8 +50,8 @@ class MyPageTableViewController: UITableViewController {
             if let cell = cell {
                 cell.profileCellBio.text = INUser.shared.bio as String
                 cell.profileCellName.text = INUser.shared.name as String
-                cell.profileCellNumberOfFollowers.text = INUser.shared.followers.stringValue
-                cell.profileCellNumberOfFollowing.text = INUser.shared.following.stringValue
+                cell.profileCellNumberOfFollowers.text = "\(INUser.shared.numFollowers)"
+                cell.profileCellNumberOfFollowing.text = "\(INUser.shared.numFollowing)"
                 return cell
             }
         } else if indexPath.row == 1 {
