@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpTapped(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "navVC")
+        let controller = storyboard.instantiateViewController(withIdentifier: "formsID")
         self.present(controller, animated: true, completion: nil)
     }
 

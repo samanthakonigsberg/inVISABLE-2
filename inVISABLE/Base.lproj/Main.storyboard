@@ -66,7 +66,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fPv-VX-aCC">
             <objects>
-                <navigationController id="ioU-l2-Y1d" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="formsID" storyboardIdentifier="formsID" id="ioU-l2-Y1d" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AO2-Pc-hwj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -931,7 +931,7 @@
             </objects>
             <point key="canvasLocation" x="4242" y="54"/>
         </scene>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="Cu3-Ys-rog">
             <objects>
                 <viewController id="6KY-j6-3nU" sceneMemberID="viewController">
@@ -944,7 +944,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Vd4-ia-Cub"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search-50" selectedImage="search-50" id="Vd4-ia-Cub"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIj-Vj-dBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1316,6 +1316,7 @@
         <image name="Home-50" width="25" height="25"/>
         <image name="Speech Bubble-50" width="25" height="25"/>
         <image name="inVISABLE!" width="210" height="55"/>
+        <image name="search-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g1n-bq-57P"/>
