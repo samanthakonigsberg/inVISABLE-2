@@ -10,15 +10,39 @@ import UIKit
 import FirebaseDatabase
 
 
-class SetUpProfileViewController: UIViewController {
+class SetUpProfileViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var bioTextView: UITextView!
     
     @IBOutlet weak var profilePicture: UIImageView!
+    let picker = UIImagePickerController()
+    
+
+    @IBAction func photoFromLibrary(_ sender: UIBarButtonItem) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.modalPresentationStyle = .popover
+        present(picker, animated: true, completion: nil)
+        picker.popoverPresentationController?.barButtonItem = sender
+    }
+    
+    @IBAction func shootPhoto(_ sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker,animated: true,completion: nil)
+        } else {
+            noCamera()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        picker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +50,23 @@ class SetUpProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func noCamera(){
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device has no camera",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true,
+            completion: nil)
+    }
+
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if let text = bioTextView.text {
@@ -35,10 +76,27 @@ class SetUpProfileViewController: UIViewController {
         if let image = profilePicture.image{
             INUser.shared.image = image
         }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
+        self.present(controller, animated: true, completion: nil)
     }
 
     @IBAction func backButtonTapped(_ sender: UIButton) {
     }
-
-
 }
+
+extension SetUpProfileViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+       profilePicture.contentMode = .scaleAspectFit
+        profilePicture.image = chosenImage
+        dismiss(animated:true, completion: nil)
+    }
+}
+

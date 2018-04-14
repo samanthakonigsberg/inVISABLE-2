@@ -11,7 +11,9 @@ import SwiftForms
 import FirebaseAuth
 import GooglePlaces
 
-class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GMSAutocompleteViewControllerDelegate {
+    
+    var locationRow: FormRowDescriptor
    
     struct FormTags {
         static let illnessPickerTag = "illnesses"
@@ -20,6 +22,7 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
     }
     
     required init(coder aDecoder: NSCoder) {
+        locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button , title: "Select Your Location")
         super.init(coder: aDecoder)
         //we will load form here
         self.loadForm()
@@ -35,17 +38,27 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button , title: INUser.shared.location as String)
+        //section2.rows removelastvalue
+        //section2.rows.append(locationRow)
+    }
+    
     @objc func submit(_: UIBarButtonItem!) {
         //continue adding to user
         let message = self.form.formValues().description
 
-        let alertController = UIAlertController(title: "Form output", message: message, preferredStyle: .alert)
-
-        let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) in
-        }
-        alertController.addAction(cancel)
-
-        self.present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: "Form output", message: message, preferredStyle: .alert)
+//
+//        let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) in
+//        }
+//        alertController.addAction(cancel)
+//
+//        self.present(alertController, animated: true, completion: nil)
+//        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "setUpProfileVC")
+        self.present(controller, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,14 +99,15 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
         
         let section2 = FormSectionDescriptor(headerTitle: "Location", footerTitle: nil)
         
-        let locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button, title: "Select Your Location")
-//        locationRow.configuration.button.didSelectClosure = {
-//            let autocompleteController = GMSAutocompleteViewController()
-//        autocompleteController.delegate = self as! GMSAutocompleteViewControllerDelegate
-//            present(autocompleteController, animated: true, completion: nil)
-//        }
+        locationRow.configuration.button.didSelectClosure = {_ in
+            let autocompleteController = GMSAutocompleteViewController()
+            autocompleteController.delegate = self as? GMSAutocompleteViewControllerDelegate
+            self.navigationController?.pushViewController(autocompleteController, animated: true)
+        }
         
-       // let locationLabelRow = FormRowDescriptor(tag: FormTags.locationTag, type: .label, title: nil)
+      
+        section2.rows.append(locationRow)
+        // let locationLabelRow = FormRowDescriptor(tag: FormTags.locationTag, type: .label, title: "Test")
         
         //add sections to form
         form.sections = [section1, section2]
@@ -108,7 +122,7 @@ extension MoreInfoTableViewController{
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress)")
         print("Place attributions: \(place.attributions)")
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -118,7 +132,8 @@ extension MoreInfoTableViewController{
     
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        dismiss(animated: true, completion: nil)
+//        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     // Turn the network activity indicator on and off again.
@@ -141,6 +156,9 @@ extension MoreInfoTableViewController{
         
         //send to singleton here
         INUser.shared.location =  fullString
+        
+        //send value back to moreinfo
+        
         return true
     }
 }
