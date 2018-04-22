@@ -39,23 +39,18 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button , title: INUser.shared.location as String)
-        //section2.rows removelastvalue
-        //section2.rows.append(locationRow)
+        if INUser.shared.location != "" {
+            locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button , title: INUser.shared.location as String)
+            form.sections.last?.rows.removeLast()
+            form.sections.last?.rows.append(locationRow)
+            self.tableView.reloadData()
+        }
     }
     
     @objc func submit(_: UIBarButtonItem!) {
         //continue adding to user
         let message = self.form.formValues().description
-
-//        let alertController = UIAlertController(title: "Form output", message: message, preferredStyle: .alert)
-//
-//        let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) in
-//        }
-//        alertController.addAction(cancel)
-//
-//        self.present(alertController, animated: true, completion: nil)
-//        
+       
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "setUpProfileVC")
         self.present(controller, animated: true, completion: nil)
