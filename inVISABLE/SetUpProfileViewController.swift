@@ -13,21 +13,26 @@ import FirebaseDatabase
 class SetUpProfileViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var bioTextView: UITextView!
-    
+   
     @IBOutlet weak var profilePicture: UIImageView!
     let picker = UIImagePickerController()
     
 
-    @IBAction func photoFromLibrary(_ sender: UIBarButtonItem) {
-        picker.allowsEditing = false
+
+    @IBAction func photoLibrary(_ sender: Any) {
+    
+    picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         picker.modalPresentationStyle = .popover
         present(picker, animated: true, completion: nil)
-        picker.popoverPresentationController?.barButtonItem = sender
+//        picker.popoverPresentationController?.barButtonItem = sender
     }
     
-    @IBAction func shootPhoto(_ sender: UIBarButtonItem) {
+    @IBAction func shootPhoto(_ sender: Any) {
+    
+        
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
             picker.sourceType = UIImagePickerControllerSourceType.camera
@@ -80,9 +85,6 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
         self.present(controller, animated: true, completion: nil)
-    }
-
-    @IBAction func backButtonTapped(_ sender: UIButton) {
     }
 }
 
