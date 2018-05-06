@@ -77,6 +77,25 @@ class FirebaseManager {
         }
     }
     
+    func findUser(with name: String, completion: @escaping (_ success: Bool, _ error: Error?, _ results: [INUser]?) -> Void) -> Void {
+        reference.child("users").queryStarting(atValue: name).queryOrdered(byChild: "name").observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? NSDictionary, value.allKeys.count > 0 else {
+                completion(false, nil, nil)
+                return
+            }
+            
+            var results: [INUser] = []
+            for key in value.allKeys {
+                guard let userInfo = value[key] as? NSDictionary else { continue }
+                var user = INUser()
+                user.update(with: userInfo)
+                results.append(user)
+            }
+            
+            completion(true, nil, results)
+        }
+    }
+    
     
     
     //TODO: Update firebase architecture to work with friend lists and feed
