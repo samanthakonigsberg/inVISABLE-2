@@ -71,10 +71,27 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func forgotPasswordTapped(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "forgotPasswordVC")
-        self.present(controller, animated: true, completion: nil)
         
+        let alertController = UIAlertController(title: "Reset Password", message: "Please enter an email to reset your password", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Email address"
+        }
+        let sendAction = UIAlertAction(title: "Send", style: .default) { (action) in
+            if let textFields = alertController.textFields, let emailTextField = textFields.first, textFields.count == 1, let text = emailTextField.text {
+                Auth.auth().sendPasswordReset(withEmail: text, completion: { (error) in
+                    if error == nil {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(sendAction)
+        alertController.addAction(cancelAction)
+    
+        present(alertController, animated: true, completion: nil)
     }
     
 
