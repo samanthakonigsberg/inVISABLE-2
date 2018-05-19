@@ -52,17 +52,12 @@ class LoginViewController: UIViewController {
             if success {
                 //TODO: REMOVE THIS AFTER NAVIGATOR CLASS IS BUILT. DO NOT SHIP.
                 let alert = UIAlertController(title: "HURRAY", message: "You are logged in as \(INUser.shared.name)", preferredStyle: .alert)
-                let action = UIAlertAction(title: "COOL", style: .default, handler: { (action) in
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
-                    self.present(controller, animated: true, completion: nil)
-                })
+                let action = UIAlertAction(title: "COOL", style: .default, handler: nil)
                 alert.addAction(action)
                 DispatchQueue.main.async {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-            // TODO: insert navigator class here to reveal tab bar controller
         }
         
 //        //Test Email and Password: user@gmail.com password
