@@ -17,6 +17,7 @@ class NewPostViewController: UIViewController {
     }
 
     @IBAction func xOutButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var newPostTextView: UITextView!
