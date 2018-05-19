@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeTableViewController: UITableViewController {
 
@@ -18,6 +19,15 @@ class HomeTableViewController: UITableViewController {
         tabBarController?.tabBar.barTintColor = UIColor(white: 0.2, alpha: 1.0)
         tabBarController?.tabBar.unselectedItemTintColor = UIColor(red: 224.0/255.0, green: 150.0/255.0, blue: 208.0/255.0, alpha: 1.0)
 
+        
+        if let image = UIImage(named: "inVISABLE!") {
+            let view = UIImageView(image: image)
+            navigationItem.titleView = view
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(HomeTableViewController.presentNewPostVC))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(HomeTableViewController.logout))
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -57,7 +67,22 @@ class HomeTableViewController: UITableViewController {
 
         return cell!
     }
-        
+    
+    @objc fileprivate func presentNewPostVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "newPostVC")
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func logout() {
+        let firebaseAuth = Auth.auth()
+        INUser.shared.resetFIRUser()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
 
     
     /*

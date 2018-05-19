@@ -55,6 +55,10 @@ struct INUser {
         self.mutableUser = user
     }
     
+    mutating func resetFIRUser() {
+        self.mutableUser = nil
+    }
+    
     mutating func add(_ post: NSString) {
         objc_sync_enter(self)
         mutablePosts.add(post)

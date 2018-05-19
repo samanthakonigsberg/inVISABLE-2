@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MyPageTableViewController: UITableViewController {
     
         override func viewDidLoad() {
         super.viewDidLoad()
+            
+            if let image = UIImage(named: "inVISABLE!") {
+                let view = UIImageView(image: image)
+                navigationItem.titleView = view
+            }
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -81,9 +90,23 @@ class MyPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "newPostVC")
-            self.present(controller, animated: true, completion: nil)
+            presentNewPostVC()
+        }
+    }
+    
+    @objc fileprivate func presentNewPostVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "newPostVC")
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    @objc fileprivate func logout() {
+        let firebaseAuth = Auth.auth()
+        INUser.shared.resetFIRUser()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
         }
     }
 }

@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
         }
         
 //        //Test Email and Password: user@gmail.com password
+        // Second Test Email and Password: user1@gmail.com password1
     }
     
     @IBAction func signUpTapped(_ sender: AnyObject) {
