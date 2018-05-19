@@ -7,27 +7,34 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
          super.viewDidLoad()
      
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewcontrollerID: String
-            if INUser.shared.user != nil {
-                viewcontrollerID = "tabBarVC"
-            } else{
-                viewcontrollerID = "loginVC"
+            let _ = Auth.auth().addStateDidChangeListener() { (auth, user) in
+                if let certainUser = user {
+                    INUser.shared.updateFIRUser(with: certainUser)
+                }
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewcontrollerID: String
+                
+                if INUser.shared.user != nil {
+                    viewcontrollerID = "tabBarVC"
+                } else{
+                    viewcontrollerID = "loginVC"
+                }
+                
+                let controller = storyboard.instantiateViewController(withIdentifier: viewcontrollerID)
+                self.addChildViewController(controller)
+                controller.view.frame = self.view.frame
+                self.view.addSubview(controller.view)
+                controller.didMove(toParentViewController: self)
             }
-            
-            let controller = storyboard.instantiateViewController(withIdentifier: viewcontrollerID)
-            addChildViewController(controller)
-            controller.view.frame = view.frame
-            view.addSubview(controller.view)
-            controller.didMove(toParentViewController: self)
         
-
         // Do any additional setup after loading the view.
     }
 
