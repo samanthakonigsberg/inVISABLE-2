@@ -23,6 +23,8 @@ struct INUser {
     }
     
     var image: UIImage?
+    var imageRef: NSString
+    var imageUrl: NSString
     var bio: NSString
     var numFollowers: Int
     var numFollowing: Int
@@ -39,6 +41,8 @@ struct INUser {
     public init() {
         mutableUser = nil
         image = nil
+        imageRef = ""
+        imageUrl = ""
         bio = ""
         numFollowers = 0
         numFollowing = 0
@@ -78,6 +82,8 @@ struct INUser {
         self.interests = dictionary[interestsKey] as? NSArray ?? []
         self.location = dictionary[locationKey] as? NSString ?? ""
         self.name = dictionary[nameKey] as? NSString ?? ""
+        self.imageRef = dictionary[imageRefKey] as? NSString ?? ""
+        self.imageUrl = dictionary[imageUrlKey] as? NSString ?? ""
     }
     
     func createUserInfoDictionary() -> [NSString : Any] {
@@ -89,7 +95,9 @@ struct INUser {
          illnessesKey: illnesses,
          interestsKey: interests,
          locationKey: location,
-         nameKey: name
+         nameKey: name,
+         imageRefKey: imageRef,
+         imageUrlKey: imageUrl
          ]
     }
 }

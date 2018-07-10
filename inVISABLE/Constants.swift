@@ -20,6 +20,8 @@ let followingKey: NSString = "following"
 let followersKey: NSString = "followers"
 let bioKey: NSString = "bio"
 let nameKey: NSString = "name"
+let imageRefKey: NSString = "imagePath"
+let imageUrlKey: NSString = "imageUrl"
 
 //error enum
 
