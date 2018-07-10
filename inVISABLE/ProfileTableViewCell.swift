@@ -23,6 +23,7 @@ class ProfileTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+       profileCellImage.roundedImage()
         // Initialization code
     }
 

@@ -18,6 +18,7 @@ class HomePostTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        homeIconImage.roundedImage()
         // Initialization code
     }
 

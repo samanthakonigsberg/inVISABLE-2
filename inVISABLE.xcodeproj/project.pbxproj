@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B161FA120261B3900DA4752 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B161FA020261B3900DA4752 /* BaseViewController.swift */; };
+		1B1DF5CE20F402DF00528E14 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1DF5CD20F402DF00528E14 /* UIImageView.swift */; };
 		1B3467152009AA37003A3EDE /* MoreInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */; };
 		1B36871F1FDC43CD00CC734D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36871E1FDC43CD00CC734D /* AppDelegate.swift */; };
 		1B3687211FDC43CD00CC734D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3687201FDC43CD00CC734D /* ViewController.swift */; };
@@ -39,6 +40,12 @@
 		1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */; };
 		1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */; };
 		1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */; };
+		1BDECED920D9B5AA00A4BE18 /* RuskSack-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED320D9B5A900A4BE18 /* RuskSack-DemiBold.otf */; };
+		1BDECEDA20D9B5AA00A4BE18 /* RuskSack-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED420D9B5A900A4BE18 /* RuskSack-Light.otf */; };
+		1BDECEDB20D9B5AA00A4BE18 /* RuckSack-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED520D9B5A900A4BE18 /* RuckSack-Black.otf */; };
+		1BDECEDC20D9B5AA00A4BE18 /* RuskSack-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED620D9B5A900A4BE18 /* RuskSack-Bold.otf */; };
+		1BDECEDD20D9B5AA00A4BE18 /* RuckSack-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED720D9B5A900A4BE18 /* RuckSack-Book.otf */; };
+		1BDECEDE20D9B5AA00A4BE18 /* RuckSack-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED820D9B5AA00A4BE18 /* RuckSack-Medium.otf */; };
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
 		D11216102009ACCE00794D00 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112160F2009ACCE00794D00 /* FirebaseManager.swift */; };
@@ -67,6 +74,7 @@
 /* Begin PBXFileReference section */
 		17C33D94429259E38FCE7363 /* Pods-inVISABLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLE.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLE/Pods-inVISABLE.release.xcconfig"; sourceTree = "<group>"; };
 		1B161FA020261B3900DA4752 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1B1DF5CD20F402DF00528E14 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoTableViewController.swift; sourceTree = "<group>"; };
 		1B36871B1FDC43CD00CC734D /* inVISABLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inVISABLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B36871E1FDC43CD00CC734D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,12 @@
 		1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
 		1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
+		1BDECED320D9B5A900A4BE18 /* RuskSack-DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuskSack-DemiBold.otf"; path = "../../../../Rucksack/RuskSack-DemiBold.otf"; sourceTree = "<group>"; };
+		1BDECED420D9B5A900A4BE18 /* RuskSack-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuskSack-Light.otf"; path = "../../../../Rucksack/RuskSack-Light.otf"; sourceTree = "<group>"; };
+		1BDECED520D9B5A900A4BE18 /* RuckSack-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuckSack-Black.otf"; path = "../../../../Rucksack/RuckSack-Black.otf"; sourceTree = "<group>"; };
+		1BDECED620D9B5A900A4BE18 /* RuskSack-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuskSack-Bold.otf"; path = "../../../../Rucksack/RuskSack-Bold.otf"; sourceTree = "<group>"; };
+		1BDECED720D9B5A900A4BE18 /* RuckSack-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuckSack-Book.otf"; path = "../../../../Rucksack/RuckSack-Book.otf"; sourceTree = "<group>"; };
+		1BDECED820D9B5AA00A4BE18 /* RuckSack-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuckSack-Medium.otf"; path = "../../../../Rucksack/RuckSack-Medium.otf"; sourceTree = "<group>"; };
 		25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9D314021ABB467C0C8E1F1 /* Pods-inVISABLEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		43F81FE53000DD4942E30B22 /* Pods-inVISABLEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +194,7 @@
 		1B36871D1FDC43CD00CC734D /* inVISABLE */ = {
 			isa = PBXGroup;
 			children = (
+				1BDECED020D9B3F700A4BE18 /* Fonts */,
 				1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */,
 				1BA9D5CA1FDC476900D6E512 /* Keys.plist */,
 				1B36872A1FDC43CD00CC734D /* Info.plist */,
@@ -214,6 +229,7 @@
 				D112160F2009ACCE00794D00 /* FirebaseManager.swift */,
 				D140EE87201C2286006A3883 /* PostOffice.swift */,
 				1B161FA020261B3900DA4752 /* BaseViewController.swift */,
+				1B1DF5CD20F402DF00528E14 /* UIImageView.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -234,6 +250,19 @@
 				1B3687401FDC43CD00CC734D /* Info.plist */,
 			);
 			path = inVISABLEUITests;
+			sourceTree = "<group>";
+		};
+		1BDECED020D9B3F700A4BE18 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1BDECED520D9B5A900A4BE18 /* RuckSack-Black.otf */,
+				1BDECED720D9B5A900A4BE18 /* RuckSack-Book.otf */,
+				1BDECED820D9B5AA00A4BE18 /* RuckSack-Medium.otf */,
+				1BDECED620D9B5A900A4BE18 /* RuskSack-Bold.otf */,
+				1BDECED320D9B5A900A4BE18 /* RuskSack-DemiBold.otf */,
+				1BDECED420D9B5A900A4BE18 /* RuskSack-Light.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4C533D168BC7077EAAB23DD2 /* Pods */ = {
@@ -367,8 +396,14 @@
 			files = (
 				1BA9D5D21FDC476900D6E512 /* Keys.plist in Resources */,
 				1B3687291FDC43CD00CC734D /* LaunchScreen.storyboard in Resources */,
+				1BDECEDB20D9B5AA00A4BE18 /* RuckSack-Black.otf in Resources */,
+				1BDECEDD20D9B5AA00A4BE18 /* RuckSack-Book.otf in Resources */,
 				1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */,
+				1BDECEDE20D9B5AA00A4BE18 /* RuckSack-Medium.otf in Resources */,
+				1BDECEDA20D9B5AA00A4BE18 /* RuskSack-Light.otf in Resources */,
 				1B3687261FDC43CD00CC734D /* Assets.xcassets in Resources */,
+				1BDECEDC20D9B5AA00A4BE18 /* RuskSack-Bold.otf in Resources */,
+				1BDECED920D9B5AA00A4BE18 /* RuskSack-DemiBold.otf in Resources */,
 				1B3687241FDC43CD00CC734D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +595,7 @@
 				1BA9D5CD1FDC476900D6E512 /* HomeTableViewController.swift in Sources */,
 				1BA9D5D01FDC476900D6E512 /* ForgotPasswordViewController.swift in Sources */,
 				1BA9D5E61FDC477D00D6E512 /* PostTableViewCell.swift in Sources */,
+				1B1DF5CE20F402DF00528E14 /* UIImageView.swift in Sources */,
 				1B3687211FDC43CD00CC734D /* ViewController.swift in Sources */,
 				1BA9D5E11FDC477D00D6E512 /* ProfileTableViewCell.swift in Sources */,
 				1B161FA120261B3900DA4752 /* BaseViewController.swift in Sources */,
