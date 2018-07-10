@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 enum UpdateType {
     case email
@@ -21,6 +22,7 @@ enum UpdateType {
 class FirebaseManager {
     static let shared = FirebaseManager()
     var reference: DatabaseReference = Database.database().reference()
+    var storage: Storage = Storage.storage()
     
     func createUser(email: String, password: String, completion: @escaping (_ success: Bool, _ error: Error?) -> Void) -> Void {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -96,8 +98,33 @@ class FirebaseManager {
         }
     }
     
-    
-    
-    //TODO: Update firebase architecture to work with friend lists and feed
-    //TODO: Create function to populate feed and friend list; should not be attached to INUser.
+    func store(_ image: UIImage) {
+        guard let user = INUser.shared.user, let imageData: Data = UIImagePNGRepresentation(image) else { return }
+        
+        var ref: StorageReference
+        if INUser.shared.imageRef.length > 0 {
+            ref = storage.reference().child(INUser.shared.imageRef as String)
+        } else {
+            let urlString = "/users/\(user.uid)/profile.img"
+            INUser.shared.imageRef = urlString as NSString
+            ref = storage.reference().child(urlString)
+        }
+        
+        let _ = ref.putData(imageData, metadata: nil) { (metadata, error) in
+            guard let _ = metadata else {
+                // uh oh error
+                return
+            }
+            
+            ref.downloadURL(completion: { (url, error) in
+                guard let downloadUrl = url else {
+                    //uh oh error
+                    return
+                }
+                
+                INUser.shared.imageUrl = downloadUrl.absoluteString as NSString
+                
+            })
+        }
+    }
 }

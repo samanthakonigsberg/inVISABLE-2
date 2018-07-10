@@ -107,8 +107,11 @@ extension SetUpProfileViewController: UIImagePickerControllerDelegate {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-       profilePicture.contentMode = .scaleAspectFit
+        guard let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        
+        INUser.shared.image = chosenImage
+        FirebaseManager.shared.store(chosenImage)
+        profilePicture.contentMode = .scaleAspectFit
         profilePicture.image = chosenImage
         dismiss(animated:true, completion: nil)
     }
