@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewPostViewController: UIViewController {
+class NewPostViewController: UIViewController, UITextViewDelegate {
     
     
     @IBAction func postButton(_ sender: UIButton) {
@@ -20,12 +20,44 @@ class NewPostViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var xOutButtonOutlet: UIButton!
+    
     @IBOutlet weak var newPostTextView: UITextView!
     
+    @IBOutlet weak var profilePicture: UIImageView!
+    
     override func viewDidLoad() {
+        
+        newPostTextView.delegate = self
+        newPostTextView.text = "What's on your mind?"
+        newPostTextView.textColor = UIColor.lightGray
+        profilePicture.roundedImage()
+    xOutButtonOutlet.layer.cornerRadius = 10
         super.viewDidLoad()
+        
+    //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if newPostTextView.textColor == UIColor.lightGray {
+        newPostTextView.text = nil
+        newPostTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if newPostTextView.text.isEmpty {
+        newPostTextView.text = "What's on your mind?"
+        newPostTextView.textColor = UIColor.lightGray
+        }
+    }
 
-        // Do any additional setup after loading the view.
+
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

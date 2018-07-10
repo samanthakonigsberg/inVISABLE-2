@@ -2,9 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSCameraUsageDescription</key>
-    <string>Take a profile picture</string>
-
+	<key>UIAppFonts</key>
+	<array>
+		<string>RuckSack-Black.otf</string>
+		<string>RuckSack-Book.otf</string>
+		<string>RuckSack-Medium.otf</string>
+		<string>RuskSack-Bold.otf</string>
+		<string>RuskSack-DemiBold.otf</string>
+		<string>RuskSack-Light.otf</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a profile picture</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Set Profile Picture</string>
 	<key>CFBundleDevelopmentRegion</key>

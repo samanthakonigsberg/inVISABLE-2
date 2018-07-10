@@ -11,7 +11,8 @@ import FirebaseAuth
 
 class MyPageTableViewController: UITableViewController {
     
-        override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
             
             if let image = UIImage(named: "inVISABLE!") {
