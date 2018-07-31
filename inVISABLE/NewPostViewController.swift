@@ -28,6 +28,14 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         
+        if let image = UIImage(named: "FinalLogo") {
+            //create a container view with specific frame
+            //insert code below but it in container
+            let view = UIImageView(image: image)
+            view.contentMode = .scaleAspectFit
+            navigationItem.titleView = view
+        }
+        
         newPostTextView.delegate = self
         newPostTextView.text = "What's on your mind?"
         newPostTextView.textColor = UIColor.lightGray
@@ -53,7 +61,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         }
     }
 
-
+    
+    
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

@@ -15,10 +15,15 @@ class MyPageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
-            if let image = UIImage(named: "inVISABLE!") {
-                let view = UIImageView(image: image)
-                navigationItem.titleView = view
-            }
+        
+        if let image = UIImage(named: "FinalLogo") {
+            //create a container view with specific frame
+            //insert code below but it in container
+            let view = UIImageView(image: image)
+            view.contentMode = .scaleAspectFit
+            navigationItem.titleView = view
+        }
+        
             
             navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout))
@@ -50,7 +55,7 @@ class MyPageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return PostOffice.manager.userPosts.count + 2
+        return PostOffice.manager.userPosts.count + 1
     }
 
     
@@ -63,21 +68,17 @@ class MyPageTableViewController: UITableViewController {
                 cell.profileCellNumberOfFollowers.text = "\(INUser.shared.numFollowers)"
                 cell.profileCellNumberOfFollowing.text = "\(INUser.shared.numFollowing)"
                 
-                if let image = INUser.shared.image {
+                if let image = INUser.shared.image{
                     cell.profileCellImage.image = image
                 }
                 return cell
             }
-        } else if indexPath.row == 1 {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "newPostCellID", for: indexPath)
-            return cell
         
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCellID", for: indexPath) as? PostTableViewCell
             if let cell = cell {
-                cell.postCellName.text = PostOffice.manager.userPosts[indexPath.row - 2].name as String
-                cell.postPostLabel.text = PostOffice.manager.userPosts[indexPath.row - 2].post as? String
+                cell.postCellName.text = PostOffice.manager.userPosts[indexPath.row - 1].name as String
+                cell.postPostLabel.text = PostOffice.manager.userPosts[indexPath.row - 1].post as? String
                 return cell
             }
         }
@@ -92,18 +93,11 @@ class MyPageTableViewController: UITableViewController {
             return 120
         }
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
-            presentNewPostVC()
-        }
-    }
-    
     @objc fileprivate func presentNewPostVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "newPostVC")
         self.present(controller, animated: true, completion: nil)
-    }
+            }
     
     @objc fileprivate func logout() {
         let firebaseAuth = Auth.auth()
