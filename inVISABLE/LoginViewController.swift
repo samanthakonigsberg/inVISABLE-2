@@ -22,6 +22,9 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        loginButton.layer.cornerRadius = 10
+        signUpButton.layer.cornerRadius = 10
+        forgotPasswordButton.layer.cornerRadius = 10
         super.viewDidLoad()
         self.ref = Database.database().reference()
 
@@ -41,7 +44,8 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBAction func loginTapped(_ sender: UIButton) {
         
         guard let email = emailTextField.text, let password = passwordTextField.text else {
@@ -63,6 +67,7 @@ class LoginViewController: UIViewController {
 //        //Test Email and Password: user@gmail.com password
         // Second Test Email and Password: user1@gmail.com password1
     }
+    @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func signUpTapped(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -70,6 +75,7 @@ class LoginViewController: UIViewController {
         self.present(controller, animated: true, completion: nil)
     }
 
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBAction func forgotPasswordTapped(_ sender: AnyObject) {
         
         let alertController = UIAlertController(title: "Reset Password", message: "Please enter an email to reset your password", preferredStyle: .alert)

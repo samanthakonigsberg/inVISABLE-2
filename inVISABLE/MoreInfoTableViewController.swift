@@ -9,26 +9,19 @@
 import UIKit
 import SwiftForms
 import FirebaseAuth
-import GooglePlaces
 
-class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GMSAutocompleteViewControllerDelegate {
+
+class MoreInfoTableViewController:FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    var locationRow: FormRowDescriptor
    
     struct FormTags {
         static let illnessPickerTag = "illnesses"
         static let interestPickerTag = "interests"
-        static let locationTag = "location"
+        
     }
-    
-    required init(coder aDecoder: NSCoder) {
-        locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button , title: "Select Your Location")
-        super.init(coder: aDecoder)
-        //we will load form here
-        self.loadForm()
-    }
-    
+
     override func viewDidLoad() {
+        self.loadForm()
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(MoreInfoTableViewController.submit(_:)))
         // Uncomment the following line to preserve selection between presentations
@@ -39,12 +32,7 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if INUser.shared.location != "" {
-            locationRow = FormRowDescriptor(tag: FormTags.locationTag, type: .button , title: INUser.shared.location as String)
-            form.sections.last?.rows.removeLast()
-            form.sections.last?.rows.append(locationRow)
-            self.tableView.reloadData()
-        }
+        
     }
     
     @objc func submit(_: UIBarButtonItem!) {
@@ -92,69 +80,12 @@ class MoreInfoTableViewController: FormViewController, UIImagePickerControllerDe
         
         //section 2 (google places)
         
-        let section2 = FormSectionDescriptor(headerTitle: "Location", footerTitle: nil)
         
-        locationRow.configuration.button.didSelectClosure = {_ in
-            let autocompleteController = GMSAutocompleteViewController()
-            autocompleteController.delegate = self as? GMSAutocompleteViewControllerDelegate
-            self.navigationController?.pushViewController(autocompleteController, animated: true)
-        }
         
-      
-        section2.rows.append(locationRow)
         // let locationLabelRow = FormRowDescriptor(tag: FormTags.locationTag, type: .label, title: "Test")
         
         //add sections to form
-        form.sections = [section1, section2]
+        form.sections = [section1]
         self.form = form
     }
 }
-
-extension MoreInfoTableViewController{
-    
-    // Handle the user's selection.
-    @objc(viewController:didAutocompleteWithPlace:) func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        print("Place name: \(place.name)")
-        print("Place address: \(place.formattedAddress)")
-        print("Place attributions: \(place.attributions)")
-        navigationController?.popViewController(animated: true)
-    }
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
-        print("Error: ", error.localizedDescription)
-    }
-    
-    // User canceled the operation.
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-//        navigationController?.popViewController(animated: true)
-        navigationController?.popViewController(animated: true)
-    }
-    
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-    
-    @objc(viewController:didSelectPrediction:) func viewController(_ viewController: GMSAutocompleteViewController, didSelect prediction: GMSAutocompletePrediction) -> Bool {
-        
-        let a =  prediction.attributedPrimaryText.string
-        let b = prediction.attributedSecondaryText?.string
-        let fullString = NSMutableString(string: a)
-        fullString.append(", ")
-        fullString.append(b!)
-        //locationLableRow.text = fullString as String
-        
-        //send to singleton here
-        INUser.shared.location =  fullString
-        
-        //send value back to moreinfo
-        
-        return true
-    }
-}
-

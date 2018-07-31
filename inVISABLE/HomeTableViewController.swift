@@ -16,9 +16,9 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
       
         //TODO: finalize colors
-        tabBarController?.tabBar.tintColor = UIColor(red: 239/255, green: 0, blue: 119/255, alpha: 0.6)
-        tabBarController?.tabBar.barTintColor = UIColor(white: 0.1, alpha: 1.0)
-        tabBarController?.tabBar.unselectedItemTintColor = .white
+        tabBarController?.tabBar.tintColor = UIColor(named: "ActionNew")
+        tabBarController?.tabBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
+        tabBarController?.tabBar.unselectedItemTintColor = .lightGray
 
 
         
@@ -134,4 +134,14 @@ class HomeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row ==  PostOffice.manager.feedPosts.count {
+            //presentNewPostVC()
+        }
+    }
+    
+   
+    
 }
