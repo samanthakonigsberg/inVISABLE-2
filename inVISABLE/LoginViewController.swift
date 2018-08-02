@@ -54,7 +54,6 @@ class LoginViewController: UIViewController {
 
         FirebaseManager.shared.login(email: email, password: password) { (success, error) in
             if success {
-                //TODO: REMOVE THIS AFTER NAVIGATOR CLASS IS BUILT. DO NOT SHIP.
                 let alert = UIAlertController(title: "HURRAY", message: "You are logged in as \(INUser.shared.name)", preferredStyle: .alert)
                 let action = UIAlertAction(title: "COOL", style: .default, handler: nil)
                 alert.addAction(action)
