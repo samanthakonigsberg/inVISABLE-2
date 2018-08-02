@@ -88,9 +88,10 @@ class FirebaseManager {
             
             var results: [INUser] = []
             for key in value.allKeys {
-                guard let userInfo = value[key] as? NSDictionary else { continue }
+                guard let userInfo = value[key] as? NSDictionary, let k = key as? String else { continue }
                 var user = INUser()
                 user.update(with: userInfo)
+                user.id = k
                 results.append(user)
             }
             

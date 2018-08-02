@@ -44,6 +44,8 @@
 		D1639D712112896C00E4AAEF /* RuckSack-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6B2112896C00E4AAEF /* RuckSack-Black.otf */; };
 		D1639D722112896C00E4AAEF /* RuskSack-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6C2112896C00E4AAEF /* RuskSack-Light.otf */; };
 		D1639D732112896C00E4AAEF /* RuckSack-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */; };
+		D1639D7B21128F2900E4AAEF /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */; };
+		D1639D7D211291B700E4AAEF /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */; };
 		D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */; };
 		E464768C55D13F342B8D36D2 /* Pods_inVISABLETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +117,8 @@
 		D1639D6B2112896C00E4AAEF /* RuckSack-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Black.otf"; sourceTree = "<group>"; };
 		D1639D6C2112896C00E4AAEF /* RuskSack-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuskSack-Light.otf"; sourceTree = "<group>"; };
 		D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Book.otf"; sourceTree = "<group>"; };
+		D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormTextFieldCell.swift; sourceTree = "<group>"; };
 		E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -212,6 +216,8 @@
 				D140EE87201C2286006A3883 /* PostOffice.swift */,
 				1B161FA020261B3900DA4752 /* BaseViewController.swift */,
 				1B1DF5CD20F402DF00528E14 /* UIImageView.swift */,
+				D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */,
+				D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -580,7 +586,9 @@
 				1B1DF5CE20F402DF00528E14 /* UIImageView.swift in Sources */,
 				1B3687211FDC43CD00CC734D /* ViewController.swift in Sources */,
 				1BA9D5E11FDC477D00D6E512 /* ProfileTableViewCell.swift in Sources */,
+				D1639D7D211291B700E4AAEF /* SearchResultTableViewCell.swift in Sources */,
 				1B161FA120261B3900DA4752 /* BaseViewController.swift in Sources */,
+				D1639D7B21128F2900E4AAEF /* SearchTableViewController.swift in Sources */,
 				1B36871F1FDC43CD00CC734D /* AppDelegate.swift in Sources */,
 				D140EE88201C2286006A3883 /* PostOffice.swift in Sources */,
 				D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */,

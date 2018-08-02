@@ -18,6 +18,8 @@ struct INUser {
         }
     }
     
+    var id: String?
+        
     var posts: NSArray {
         return mutablePosts
     }
