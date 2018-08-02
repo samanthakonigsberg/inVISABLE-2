@@ -19,6 +19,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postPostLabel: UILabel!
     
     override func awakeFromNib() {
+        postCellImage.roundedImage()
         super.awakeFromNib()
         // Initialization code
     }
