@@ -40,7 +40,16 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
     }
 
     @objc func submit(_sender: UIBarButtonItem!) {
-        guard let email = valueForTag(FormTags.emailTag) as? String, let password = valueForTag(FormTags.passwordTag) as? String else {
+        guard let email = valueForTag(FormTags.emailTag) as? String,
+            let password = valueForTag(FormTags.passwordTag) as? String,
+            let firstName = valueForTag(FormTags.firstNameTag) as? String,
+            let lastName = valueForTag(FormTags.lastNameTag) as? String
+        else {
+            let alert = UIAlertController(title: "Please complete all required information", message: "It seems you're still missing a few items to set up your account. Please fill out all fields before continuing.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            
             return
         }
         
@@ -57,6 +66,8 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
                     return
                 }
                 
+                INUser.shared.name = NSString(string: "\(firstName) \(lastName)")
+                FirebaseManager.shared.updateAllUserInfo()
                 self.performSegue(withIdentifier: "toMoreInfo", sender: self)
             }
         }

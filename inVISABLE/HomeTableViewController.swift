@@ -32,15 +32,13 @@ class HomeTableViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(HomeTableViewController.presentNewPostVC))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(HomeTableViewController.logout))
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(_ animated: Bool) {
-        PostOffice.manager.requestFeedPosts(for: INUser.shared.user!.uid) { (success) in
+        guard let userId = INUser.shared.user?.uid else {
+            tableView.reloadData()
+            return
+        }
+        PostOffice.manager.requestFeedPosts(for: userId) { (success) in
             self.tableView.reloadData()
         }
         tableView.reloadData()

@@ -34,16 +34,16 @@
 		1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */; };
 		1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */; };
 		1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */; };
-		1BDECED920D9B5AA00A4BE18 /* RuskSack-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED320D9B5A900A4BE18 /* RuskSack-DemiBold.otf */; };
-		1BDECEDA20D9B5AA00A4BE18 /* RuskSack-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED420D9B5A900A4BE18 /* RuskSack-Light.otf */; };
-		1BDECEDB20D9B5AA00A4BE18 /* RuckSack-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED520D9B5A900A4BE18 /* RuckSack-Black.otf */; };
-		1BDECEDC20D9B5AA00A4BE18 /* RuskSack-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED620D9B5A900A4BE18 /* RuskSack-Bold.otf */; };
-		1BDECEDD20D9B5AA00A4BE18 /* RuckSack-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED720D9B5A900A4BE18 /* RuckSack-Book.otf */; };
-		1BDECEDE20D9B5AA00A4BE18 /* RuckSack-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDECED820D9B5AA00A4BE18 /* RuckSack-Medium.otf */; };
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
 		D11216102009ACCE00794D00 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112160F2009ACCE00794D00 /* FirebaseManager.swift */; };
 		D140EE88201C2286006A3883 /* PostOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140EE87201C2286006A3883 /* PostOffice.swift */; };
+		D1639D6E2112896C00E4AAEF /* RuskSack-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D682112896B00E4AAEF /* RuskSack-Bold.otf */; };
+		D1639D6F2112896C00E4AAEF /* RuckSack-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D692112896B00E4AAEF /* RuckSack-Medium.otf */; };
+		D1639D702112896C00E4AAEF /* RuskSack-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6A2112896B00E4AAEF /* RuskSack-DemiBold.otf */; };
+		D1639D712112896C00E4AAEF /* RuckSack-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6B2112896C00E4AAEF /* RuckSack-Black.otf */; };
+		D1639D722112896C00E4AAEF /* RuskSack-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6C2112896C00E4AAEF /* RuskSack-Light.otf */; };
+		D1639D732112896C00E4AAEF /* RuckSack-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */; };
 		D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */; };
 		E464768C55D13F342B8D36D2 /* Pods_inVISABLETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */; };
 /* End PBXBuildFile section */
@@ -100,12 +100,6 @@
 		1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
 		1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
-		1BDECED320D9B5A900A4BE18 /* RuskSack-DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuskSack-DemiBold.otf"; path = "../../../../Rucksack/RuskSack-DemiBold.otf"; sourceTree = "<group>"; };
-		1BDECED420D9B5A900A4BE18 /* RuskSack-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuskSack-Light.otf"; path = "../../../../Rucksack/RuskSack-Light.otf"; sourceTree = "<group>"; };
-		1BDECED520D9B5A900A4BE18 /* RuckSack-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuckSack-Black.otf"; path = "../../../../Rucksack/RuckSack-Black.otf"; sourceTree = "<group>"; };
-		1BDECED620D9B5A900A4BE18 /* RuskSack-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuskSack-Bold.otf"; path = "../../../../Rucksack/RuskSack-Bold.otf"; sourceTree = "<group>"; };
-		1BDECED720D9B5A900A4BE18 /* RuckSack-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuckSack-Book.otf"; path = "../../../../Rucksack/RuckSack-Book.otf"; sourceTree = "<group>"; };
-		1BDECED820D9B5AA00A4BE18 /* RuckSack-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RuckSack-Medium.otf"; path = "../../../../Rucksack/RuckSack-Medium.otf"; sourceTree = "<group>"; };
 		25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9D314021ABB467C0C8E1F1 /* Pods-inVISABLEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		43F81FE53000DD4942E30B22 /* Pods-inVISABLEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +109,12 @@
 		CD6062F53D8004B0C3A44FCE /* Pods-inVISABLETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLETests/Pods-inVISABLETests.release.xcconfig"; sourceTree = "<group>"; };
 		D112160F2009ACCE00794D00 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D140EE87201C2286006A3883 /* PostOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOffice.swift; sourceTree = "<group>"; };
+		D1639D682112896B00E4AAEF /* RuskSack-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuskSack-Bold.otf"; sourceTree = "<group>"; };
+		D1639D692112896B00E4AAEF /* RuckSack-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Medium.otf"; sourceTree = "<group>"; };
+		D1639D6A2112896B00E4AAEF /* RuskSack-DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuskSack-DemiBold.otf"; sourceTree = "<group>"; };
+		D1639D6B2112896C00E4AAEF /* RuckSack-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Black.otf"; sourceTree = "<group>"; };
+		D1639D6C2112896C00E4AAEF /* RuskSack-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuskSack-Light.otf"; sourceTree = "<group>"; };
+		D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Book.otf"; sourceTree = "<group>"; };
 		D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormTextFieldCell.swift; sourceTree = "<group>"; };
 		E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -237,12 +237,12 @@
 		1BDECED020D9B3F700A4BE18 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1BDECED520D9B5A900A4BE18 /* RuckSack-Black.otf */,
-				1BDECED720D9B5A900A4BE18 /* RuckSack-Book.otf */,
-				1BDECED820D9B5AA00A4BE18 /* RuckSack-Medium.otf */,
-				1BDECED620D9B5A900A4BE18 /* RuskSack-Bold.otf */,
-				1BDECED320D9B5A900A4BE18 /* RuskSack-DemiBold.otf */,
-				1BDECED420D9B5A900A4BE18 /* RuskSack-Light.otf */,
+				D1639D6B2112896C00E4AAEF /* RuckSack-Black.otf */,
+				D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */,
+				D1639D692112896B00E4AAEF /* RuckSack-Medium.otf */,
+				D1639D682112896B00E4AAEF /* RuskSack-Bold.otf */,
+				D1639D6A2112896B00E4AAEF /* RuskSack-DemiBold.otf */,
+				D1639D6C2112896C00E4AAEF /* RuskSack-Light.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -376,16 +376,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1639D702112896C00E4AAEF /* RuskSack-DemiBold.otf in Resources */,
 				1BA9D5D21FDC476900D6E512 /* Keys.plist in Resources */,
 				1B3687291FDC43CD00CC734D /* LaunchScreen.storyboard in Resources */,
-				1BDECEDB20D9B5AA00A4BE18 /* RuckSack-Black.otf in Resources */,
-				1BDECEDD20D9B5AA00A4BE18 /* RuckSack-Book.otf in Resources */,
+				D1639D722112896C00E4AAEF /* RuskSack-Light.otf in Resources */,
 				1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */,
-				1BDECEDE20D9B5AA00A4BE18 /* RuckSack-Medium.otf in Resources */,
-				1BDECEDA20D9B5AA00A4BE18 /* RuskSack-Light.otf in Resources */,
+				D1639D732112896C00E4AAEF /* RuckSack-Book.otf in Resources */,
 				1B3687261FDC43CD00CC734D /* Assets.xcassets in Resources */,
-				1BDECEDC20D9B5AA00A4BE18 /* RuskSack-Bold.otf in Resources */,
-				1BDECED920D9B5AA00A4BE18 /* RuskSack-DemiBold.otf in Resources */,
+				D1639D6E2112896C00E4AAEF /* RuskSack-Bold.otf in Resources */,
+				D1639D712112896C00E4AAEF /* RuckSack-Black.otf in Resources */,
+				D1639D6F2112896C00E4AAEF /* RuckSack-Medium.otf in Resources */,
 				1B3687241FDC43CD00CC734D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

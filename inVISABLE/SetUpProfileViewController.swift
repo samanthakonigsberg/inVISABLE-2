@@ -30,9 +30,6 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
     }
     
     @IBAction func shootPhoto(_ sender: Any) {
-    
-        
-        
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
             picker.sourceType = UIImagePickerControllerSourceType.camera
@@ -88,6 +85,7 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if let text = bioTextView.text {
             INUser.shared.bio = text as NSString
+            FirebaseManager.shared.updateAllUserInfo()
         }
         
         if let image = profilePicture.image{
@@ -111,7 +109,7 @@ extension SetUpProfileViewController: UIImagePickerControllerDelegate {
         
         INUser.shared.image = chosenImage
         FirebaseManager.shared.store(chosenImage)
-        profilePicture.contentMode = .scaleAspectFit
+        profilePicture.contentMode = .scaleAspectFill
         profilePicture.image = chosenImage
         dismiss(animated:true, completion: nil)
     }

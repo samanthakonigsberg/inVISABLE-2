@@ -39,6 +39,14 @@ class MoreInfoTableViewController:FormViewController, UIImagePickerControllerDel
         //continue adding to user
         let message = self.form.formValues().description
        
+        guard let selectedIllnesses = valueForTag(FormTags.illnessPickerTag) as? [String], let selectedInterests = valueForTag(FormTags.interestPickerTag) as? [String] else {
+            return
+        }
+        
+        INUser.shared.illnesses = NSArray(array: selectedIllnesses)
+        INUser.shared.interests = NSArray(array: selectedInterests)
+        FirebaseManager.shared.updateAllUserInfo()
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "setUpProfileVC")
         self.present(controller, animated: true, completion: nil)

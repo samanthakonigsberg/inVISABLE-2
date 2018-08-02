@@ -32,7 +32,6 @@ struct INUser {
     var following: NSArray
     var illnesses: NSArray
     var interests: NSArray
-    var location: NSString
     var name: NSString
     
     private var mutableUser : User?
@@ -51,7 +50,6 @@ struct INUser {
         mutablePosts = []
         illnesses = []
         interests = []
-        location = ""
         name = ""
     }
     
@@ -80,7 +78,6 @@ struct INUser {
         self.numFollowing = self.following.count
         self.illnesses = dictionary[illnessesKey] as? NSArray ?? []
         self.interests = dictionary[interestsKey] as? NSArray ?? []
-        self.location = dictionary[locationKey] as? NSString ?? ""
         self.name = dictionary[nameKey] as? NSString ?? ""
         self.imageRef = dictionary[imageRefKey] as? NSString ?? ""
         self.imageUrl = dictionary[imageUrlKey] as? NSString ?? ""
@@ -94,7 +91,6 @@ struct INUser {
          postsKey: posts,
          illnessesKey: illnesses,
          interestsKey: interests,
-         locationKey: location,
          nameKey: name,
          imageRefKey: imageRef,
          imageUrlKey: imageUrl
