@@ -9,8 +9,19 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
+    var user: INUser?
     
-
+    @IBAction func followButton(_ sender: UIButton) {
+        if let u = user, let id = u.id {
+            INUser.shared.following = INUser.shared.following.adding(id) as NSArray
+            FirebaseManager.shared.updateAllUserInfo()
+        }
+        sender.setTitle("Unfollow", for: .normal)
+        
+    }
+    
+    @IBOutlet weak var followButtonDesign: UIButton!
+    
     @IBOutlet weak var profileCellImage: UIImageView!
 
     @IBOutlet weak var profileCellName: UILabel!
@@ -23,7 +34,8 @@ class ProfileTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       profileCellImage.roundedImage()
+        followButtonDesign.layer.cornerRadius = 10
+        profileCellImage.roundedImage()
         // Initialization code
     }
 

@@ -73,7 +73,7 @@ class HomeTableViewController: UITableViewController {
     
     @objc fileprivate func presentNewPostVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "newPostVC")
+        let controller = storyboard.instantiateViewController(withIdentifier: "NavBarNewPost")
         self.present(controller, animated: true, completion: nil)
     }
     
