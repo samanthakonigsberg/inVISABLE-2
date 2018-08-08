@@ -29,7 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
     
         ref = Database.database().reference()
-    //is this okay
+        
+        if let user = Auth.auth().currentUser {
+            INUser.shared.updateFIRUser(with: user)
+            
+            ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let value = snapshot.value as? NSDictionary else {
+                    return
+                }
+                INUser.shared.update(with: value)
+            })
+        }
+        
         return true
     }
 
