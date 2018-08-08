@@ -55,7 +55,19 @@ class FirebaseManager {
         }
     }
     
-    //TODO: untested!
+    func updateFollowersFor(userId: String) {
+        guard let currentUser = INUser.shared.user else { return }
+        reference.child("users").child(userId).child("followers").observeSingleEvent(of: .value) { (snapshot) in
+            var array: NSArray
+            if let arr = snapshot.value as? NSArray {
+                array = arr.adding(currentUser.uid) as NSArray
+            } else {
+                array = NSArray(array: [currentUser.uid])
+            }
+            self.reference.child("users").child(userId).updateChildValues(["followers": array])
+        }
+    }
+    
     func updateAllUserInfo() {
         guard let user = INUser.shared.user else { return }
         reference.child("users").child(user.uid).updateChildValues(INUser.shared.createUserInfoDictionary())

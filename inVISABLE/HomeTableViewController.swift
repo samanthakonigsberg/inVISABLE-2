@@ -20,7 +20,7 @@ class HomeTableViewController: UITableViewController {
         tabBarController?.tabBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
         tabBarController?.tabBar.unselectedItemTintColor = .lightGray
 
-
+        //TODO: Look up and implement postsRef.observe(.childAdded...
         
         if let image = UIImage(named: "FinalLogo") {
             //create a container view with specific frame

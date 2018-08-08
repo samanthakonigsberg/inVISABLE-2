@@ -29,11 +29,12 @@ class SearchResultTableViewCell: UITableViewCell {
    
     @IBAction func followButtonTapped(_ sender: UIButton) {
     
-    if let u = user, let id = u.id {
+        if let u = user, let id = u.id{
             INUser.shared.following = INUser.shared.following.adding(id) as NSArray
             FirebaseManager.shared.updateAllUserInfo()
+            FirebaseManager.shared.updateFollowersFor(userId: id)
+            sender.setTitle("Unfollow", for: .normal)
         }
-         sender.setTitle("Unfollow", for: .normal)
     }
     
 }
