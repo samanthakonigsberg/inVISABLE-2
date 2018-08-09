@@ -55,7 +55,7 @@ class FirebaseManager {
         }
     }
     
-    func updateFollowersFor(userId: String) {
+    func addUserAsFollowerFor(userId: String) {
         guard let currentUser = INUser.shared.user else { return }
         reference.child("users").child(userId).child("followers").observeSingleEvent(of: .value) { (snapshot) in
             var array: NSArray
@@ -65,6 +65,18 @@ class FirebaseManager {
                 array = NSArray(array: [currentUser.uid])
             }
             self.reference.child("users").child(userId).updateChildValues(["followers": array])
+        }
+    }
+    
+    func removeUserAsFollowerFor(userId: String) {
+        guard let currentUser = INUser.shared.user else { return }
+        reference.child("users").child(userId).child("followers").observeSingleEvent(of: .value) { (snapshot) in
+            if let arr = snapshot.value as? NSArray {
+                let index = arr.index(of: currentUser.uid)
+                let mutableArr = NSMutableArray(array: arr)
+                mutableArr.removeObject(at: index)
+                self.reference.child("users").child(userId).updateChildValues(["followers": mutableArr as NSArray])
+            }
         }
     }
     
