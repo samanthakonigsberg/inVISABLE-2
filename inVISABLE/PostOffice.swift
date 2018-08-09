@@ -23,7 +23,7 @@ class PostOffice {
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let date = formatter.date(from: dateString as String)
             let newPost = Post(date: date!, post: text, image: nil, name: name)
-            self.feedPosts.append(newPost)
+            self.feedPosts.insert(newPost, at: 0)
             completion(newPost)
         }
     }
