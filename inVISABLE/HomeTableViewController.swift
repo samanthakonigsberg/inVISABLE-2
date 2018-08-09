@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class HomeTableViewController: UITableViewController {
 
@@ -38,10 +39,10 @@ class HomeTableViewController: UITableViewController {
             tableView.reloadData()
             return
         }
-        PostOffice.manager.requestFeedPosts(for: userId) { (success) in
-            self.tableView.reloadData()
+        
+        PostOffice.manager.listenToFeedPosts(for: userId) { (newPost) in
+            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
         }
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

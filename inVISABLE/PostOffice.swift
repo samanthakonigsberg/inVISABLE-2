@@ -16,6 +16,18 @@ class PostOffice {
     var feedPosts = [Post]()
     var userPosts = [Post]()
     
+    func listenToFeedPosts(for userID: String, completion: @escaping (_ newPost: Post) -> Void) {
+        ref.child("feed-posts").child(userID).observe(.childAdded) { (snapshot) in
+            guard let post = snapshot.value as? [AnyHashable: Any], let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString else { return }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let date = formatter.date(from: dateString as String)
+            let newPost = Post(date: date!, post: text, image: nil, name: name)
+            self.feedPosts.append(newPost)
+            completion(newPost)
+        }
+    }
+    
     func requestFeedPosts(for userID: String, completion: @escaping (_ success: Bool) -> Void) {
         if feedPosts.count > 0 {
             feedPosts.removeAll()
