@@ -28,12 +28,21 @@ class SearchResultTableViewCell: UITableViewCell {
     }
    
     @IBAction func followButtonTapped(_ sender: UIButton) {
-    
-    if let u = user, let id = u.id {
+        guard let u = user, let id = u.id else { return }
+        if sender.title(for: .normal) == "Follow" {
             INUser.shared.following = INUser.shared.following.adding(id) as NSArray
             FirebaseManager.shared.updateAllUserInfo()
+            FirebaseManager.shared.addUserAsFollowerFor(userId: id)
+            sender.setTitle("Unfollow", for: .normal)
+        } else {
+            let index = INUser.shared.following.index(of: id)
+            let mutableArr = NSMutableArray(array: INUser.shared.following)
+            mutableArr.removeObject(at: index)
+            INUser.shared.following = mutableArr as NSArray
+            FirebaseManager.shared.updateAllUserInfo()
+            FirebaseManager.shared.removeUserAsFollowerFor(userId: id)
+            sender.setTitle("Follow", for: .normal)
         }
-         sender.setTitle("Unfollow", for: .normal)
     }
     
 }

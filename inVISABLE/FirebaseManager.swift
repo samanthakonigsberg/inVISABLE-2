@@ -55,7 +55,31 @@ class FirebaseManager {
         }
     }
     
-    //TODO: untested!
+    func addUserAsFollowerFor(userId: String) {
+        guard let currentUser = INUser.shared.user else { return }
+        reference.child("users").child(userId).child("followers").observeSingleEvent(of: .value) { (snapshot) in
+            var array: NSArray
+            if let arr = snapshot.value as? NSArray {
+                array = arr.adding(currentUser.uid) as NSArray
+            } else {
+                array = NSArray(array: [currentUser.uid])
+            }
+            self.reference.child("users").child(userId).updateChildValues(["followers": array])
+        }
+    }
+    
+    func removeUserAsFollowerFor(userId: String) {
+        guard let currentUser = INUser.shared.user else { return }
+        reference.child("users").child(userId).child("followers").observeSingleEvent(of: .value) { (snapshot) in
+            if let arr = snapshot.value as? NSArray {
+                let index = arr.index(of: currentUser.uid)
+                let mutableArr = NSMutableArray(array: arr)
+                mutableArr.removeObject(at: index)
+                self.reference.child("users").child(userId).updateChildValues(["followers": mutableArr as NSArray])
+            }
+        }
+    }
+    
     func updateAllUserInfo() {
         guard let user = INUser.shared.user else { return }
         reference.child("users").child(user.uid).updateChildValues(INUser.shared.createUserInfoDictionary())

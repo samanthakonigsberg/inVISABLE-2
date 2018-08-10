@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class HomeTableViewController: UITableViewController {
 
@@ -20,7 +21,7 @@ class HomeTableViewController: UITableViewController {
         tabBarController?.tabBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
         tabBarController?.tabBar.unselectedItemTintColor = .lightGray
 
-
+        //TODO: Look up and implement postsRef.observe(.childAdded...
         
         if let image = UIImage(named: "FinalLogo") {
             //create a container view with specific frame
@@ -32,17 +33,14 @@ class HomeTableViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(HomeTableViewController.presentNewPostVC))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(HomeTableViewController.logout))
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        guard let userId = INUser.shared.user?.uid else {
-            tableView.reloadData()
-            return
+        
+        guard let userId = INUser.shared.user?.uid else { return }
+        PostOffice.manager.listenToFeedPosts(for: userId) { (newPost) in
+            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
         }
-        PostOffice.manager.requestFeedPosts(for: userId) { (success) in
-            self.tableView.reloadData()
-        }
-        tableView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -86,53 +84,6 @@ class HomeTableViewController: UITableViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
-
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row ==  PostOffice.manager.feedPosts.count {
