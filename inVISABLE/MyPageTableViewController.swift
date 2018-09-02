@@ -11,11 +11,15 @@ import FirebaseAuth
 
 class MyPageTableViewController: UITableViewController {
     
-    
+    var user : INUser?
+    //change all INUser.shared to guard statement
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        //figure out experience for if INuser comes back nil
+            //pop back to search? error page?
         
+        
+        //if navigating from tabbar set user? to INUser.shared
         if let image = UIImage(named: "FinalLogo") {
             //create a container view with specific frame
             //insert code below but it in container
@@ -35,7 +39,10 @@ class MyPageTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(_ animated: Bool) {
-        PostOffice.manager.requestUserPosts(for: INUser.shared.user!.uid) { (success) in
+        guard let realUser = user else {
+            return
+        }
+        PostOffice.manager.requestUserPosts(for: realUser.user!.uid) { (success) in
             self.tableView.reloadData()
         }
         tableView.reloadData()

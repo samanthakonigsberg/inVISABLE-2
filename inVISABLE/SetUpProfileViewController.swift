@@ -105,7 +105,7 @@ extension SetUpProfileViewController: UIImagePickerControllerDelegate {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        guard let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return } 
         
         INUser.shared.image = chosenImage
         FirebaseManager.shared.store(chosenImage)

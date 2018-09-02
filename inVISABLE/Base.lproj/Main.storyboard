@@ -285,21 +285,27 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-Lf-vEO">
                                 <rect key="frame" x="168" y="593" width="39" height="30"/>
-                                <state key="normal" title="NEXT"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" name="ActionNew"/>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="CJr-Mr-lKZ" eventType="touchUpInside" id="0PW-xg-HKT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-CR-5P0">
                                 <rect key="frame" x="195" y="509" width="48" height="30"/>
-                                <state key="normal" title="Library"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" name="ActionNew"/>
+                                </state>
                                 <connections>
                                     <action selector="photoLibrary:" destination="CJr-Mr-lKZ" eventType="touchUpInside" id="35f-VQ-Fn3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPq-Xy-OVS">
                                 <rect key="frame" x="131" y="509" width="54" height="30"/>
-                                <state key="normal" title="Camera"/>
+                                <state key="normal" title="Camera">
+                                    <color key="titleColor" name="ActionNew"/>
+                                </state>
                                 <connections>
                                     <action selector="shootPhoto:" destination="CJr-Mr-lKZ" eventType="touchUpInside" id="ZGe-dM-IAu"/>
                                 </connections>
@@ -725,13 +731,6 @@
                                     <action selector="postButton:" destination="OIb-eF-EHD" eventType="touchUpInside" id="Sdc-oI-eFG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FinalLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8Vk-Ue-E4F">
-                                <rect key="frame" x="82.5" y="74" width="210" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="NLO-ub-wDy"/>
-                                    <constraint firstAttribute="width" constant="210" id="SHb-oz-qjN"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-cu-MGV">
                                 <rect key="frame" x="52" y="193" width="40" height="40"/>
                                 <constraints>
@@ -755,16 +754,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="8Vk-Ue-E4F" secondAttribute="trailing" constant="82.5" id="6RA-vc-a35"/>
                             <constraint firstItem="fzc-no-vYb" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="59" id="7CY-hN-OLX"/>
                             <constraint firstItem="1PG-K6-tW1" firstAttribute="leading" secondItem="CBy-14-RXp" secondAttribute="leading" constant="31" id="8Ii-IK-veV"/>
-                            <constraint firstItem="8Vk-Ue-E4F" firstAttribute="centerX" secondItem="CBy-14-RXp" secondAttribute="centerX" id="Nyq-Wm-cle"/>
                             <constraint firstItem="1PG-K6-tW1" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="59" id="UlV-P2-crs"/>
                             <constraint firstItem="ETK-cu-MGV" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="129" id="WSB-D6-Qbq"/>
                             <constraint firstAttribute="trailing" secondItem="fzc-no-vYb" secondAttribute="trailing" constant="15" id="ZvF-a3-m8p"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="129" id="b5L-bV-Bgk"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="centerX" secondItem="CBy-14-RXp" secondAttribute="centerX" id="eHd-t0-Ktd"/>
-                            <constraint firstItem="8Vk-Ue-E4F" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="10" id="igA-F6-swv"/>
                             <constraint firstItem="ETK-cu-MGV" firstAttribute="leading" secondItem="CBy-14-RXp" secondAttribute="leading" constant="52" id="ldx-k6-Xyi"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="leading" secondItem="ETK-cu-MGV" secondAttribute="trailing" constant="22" id="wB6-FS-pzW"/>
                         </constraints>
@@ -801,45 +797,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjo-5Y-N8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2486" y="-2465"/>
-        </scene>
-        <!--Forgot Password View Controller-->
-        <scene sceneID="043-wY-cIM">
-            <objects>
-                <viewController storyboardIdentifier="forgotPasswordVC" id="ehR-CK-INM" customClass="ForgotPasswordViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fNG-5Q-PcS"/>
-                        <viewControllerLayoutGuide type="bottom" id="nxO-71-X7L"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cX8-ND-AZS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y YOU SO STUPID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qO-gK-Bvd">
-                                <rect key="frame" x="116.5" y="323.5" width="142" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZR-7f-X0P">
-                                <rect key="frame" x="157.5" y="375" width="60" height="30"/>
-                                <state key="normal" title="DISMISS"/>
-                                <connections>
-                                    <action selector="dismissButtonTapped:" destination="ehR-CK-INM" eventType="touchUpInside" id="Qog-XM-bRd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zZR-7f-X0P" firstAttribute="top" secondItem="8qO-gK-Bvd" secondAttribute="bottom" constant="31" id="GQU-aK-rsZ"/>
-                            <constraint firstItem="8qO-gK-Bvd" firstAttribute="centerY" secondItem="cX8-ND-AZS" secondAttribute="centerY" id="QpT-fZ-LWf"/>
-                            <constraint firstItem="zZR-7f-X0P" firstAttribute="centerX" secondItem="cX8-ND-AZS" secondAttribute="centerX" id="bWd-3L-9dh"/>
-                            <constraint firstItem="8qO-gK-Bvd" firstAttribute="centerX" secondItem="cX8-ND-AZS" secondAttribute="centerX" id="cAq-4z-5Zg"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="28u-sl-OCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2567" y="-328"/>
         </scene>
         <!--My Page-->
         <scene sceneID="d0R-fC-AGO">

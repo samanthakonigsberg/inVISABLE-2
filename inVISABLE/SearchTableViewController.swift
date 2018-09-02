@@ -54,4 +54,12 @@ class SearchTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // results[indexPath.row] -> the right user from results
+        // MyPageView.user = results[indexpath.row]
+        // navigationController.push(vc...
+        
+        
+    }
 }

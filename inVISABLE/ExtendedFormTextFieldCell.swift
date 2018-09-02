@@ -30,6 +30,8 @@ class ExtendedFormTextFieldCell: FormTextFieldCell {
     override func update() {
         super.update()
         confirmedText.isHidden = true
+        titleLabel.font = UIFont(name: "Rucksack-Demi", size: 18.0)
+        textField.font = UIFont(name: "Rucksack-Book", size: 16.0)
     }
     
     open override func constraintsViews() -> [String : UIView] {

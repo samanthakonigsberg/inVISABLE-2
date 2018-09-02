@@ -17,6 +17,8 @@
 		1B3687291FDC43CD00CC734D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3687271FDC43CD00CC734D /* LaunchScreen.storyboard */; };
 		1B3687341FDC43CD00CC734D /* inVISABLETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3687331FDC43CD00CC734D /* inVISABLETests.swift */; };
 		1B36873F1FDC43CD00CC734D /* inVISABLEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36873E1FDC43CD00CC734D /* inVISABLEUITests.swift */; };
+		1B36D9132138B174004C511F /* ExtendedFormDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36D9122138B174004C511F /* ExtendedFormDateCell.swift */; };
+		1B4E7F602139C1F500135F66 /* ExtendedFormSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */; };
 		1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C41FDC476900D6E512 /* HomePostTableViewCell.swift */; };
 		1BA9D5CD1FDC476900D6E512 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */; };
 		1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */; };
@@ -85,6 +87,8 @@
 		1B36873A1FDC43CD00CC734D /* inVISABLEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = inVISABLEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B36873E1FDC43CD00CC734D /* inVISABLEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inVISABLEUITests.swift; sourceTree = "<group>"; };
 		1B3687401FDC43CD00CC734D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B36D9122138B174004C511F /* ExtendedFormDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormDateCell.swift; sourceTree = "<group>"; };
+		1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormSelectionCell.swift; sourceTree = "<group>"; };
 		1BA9D5C41FDC476900D6E512 /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 		1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -213,11 +217,13 @@
 				1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */,
 				1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */,
 				D112160F2009ACCE00794D00 /* FirebaseManager.swift */,
+				1B36D9122138B174004C511F /* ExtendedFormDateCell.swift */,
 				D140EE87201C2286006A3883 /* PostOffice.swift */,
 				1B161FA020261B3900DA4752 /* BaseViewController.swift */,
 				1B1DF5CD20F402DF00528E14 /* UIImageView.swift */,
 				D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */,
 				D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */,
+				1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				1BA9D5CD1FDC476900D6E512 /* HomeTableViewController.swift in Sources */,
 				1BA9D5D01FDC476900D6E512 /* ForgotPasswordViewController.swift in Sources */,
 				1BA9D5E61FDC477D00D6E512 /* PostTableViewCell.swift in Sources */,
+				1B4E7F602139C1F500135F66 /* ExtendedFormSelectionCell.swift in Sources */,
 				1B1DF5CE20F402DF00528E14 /* UIImageView.swift in Sources */,
 				1B3687211FDC43CD00CC734D /* ViewController.swift in Sources */,
 				1BA9D5E11FDC477D00D6E512 /* ProfileTableViewCell.swift in Sources */,
@@ -596,6 +603,7 @@
 				1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */,
 				1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */,
 				1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */,
+				1B36D9132138B174004C511F /* ExtendedFormDateCell.swift in Sources */,
 				1BA9D5EC1FDC477D00D6E512 /* Post.swift in Sources */,
 				1B3467152009AA37003A3EDE /* MoreInfoTableViewController.swift in Sources */,
 				1BA9D5CF1FDC476900D6E512 /* Constants.swift in Sources */,
@@ -777,7 +785,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Com.SamanthaKonigsberg.inVISABLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = full;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -794,7 +803,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Com.SamanthaKonigsberg.inVISABLE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = full;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

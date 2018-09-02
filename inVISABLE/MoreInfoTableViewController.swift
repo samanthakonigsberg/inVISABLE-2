@@ -63,9 +63,11 @@ class MoreInfoTableViewController:FormViewController, UIImagePickerControllerDel
         form.title = "About You"
         
         //first section (pickers)
-        let section1 = FormSectionDescriptor(headerTitle: "Illnesses and Interests", footerTitle: nil)
+        let section1 = FormSectionDescriptor(headerTitle: "", footerTitle: nil)
         
         let illnessesRow = FormRowDescriptor(tag: FormTags.illnessPickerTag, type: .multipleSelector, title: "Select Your Illnesses")
+       
+        illnessesRow.configuration.cell.cellClass = ExtendedFormSelectionCell.self
         illnessesRow.configuration.cell.showsInputToolbar = true
         illnessesRow.configuration.selection.options = illnesses as [AnyObject]
         illnessesRow.configuration.selection.allowsMultipleSelection = true
@@ -75,6 +77,8 @@ class MoreInfoTableViewController:FormViewController, UIImagePickerControllerDel
         }
         
         let interestsRow = FormRowDescriptor(tag: FormTags.interestPickerTag, type: .multipleSelector, title: "Select Your Interests")
+        
+        interestsRow.configuration.cell.cellClass = ExtendedFormSelectionCell.self
         interestsRow.configuration.cell.showsInputToolbar = true
         interestsRow.configuration.selection.options = interests as [AnyObject]
         interestsRow.configuration.selection.allowsMultipleSelection = true

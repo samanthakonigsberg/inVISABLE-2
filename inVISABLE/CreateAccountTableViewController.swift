@@ -34,9 +34,13 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue", style: .plain, target: self, action: #selector(submit(_sender: )))
         
+       // self.navigationIten.rightBarButtonItem = UIBarButtonItem.titleTextAttributes [ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any]
+        
         //TODO: finalize colors
-        navigationController?.navigationBar.tintColor = .magenta
-        navigationController?.navigationBar.barTintColor = .clear
+        navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
+        navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font : UIFont(name: "Rucksack-Bold", size: 18.0) as Any]
+      
     }
 
     @objc func submit(_sender: UIBarButtonItem!) {
@@ -84,7 +88,8 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
         form.title = "Create an account"
         
         //first section
-        let section1 = FormSectionDescriptor(headerTitle: "Basics", footerTitle: nil)
+        let section1 = FormSectionDescriptor(headerTitle: " ", footerTitle: nil)
+   
         
         let firstNameRow = FormRowDescriptor(tag: FormTags.firstNameTag, type: .name, title: "First Name")
         firstNameRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
@@ -101,14 +106,17 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
         let passwordRow = FormRowDescriptor(tag: FormTags.passwordTag, type: .password, title: "Password")
         passwordRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
         passwordRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
-        
+       
         let confirmPasswordRow = FormRowDescriptor(tag: FormTags.confirmPasswordTag, type: .password, title: "Confirm Password")
         confirmPasswordRow.configuration.cell.cellClass = ExtendedFormTextFieldCell.self
         confirmPasswordRow.configuration.cell.appearance = ["textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         
         
         let birthdayRow = FormRowDescriptor(tag: FormTags.birthdayTag, type: .date, title: "Date of Birth")
-            birthdayRow.configuration.cell.showsInputToolbar = true
+        birthdayRow.configuration.cell.cellClass = ExtendedFormDateCell.self
+        birthdayRow.configuration.cell.showsInputToolbar = true
+
+        //row descriptor of a picker --> change font when selected
         
         section1.rows.append(firstNameRow)
         section1.rows.append(lastNameRow)
