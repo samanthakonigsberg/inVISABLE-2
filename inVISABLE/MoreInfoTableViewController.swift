@@ -24,11 +24,16 @@ class MoreInfoTableViewController:FormViewController, UIImagePickerControllerDel
         self.loadForm()
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(MoreInfoTableViewController.submit(_:)))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(MoreInfoTableViewController.submit(_:)))
+        //UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+        
+        
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewDidAppear(_ animated: Bool) {

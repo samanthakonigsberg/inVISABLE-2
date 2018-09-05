@@ -16,17 +16,19 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func xOutButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBOutlet weak var xOutButtonOutlet: UIButton!
     
     @IBOutlet weak var newPostTextView: UITextView!
     
     @IBOutlet weak var profilePicture: UIImageView!
     
     override func viewDidLoad() {
+        
+        
+        let buttonX = UIImage(named: "xOUT")
+            let leftBarButton = UIBarButtonItem.init(title: "X", style: UIBarButtonItemStyle.done, target: self, action: #selector(NewPostViewController.dismissNewPostVC))
+            leftBarButton.image = buttonX
+            self.navigationItem.leftBarButtonItem = leftBarButton
+        
         
         if let image = UIImage(named: "FinalLogo") {
             //create a container view with specific frame
@@ -36,17 +38,23 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
             navigationItem.titleView = view
         }
         
+
         newPostTextView.delegate = self
         newPostTextView.text = "What's on your mind?"
         newPostTextView.textColor = UIColor.lightGray
         profilePicture.roundedImage()
-    xOutButtonOutlet.layer.cornerRadius = 10
+   
         super.viewDidLoad()
         
     //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
+
+    @objc fileprivate func dismissNewPostVC() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if newPostTextView.textColor == UIColor.lightGray {
         newPostTextView.text = nil

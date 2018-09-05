@@ -33,8 +33,8 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue", style: .plain, target: self, action: #selector(submit(_sender: )))
-        
-       // self.navigationIten.rightBarButtonItem = UIBarButtonItem.titleTextAttributes [ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any]
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+      
         
         //TODO: finalize colors
         navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
