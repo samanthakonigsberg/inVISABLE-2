@@ -9,12 +9,32 @@
 import UIKit
 
 class SearchTableViewController: UITableViewController {
-
     
+    var blockerView: UIView?
+    var spinner: UIActivityIndicatorView?
     var results: [INUser]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search inVISABLE warriors"
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = true
+        self.navigationItem.searchController = searchController
+        definesPresentationContext = true
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        
+        let blockerView = UIView(frame: view.frame)
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        blockerView.addSubview(spinner)
+        
+        blockerView.backgroundColor = UIColor(white: 0.3, alpha: 0.3)
+        blockerView.isHidden = true
+        
+        self.blockerView = blockerView
+        self.spinner = spinner
         
         FirebaseManager.shared.findUser(with: "") { (success, error, users) in
             if success {
@@ -61,5 +81,38 @@ class SearchTableViewController: UITableViewController {
         // navigationController.push(vc...
         
         
+    }
+}
+
+extension SearchTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let input = searchBar.text else { return }
+        
+        blockerView?.isHidden = false
+        spinner?.startAnimating()
+        
+        FirebaseManager.shared.findUser(with: input) { (success, error, results) in
+            if success {
+                self.spinner?.stopAnimating()
+                self.blockerView?.isHidden = true
+                self.results = results
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        blockerView?.isHidden = false
+        spinner?.startAnimating()
+        
+        FirebaseManager.shared.findUser(with: "") { (success, error, users) in
+            if success {
+                self.spinner?.stopAnimating()
+                self.blockerView?.isHidden = true
+                self.results = users
+                self.tableView.reloadData()
+            }
+        }
     }
 }

@@ -15,7 +15,13 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+        
+        
+        //TODO: finalize colors
+        navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
+        navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
+        
         //TODO: finalize colors
         tabBarController?.tabBar.tintColor = UIColor(named: "ActionNew")
         tabBarController?.tabBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)

@@ -27,7 +27,12 @@ class MyPageTableViewController: UITableViewController {
             view.contentMode = .scaleAspectFit
             navigationItem.titleView = view
         }
+    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
         
+        
+        //TODO: finalize colors
+        navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
+        navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
             
             navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout))

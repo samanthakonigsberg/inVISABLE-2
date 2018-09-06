@@ -11,24 +11,11 @@ import UIKit
 class NewPostViewController: UIViewController, UITextViewDelegate {
     
     
-    @IBAction func postButton(_ sender: UIButton) {
-        INUser.shared.add(newPostTextView.text as NSString)
-        dismiss(animated: true, completion: nil)
-    }
-
-    
     @IBOutlet weak var newPostTextView: UITextView!
     
     @IBOutlet weak var profilePicture: UIImageView!
     
     override func viewDidLoad() {
-        
-        
-        let buttonX = UIImage(named: "xOUT")
-            let leftBarButton = UIBarButtonItem.init(title: "X", style: UIBarButtonItemStyle.done, target: self, action: #selector(NewPostViewController.dismissNewPostVC))
-            leftBarButton.image = buttonX
-            self.navigationItem.leftBarButtonItem = leftBarButton
-        
         
         if let image = UIImage(named: "FinalLogo") {
             //create a container view with specific frame
@@ -38,7 +25,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
             navigationItem.titleView = view
         }
         
-
+        
         newPostTextView.delegate = self
         newPostTextView.text = "What's on your mind?"
         newPostTextView.textColor = UIColor.lightGray
@@ -46,6 +33,21 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
    
         super.viewDidLoad()
         
+        if let imageLeft = UIImage(named: "xOUT"){
+        
+        //create a container view with specific frame
+        //insert code below but it in container
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: imageLeft, style: .plain, target: self, action: #selector(NewPostViewController.dismissNewPostVC))
+           
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Post", style: .plain, target: self, action: #selector(NewPostViewController.postButton))
+    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+        
+        
+        //TODO: finalize colors
+        navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
+        navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
     //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -55,6 +57,11 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func postButton() {
+        INUser.shared.add(newPostTextView.text as NSString)
+        dismiss(animated: true, completion: nil)
+    }
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         if newPostTextView.textColor == UIColor.lightGray {
         newPostTextView.text = nil

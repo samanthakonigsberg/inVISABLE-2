@@ -409,25 +409,6 @@
             </objects>
             <point key="canvasLocation" x="1413.5999999999999" y="-944.07796101949032"/>
         </scene>
-        <!--Messages-->
-        <scene sceneID="X0y-LG-RWH">
-            <objects>
-                <viewController id="NXF-m1-ebb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PnS-LD-AIZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="4KM-me-Bnc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LYY-Tc-4zz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="Message" landscapeImage="Message" largeContentSizeImage="Message" selectedImage="Message" id="JBd-G5-5VT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FB2-W8-MFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3156" y="-1704.1979010494754"/>
-        </scene>
         <!--Search Table View Controller-->
         <scene sceneID="vZJ-K4-9Ib">
             <objects>
@@ -710,7 +691,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's on your mind?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xfU-yr-AlO">
-                                <rect key="frame" x="114" y="193" width="147" height="171.5"/>
+                                <rect key="frame" x="114" y="104" width="147" height="171.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xfU-yr-AlO" secondAttribute="height" multiplier="6:7" id="hS2-Wa-VAV"/>
@@ -718,21 +699,8 @@
                                 <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-no-vYb">
-                                <rect key="frame" x="310" y="123" width="50" height="33"/>
-                                <color key="backgroundColor" red="0.21568627450980393" green="0.31764705882352939" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="M5X-qA-Y1e"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Medium" family="RuckSack" pointSize="17"/>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="POST"/>
-                                <connections>
-                                    <action selector="postButton:" destination="OIb-eF-EHD" eventType="touchUpInside" id="Sdc-oI-eFG"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-cu-MGV">
-                                <rect key="frame" x="52" y="193" width="40" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-cu-MGV">
+                                <rect key="frame" x="66" y="104" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Hc-Vo-1Xq"/>
                                     <constraint firstAttribute="width" constant="40" id="vBp-pc-eEs"/>
@@ -741,10 +709,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fzc-no-vYb" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="59" id="7CY-hN-OLX"/>
-                            <constraint firstItem="ETK-cu-MGV" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="129" id="WSB-D6-Qbq"/>
-                            <constraint firstAttribute="trailing" secondItem="fzc-no-vYb" secondAttribute="trailing" constant="15" id="ZvF-a3-m8p"/>
-                            <constraint firstItem="xfU-yr-AlO" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="129" id="b5L-bV-Bgk"/>
+                            <constraint firstItem="xfU-yr-AlO" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="40" id="FFh-DV-SmD"/>
+                            <constraint firstItem="ETK-cu-MGV" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="40" id="GCR-xk-Tpt"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="centerX" secondItem="CBy-14-RXp" secondAttribute="centerX" id="eHd-t0-Ktd"/>
                             <constraint firstItem="ETK-cu-MGV" firstAttribute="leading" secondItem="CBy-14-RXp" secondAttribute="leading" constant="52" id="ldx-k6-Xyi"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="leading" secondItem="ETK-cu-MGV" secondAttribute="trailing" constant="22" id="wB6-FS-pzW"/>
@@ -773,7 +739,6 @@
                     <connections>
                         <segue destination="WF2-t0-I4j" kind="relationship" relationship="viewControllers" id="SiN-ya-KBz"/>
                         <segue destination="SAr-HN-bgA" kind="relationship" relationship="viewControllers" id="ZlT-qd-bc4"/>
-                        <segue destination="NXF-m1-ebb" kind="relationship" relationship="viewControllers" id="3Kz-IJ-rY3"/>
                         <segue destination="oeK-O8-X7n" kind="relationship" relationship="viewControllers" id="oy6-v3-wyR"/>
                         <segue destination="5fg-F0-VGp" kind="relationship" relationship="viewControllers" id="9qv-It-k2G"/>
                     </connections>
@@ -870,7 +835,6 @@
     <resources>
         <image name="FinalLogo" width="1443" height="312"/>
         <image name="Home" width="38" height="38"/>
-        <image name="Message" width="38" height="38"/>
         <image name="Profile" width="38" height="38"/>
         <image name="Profile_HighDef" width="1200" height="1200"/>
         <image name="Search" width="38" height="38"/>
