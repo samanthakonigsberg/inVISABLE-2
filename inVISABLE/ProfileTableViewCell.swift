@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class ProfileTableViewCell: UITableViewCell {
-    var user: INUser?
-    
+    var user : INUser?
+   
     @IBAction func followButton(_ sender: UIButton) {
         if let u = user, let id = u.id {
           INUser.shared.following = INUser.shared.following.adding(id) as NSArray
@@ -36,6 +37,7 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         followButtonDesign.layer.cornerRadius = 10
         profileCellImage.roundedImage()
+       
         // Initialization code
     }
 

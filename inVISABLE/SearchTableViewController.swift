@@ -19,9 +19,10 @@ class SearchTableViewController: UITableViewController {
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search inVISABLE warriors"
+        searchController.searchBar.placeholder = "Search Spoonies"
         searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = true
+        searchController.searchBar.tintColor = UIColor(named: "ActionNew")
         self.navigationItem.searchController = searchController
         definesPresentationContext = true
         self.navigationItem.hidesSearchBarWhenScrolling = false

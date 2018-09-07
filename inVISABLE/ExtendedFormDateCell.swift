@@ -13,5 +13,6 @@ class ExtendedFormDateCell: FormDateCell {
     override func update() {
         super.update()
         titleLabel.font = UIFont(name: "Rucksack-Demi", size: 18.0)
+        valueLabel.font = UIFont(name: "Rucksack-Book", size: 16.0)
     }
 }

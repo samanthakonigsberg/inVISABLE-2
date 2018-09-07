@@ -359,36 +359,40 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="xYl-U8-Gvt">
-                                            <rect key="frame" x="30" y="-8" width="42" height="42"/>
+                                            <rect key="frame" x="29" y="10" width="24" height="24"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="E5I-vP-NGN"/>
-                                                <constraint firstAttribute="height" constant="42" id="YlK-h0-6mN"/>
+                                                <constraint firstAttribute="width" constant="24" id="fzT-2H-bkz"/>
+                                                <constraint firstAttribute="height" constant="24" id="tax-Qb-2hk"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-VY-M69">
-                                            <rect key="frame" x="30" y="42" width="353" height="68"/>
+                                            <rect key="frame" x="29" y="38" width="346" height="71"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="68" id="tzv-1D-hrJ"/>
-                                                <constraint firstAttribute="width" constant="353" id="v0Z-2s-fMh"/>
+                                                <constraint firstAttribute="height" constant="71" id="bzi-Qo-tcK"/>
+                                                <constraint firstAttribute="width" constant="346" id="k5D-9U-XqT"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="8"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBe-xH-dXc">
-                                            <rect key="frame" x="80" y="-7" width="59" height="26"/>
-                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="22"/>
+                                            <rect key="frame" x="61" y="16" width="27" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="12" id="bTD-Hs-HcQ"/>
+                                                <constraint firstAttribute="width" constant="27" id="itg-aA-0uH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NCf-VY-M69" firstAttribute="top" secondItem="RBe-xH-dXc" secondAttribute="bottom" constant="23" id="7qX-cB-GL6"/>
-                                        <constraint firstItem="NCf-VY-M69" firstAttribute="top" secondItem="xYl-U8-Gvt" secondAttribute="bottom" constant="8" id="IgF-JG-0lP"/>
-                                        <constraint firstItem="xYl-U8-Gvt" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leadingMargin" constant="14" id="Nrw-dV-x5l"/>
-                                        <constraint firstItem="RBe-xH-dXc" firstAttribute="leading" secondItem="xYl-U8-Gvt" secondAttribute="trailing" constant="8" id="RL1-yM-dRF"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="NCf-VY-M69" secondAttribute="bottom" constant="-8" id="Sml-Gv-AJB"/>
-                                        <constraint firstItem="NCf-VY-M69" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leadingMargin" constant="14" id="kSy-y3-ZuG"/>
+                                        <constraint firstItem="NCf-VY-M69" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="29" id="1z0-Pd-8RF"/>
+                                        <constraint firstItem="xYl-U8-Gvt" firstAttribute="top" secondItem="uy7-Mb-2y1" secondAttribute="top" constant="10" id="MgJ-9c-wqU"/>
+                                        <constraint firstItem="RBe-xH-dXc" firstAttribute="leading" secondItem="xYl-U8-Gvt" secondAttribute="trailing" constant="8" id="P2N-hR-1At"/>
+                                        <constraint firstItem="RBe-xH-dXc" firstAttribute="top" secondItem="uy7-Mb-2y1" secondAttribute="top" constant="16" id="P7N-MZ-Of5"/>
+                                        <constraint firstItem="xYl-U8-Gvt" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="29" id="doN-zz-b81"/>
+                                        <constraint firstItem="NCf-VY-M69" firstAttribute="top" secondItem="xYl-U8-Gvt" secondAttribute="bottom" constant="4" id="jHu-WY-64c"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -417,14 +421,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="evh-Av-bsF">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" id="Eqq-4O-drG" customClass="SearchResultTableViewCell" customModule="inVISABLE" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eqq-4O-drG" id="CPV-ZW-pcw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -610,7 +609,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FinalLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PAj-rG-JgN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="PAj-rG-JgN">
                                             <rect key="frame" x="29" y="8" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="VlR-q2-ZVj"/>
@@ -623,13 +622,13 @@
                                                 <constraint firstAttribute="height" constant="71" id="JPJ-yp-U88"/>
                                                 <constraint firstAttribute="width" constant="346" id="Utz-E4-tYC"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="8"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-1C-ddQ">
-                                            <rect key="frame" x="61" y="8" width="28" height="12"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="10"/>
+                                            <rect key="frame" x="61" y="8" width="27" height="12"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -750,7 +749,7 @@
         <!--My Page-->
         <scene sceneID="d0R-fC-AGO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oeK-O8-X7n" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="myPageTab" automaticallyAdjustsScrollViewInsets="NO" id="oeK-O8-X7n" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Page" image="Profile" landscapeImage="Profile" largeContentSizeImage="Profile" selectedImage="Profile" id="M5f-8w-KZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CTa-6Y-BFn">

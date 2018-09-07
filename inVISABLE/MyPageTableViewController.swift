@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class MyPageTableViewController: UITableViewController {
-    
+
     var user : INUser?
     //change all INUser.shared to guard statement
     override func viewDidLoad() {
@@ -18,8 +18,12 @@ class MyPageTableViewController: UITableViewController {
         //figure out experience for if INuser comes back nil
             //pop back to search? error page?
         
-        
+       
         //if navigating from tabbar set user? to INUser.shared
+        if tabBarController?.selectedIndex == 2{
+            user = INUser.shared
+        }
+    
         if let image = UIImage(named: "FinalLogo") {
             //create a container view with specific frame
             //insert code below but it in container
@@ -27,16 +31,19 @@ class MyPageTableViewController: UITableViewController {
             view.contentMode = .scaleAspectFit
             navigationItem.titleView = view
         }
-    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+        if let imageRight = UIImage(named: "+POST"){
+            
+            //create a container view with specific frame
+            //insert code below but it in container
+            navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: imageRight, style: .plain, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
+        }
         
         
         //TODO: finalize colors
         navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
         navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
-            
-            navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout))
-
+    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -79,7 +86,7 @@ class MyPageTableViewController: UITableViewController {
                 cell.profileCellName.text = INUser.shared.name as String
                 cell.profileCellNumberOfFollowers.text = "\(INUser.shared.numFollowers)"
                 cell.profileCellNumberOfFollowing.text = "\(INUser.shared.numFollowing)"
-                
+                cell.followButtonDesign.isHidden = true
                 if let image = INUser.shared.image{
                     cell.profileCellImage.image = image
                 }

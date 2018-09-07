@@ -15,7 +15,9 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+   
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
         
         
         //TODO: finalize colors
@@ -36,8 +38,12 @@ class HomeTableViewController: UITableViewController {
             view.contentMode = .scaleAspectFit
             navigationItem.titleView = view
         }
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(HomeTableViewController.presentNewPostVC))
+        if let imageRight = UIImage(named: "+POST"){
+            
+            //create a container view with specific frame
+            //insert code below but it in container
+            navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: imageRight, style: .plain, target: self, action: #selector(HomeTableViewController.presentNewPostVC))
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(HomeTableViewController.logout))
         
         guard let userId = INUser.shared.user?.uid else { return }

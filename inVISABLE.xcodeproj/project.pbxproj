@@ -23,8 +23,6 @@
 		1BA9D5CD1FDC476900D6E512 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */; };
 		1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */; };
 		1BA9D5CF1FDC476900D6E512 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C71FDC476900D6E512 /* Constants.swift */; };
-		1BA9D5D01FDC476900D6E512 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C81FDC476900D6E512 /* ForgotPasswordViewController.swift */; };
-		1BA9D5D11FDC476900D6E512 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C91FDC476900D6E512 /* AboutPageViewController.swift */; };
 		1BA9D5D21FDC476900D6E512 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9D5CA1FDC476900D6E512 /* Keys.plist */; };
 		1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5CB1FDC476900D6E512 /* MyPageTableViewController.swift */; };
 		1BA9D5E11FDC477D00D6E512 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5D41FDC477C00D6E512 /* ProfileTableViewCell.swift */; };
@@ -93,8 +91,6 @@
 		1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1BA9D5C71FDC476900D6E512 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1BA9D5C81FDC476900D6E512 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		1BA9D5C91FDC476900D6E512 /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		1BA9D5CA1FDC476900D6E512 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		1BA9D5CB1FDC476900D6E512 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
 		1BA9D5D41FDC477C00D6E512 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,9 +199,7 @@
 				1BA9D5D41FDC477C00D6E512 /* ProfileTableViewCell.swift */,
 				1BA9D5DA1FDC477C00D6E512 /* QuestionCatagories.swift */,
 				1BA9D5DC1FDC477D00D6E512 /* User.swift */,
-				1BA9D5C91FDC476900D6E512 /* AboutPageViewController.swift */,
 				1BA9D5C71FDC476900D6E512 /* Constants.swift */,
-				1BA9D5C81FDC476900D6E512 /* ForgotPasswordViewController.swift */,
 				1BA9D5C41FDC476900D6E512 /* HomePostTableViewCell.swift */,
 				1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */,
 				1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */,
@@ -587,7 +581,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA9D5CD1FDC476900D6E512 /* HomeTableViewController.swift in Sources */,
-				1BA9D5D01FDC476900D6E512 /* ForgotPasswordViewController.swift in Sources */,
 				1BA9D5E61FDC477D00D6E512 /* PostTableViewCell.swift in Sources */,
 				1B4E7F602139C1F500135F66 /* ExtendedFormSelectionCell.swift in Sources */,
 				1B1DF5CE20F402DF00528E14 /* UIImageView.swift in Sources */,
@@ -610,7 +603,6 @@
 				1BA9D5E71FDC477D00D6E512 /* QuestionCatagories.swift in Sources */,
 				D11216102009ACCE00794D00 /* FirebaseManager.swift in Sources */,
 				1BA9D5E91FDC477D00D6E512 /* User.swift in Sources */,
-				1BA9D5D11FDC476900D6E512 /* AboutPageViewController.swift in Sources */,
 				1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */,
 				1BA9D5EA1FDC477D00D6E512 /* NewPostViewController.swift in Sources */,
 			);
