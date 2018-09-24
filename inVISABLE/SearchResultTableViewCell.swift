@@ -22,10 +22,10 @@ class SearchResultTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+       
         // Configure the view for the selected state
     }
+    
    
     @IBAction func followButtonTapped(_ sender: UIButton) {
         guard let u = user, let id = u.id else { return }
@@ -44,5 +44,6 @@ class SearchResultTableViewCell: UITableViewCell {
             sender.setTitle("Follow", for: .normal)
         }
     }
+   
     
 }

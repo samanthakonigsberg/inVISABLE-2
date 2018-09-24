@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LaunchViewController.swift
 //  inVISABLE
 //
 //  Created by Samantha Konigsberg on 9/19/18.
@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class ViewController: UIViewController {
+class LaunchViewController: UIViewController, NVActivityIndicatorViewable  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        startAnimating()
         // Do any additional setup after loading the view.
     }
 

@@ -45,6 +45,7 @@ class SearchTableViewController: UITableViewController {
         }
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,10 +78,12 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // results[indexPath.row] -> the right user from results
-        // MyPageView.user = results[indexpath.row]
-        // navigationController.push(vc...
         
+        MyPageTableViewController().user = results?[indexPath.row]
+        
+      let destination = MyPageTableViewController() // Your destination
+        navigationController?.pushViewController(destination, animated: true)
+        // navigationController?.show(MyPageTableViewController, sender: Any?.self)
         
     }
 }
