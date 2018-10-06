@@ -57,11 +57,11 @@ class PostOffice {
         ref.child("user-posts").child(userID).observeSingleEvent(of: .value) { (snapshot) in
             if let dictionary = snapshot.value as? [AnyHashable: Any], let allUserPosts = Array(dictionary.values) as? [[AnyHashable: Any]] {
                 for post in allUserPosts {
-                    guard let dateString = post["date"] as? NSString, let text = post["text"] else { return }
+                    guard let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString else { return }
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     let date = formatter.date(from: dateString as String)
-                    let post = Post(date: date!, post: text as! NSString, image: nil, name: INUser.shared.name)
+                    let post = Post(date: date!, post: text, image: nil, name: name)
                     self.userPosts.append(post)
                 }
                 

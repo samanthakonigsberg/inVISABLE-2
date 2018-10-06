@@ -61,23 +61,10 @@
         <!--Launch View Controller-->
         <scene sceneID="9Du-ZM-txv">
             <objects>
-                <viewController id="DTS-ku-Tet" customClass="LaunchViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DWJ-eu-3Wz"/>
-                        <viewControllerLayoutGuide type="bottom" id="cK4-Eh-cqP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="launchView" id="HQm-ks-nrV" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="typeName" value=" lineScalePulseOut"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                </viewController>
+                <viewController id="DTS-ku-Tet" customClass="LaunchViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXY-Cz-Upb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5118" y="-1688"/>
+            <point key="canvasLocation" x="-4281" y="-1704"/>
         </scene>
         <!--BaseViewController-->
         <scene sceneID="KGt-HB-y84">
@@ -386,23 +373,23 @@
                                                 <constraint firstAttribute="height" constant="24" id="tax-Qb-2hk"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-VY-M69">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-VY-M69">
                                             <rect key="frame" x="29" y="38" width="346" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="71" id="bzi-Qo-tcK"/>
                                                 <constraint firstAttribute="width" constant="346" id="k5D-9U-XqT"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="8"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBe-xH-dXc">
-                                            <rect key="frame" x="61" y="16" width="27" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBe-xH-dXc">
+                                            <rect key="frame" x="61" y="16" width="48" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="bTD-Hs-HcQ"/>
                                                 <constraint firstAttribute="width" constant="27" id="itg-aA-0uH"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -433,6 +420,149 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHu-wV-6qS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1413.5999999999999" y="-944.07796101949032"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="30t-my-x33">
+            <objects>
+                <navigationController id="d35-KA-uBd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X8M-Cm-2Ly">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AYB-Yh-CJg" kind="relationship" relationship="rootViewController" id="LXi-X0-JUP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6O-vB-F5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="-482"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oHS-wq-4aq">
+            <objects>
+                <viewController id="AYB-Yh-CJg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="05w-Cp-xhY"/>
+                        <viewControllerLayoutGuide type="bottom" id="yRF-ll-Rar"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLS-J1-1Ja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ECD-3e-J1y">
+                                <rect key="frame" x="39" y="108" width="50" height="450"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="rv1-Pv-uO7">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Dig-s8-sNA"/>
+                                            <constraint firstAttribute="height" constant="50" id="beD-Rc-7GH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-F2-2zL">
+                                        <rect key="frame" x="0.0" y="100" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="KHV-WL-TKS"/>
+                                            <constraint firstAttribute="height" constant="50" id="nW0-Z7-CtS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="Jn2-Ra-hiA">
+                                        <rect key="frame" x="0.0" y="200" width="50" height="50"/>
+                                        <color key="tintColor" name="ActionNew"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="LKx-qT-wmR"/>
+                                            <constraint firstAttribute="height" constant="50" id="Xg3-gf-jPA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="kDI-Ax-mch">
+                                        <rect key="frame" x="0.0" y="300" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="0IE-Hj-2p6"/>
+                                            <constraint firstAttribute="height" constant="50" id="hcP-b1-7D5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="+POST" translatesAutoresizingMaskIntoConstraints="NO" id="Ibv-PL-0Ra">
+                                        <rect key="frame" x="0.0" y="400" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="3M9-77-hat"/>
+                                            <constraint firstAttribute="height" constant="50" id="Z1Z-BA-S1s"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="ActionNew"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your first post" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-p8-jBN">
+                                <rect key="frame" x="111" y="526" width="155.5" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155.5" id="QzO-Ht-VxD"/>
+                                    <constraint firstAttribute="height" constant="19.5" id="yR2-0N-xgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your personal profile here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vov-mp-N9Z">
+                                <rect key="frame" x="111" y="313" width="216" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="evv-B5-ZJr"/>
+                                    <constraint firstAttribute="width" constant="216" id="pvj-Uf-zRD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search and follow other spoonies" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFL-hV-jzm">
+                                <rect key="frame" x="111" y="205" width="236" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="7rY-LB-ET6"/>
+                                    <constraint firstAttribute="width" constant="236" id="Mcn-Qx-x4P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your profile and app settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvh-3c-eWa">
+                                <rect key="frame" x="111" y="413" width="256" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Bch-Hq-Jyw"/>
+                                    <constraint firstAttribute="width" constant="256" id="ZbP-oJ-rPj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find new posts from the people you follow" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHo-9R-WfW">
+                                <rect key="frame" x="111" y="108" width="185" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="Smi-Oz-hiT"/>
+                                    <constraint firstAttribute="height" constant="59" id="gBd-a2-Jo6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YFL-hV-jzm" firstAttribute="leading" secondItem="eLo-F2-2zL" secondAttribute="trailing" constant="22" id="AZp-fh-N8e"/>
+                            <constraint firstItem="YFL-hV-jzm" firstAttribute="top" secondItem="gHo-9R-WfW" secondAttribute="bottom" constant="38" id="DqV-SF-ABm"/>
+                            <constraint firstItem="vov-mp-N9Z" firstAttribute="leading" secondItem="Jn2-Ra-hiA" secondAttribute="trailing" constant="22" id="HKS-0s-Pet"/>
+                            <constraint firstItem="ECD-3e-J1y" firstAttribute="leading" secondItem="lLS-J1-1Ja" secondAttribute="leading" constant="39" id="I0j-yz-Z4g"/>
+                            <constraint firstItem="gHo-9R-WfW" firstAttribute="top" secondItem="05w-Cp-xhY" secondAttribute="bottom" constant="44" id="QpR-qr-4CP"/>
+                            <constraint firstItem="gHo-9R-WfW" firstAttribute="leading" secondItem="rv1-Pv-uO7" secondAttribute="trailing" constant="22" id="Ue6-xN-UKq"/>
+                            <constraint firstItem="fvh-3c-eWa" firstAttribute="leading" secondItem="kDI-Ax-mch" secondAttribute="trailing" constant="22" id="Uvd-VL-AFw"/>
+                            <constraint firstItem="ECD-3e-J1y" firstAttribute="centerY" secondItem="lLS-J1-1Ja" secondAttribute="centerY" id="WLR-9I-CqN"/>
+                            <constraint firstItem="ru2-p8-jBN" firstAttribute="top" secondItem="fvh-3c-eWa" secondAttribute="bottom" constant="67" id="aRu-15-diX"/>
+                            <constraint firstItem="vov-mp-N9Z" firstAttribute="top" secondItem="YFL-hV-jzm" secondAttribute="bottom" constant="54" id="ewj-09-oDH"/>
+                            <constraint firstItem="ru2-p8-jBN" firstAttribute="leading" secondItem="Ibv-PL-0Ra" secondAttribute="trailing" constant="22" id="o02-6F-vXn"/>
+                            <constraint firstItem="fvh-3c-eWa" firstAttribute="top" secondItem="vov-mp-N9Z" secondAttribute="bottom" constant="60" id="wuJ-Bb-EU1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GfA-6p-v56"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cu1-Qa-w9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="-30.134932533733135"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="vZJ-K4-9Ib">
@@ -637,31 +767,31 @@
                                                 <constraint firstAttribute="height" constant="24" id="k9w-Cc-8p4"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXw-9s-Gc0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXw-9s-Gc0">
                                             <rect key="frame" x="29" y="38" width="346" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="71" id="JPJ-yp-U88"/>
                                                 <constraint firstAttribute="width" constant="346" id="Utz-E4-tYC"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="8"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-1C-ddQ">
-                                            <rect key="frame" x="61" y="8" width="27" height="12"/>
-                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="10"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-1C-ddQ">
+                                            <rect key="frame" x="61" y="13" width="47" height="17"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="PAj-rG-JgN" firstAttribute="leading" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" constant="13" id="2q7-lJ-xOj"/>
+                                        <constraint firstItem="oDE-1C-ddQ" firstAttribute="leading" secondItem="PAj-rG-JgN" secondAttribute="trailing" constant="8" id="P4c-tF-OlJ"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oDE-1C-ddQ" secondAttribute="trailing" constant="20" symbolic="YES" id="aOa-MJ-4Rs"/>
-                                        <constraint firstItem="oDE-1C-ddQ" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="topMargin" constant="-3" id="gOe-ec-sfj"/>
+                                        <constraint firstItem="oDE-1C-ddQ" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="top" constant="13" id="dHi-KJ-VC3"/>
                                         <constraint firstItem="QXw-9s-Gc0" firstAttribute="top" secondItem="PAj-rG-JgN" secondAttribute="bottom" constant="6" id="oTj-1B-jrC"/>
                                         <constraint firstItem="QXw-9s-Gc0" firstAttribute="leading" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" constant="13" id="s1S-UQ-Uyz"/>
                                         <constraint firstItem="PAj-rG-JgN" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="topMargin" constant="-3" id="tuc-Bz-vNt"/>
-                                        <constraint firstItem="oDE-1C-ddQ" firstAttribute="leading" secondItem="PAj-rG-JgN" secondAttribute="trailing" constant="8" id="vwi-6L-adS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -853,12 +983,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="+POST" width="38" height="38"/>
         <image name="FinalLogo" width="1443" height="312"/>
         <image name="Home" width="38" height="38"/>
         <image name="Profile" width="38" height="38"/>
         <image name="Profile_HighDef" width="1200" height="1200"/>
         <image name="Search" width="38" height="38"/>
         <image name="Settings" width="38" height="38"/>
+        <namedColor name="ActionNew">
+            <color red="0.2196078431372549" green="0.31764705882352939" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ActionNew">
             <color red="0.2196078431372549" green="0.31764705882352939" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

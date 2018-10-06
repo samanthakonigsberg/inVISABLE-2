@@ -22,6 +22,7 @@ class MyPageTableViewController: UITableViewController {
         //if navigating from tabbar set user? to INUser.shared
         if tabBarController?.selectedIndex == 2{
             user = INUser.shared
+            user?.id = INUser.shared.user?.uid
         }
     
         if let image = UIImage(named: "FinalLogo") {
@@ -42,7 +43,8 @@ class MyPageTableViewController: UITableViewController {
         //TODO: finalize colors
         navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
         navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout))
+        if let user = user, INUser.shared.name == user.name {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout)) }
     UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -54,8 +56,15 @@ class MyPageTableViewController: UITableViewController {
         guard let realUser = user else {
             return
         }
-        PostOffice.manager.requestUserPosts(for: realUser.user!.uid) { (success) in
+        if let realUser = realUser.id {
+            
+        PostOffice.manager.requestUserPosts(for:(realUser)) {
+                (success) in
             self.tableView.reloadData()
+            }
+            
+        tableView.reloadData()
+        
         }
         tableView.reloadData()
     }
@@ -79,15 +88,19 @@ class MyPageTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "profileCellID", for: indexPath) as? ProfileTableViewCell
+        
+            guard let realUser = user else {  return cell!}
             if let cell = cell {
-                cell.profileCellBio.text = INUser.shared.bio as String
-                cell.profileCellName.text = INUser.shared.name as String
-                cell.profileCellNumberOfFollowers.text = "\(INUser.shared.numFollowers)"
-                cell.profileCellNumberOfFollowing.text = "\(INUser.shared.numFollowing)"
-                cell.followButtonDesign.isHidden = true
-                if let image = INUser.shared.image{
+                cell.profileCellBio.text = realUser.bio as String
+                cell.profileCellName.text = realUser.name as String
+                cell.profileCellNumberOfFollowers.text = "\(realUser.numFollowers)"
+                cell.profileCellNumberOfFollowing.text = "\(realUser.numFollowing)"
+                if let user = user, INUser.shared.name == user.name {
+                    cell.followButtonDesign.isHidden = true }
+                if let image = realUser.image{
                     cell.profileCellImage.image = image
                 }
                 return cell

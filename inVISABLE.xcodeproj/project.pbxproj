@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0C10D12162DA550071FE9A /* onBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C10D02162DA550071FE9A /* onBoardingViewController.swift */; };
 		1B161FA120261B3900DA4752 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B161FA020261B3900DA4752 /* BaseViewController.swift */; };
 		1B1DF5CE20F402DF00528E14 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1DF5CD20F402DF00528E14 /* UIImageView.swift */; };
 		1B3467152009AA37003A3EDE /* MoreInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */; };
@@ -33,7 +34,6 @@
 		1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */; };
 		1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */; };
 		1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */; };
-		1BFB732B2152DF4700EF79C8 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB732A2152DF4700EF79C8 /* LaunchViewController.swift */; };
 		1BFB73312152DFB000EF79C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB73302152DFB000EF79C8 /* ViewController.swift */; };
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
@@ -70,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		17C33D94429259E38FCE7363 /* Pods-inVISABLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLE.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLE/Pods-inVISABLE.release.xcconfig"; sourceTree = "<group>"; };
+		1B0C10D02162DA550071FE9A /* onBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingViewController.swift; sourceTree = "<group>"; };
 		1B161FA020261B3900DA4752 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1B1DF5CD20F402DF00528E14 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		1B3467142009AA37003A3EDE /* MoreInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		1BA9D5E01FDC477D00D6E512 /* SetUpProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpProfileViewController.swift; sourceTree = "<group>"; };
 		1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
-		1BFB732A2152DF4700EF79C8 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		1BFB73302152DFB000EF79C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9D314021ABB467C0C8E1F1 /* Pods-inVISABLEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 				D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */,
 				D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */,
 				1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */,
-				1BFB732A2152DF4700EF79C8 /* LaunchViewController.swift */,
+				1B0C10D02162DA550071FE9A /* onBoardingViewController.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -596,9 +596,9 @@
 				1BFB73312152DFB000EF79C8 /* ViewController.swift in Sources */,
 				1B36871F1FDC43CD00CC734D /* AppDelegate.swift in Sources */,
 				D140EE88201C2286006A3883 /* PostOffice.swift in Sources */,
+				1B0C10D12162DA550071FE9A /* onBoardingViewController.swift in Sources */,
 				D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */,
 				1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */,
-				1BFB732B2152DF4700EF79C8 /* LaunchViewController.swift in Sources */,
 				1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */,
 				1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */,
 				1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */,

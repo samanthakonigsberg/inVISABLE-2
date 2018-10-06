@@ -1,19 +1,18 @@
 //
-//  LaunchViewController.swift
+//  onBoardingViewController.swift
 //  inVISABLE
 //
-//  Created by Samantha Konigsberg on 9/19/18.
+//  Created by Samantha Konigsberg on 10/1/18.
 //  Copyright © 2018 Samantha Konigsberg. All rights reserved.
 //
 
 import UIKit
-import NVActivityIndicatorView
 
-class LaunchViewController: UIViewController, NVActivityIndicatorViewable  {
+class onBoardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startAnimating()
+
         // Do any additional setup after loading the view.
     }
 

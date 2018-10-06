@@ -80,11 +80,9 @@ class SearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let destination: MyPageTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myPage") as? MyPageTableViewController else { return }
-        destination.user = results?[indexPath.row]
-
-        navigationController?.pushViewController(destination, animated: true)
-        // navigationController?.show(MyPageTableViewController, sender: Any?.self)
         
+        destination.user  = results?[indexPath.row]
+            navigationController?.pushViewController(destination, animated: true)
     }
 }
 
