@@ -54,7 +54,11 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
     
-        
+        if UserDefaults.standard.bool(forKey: "didDisplayOnboarding") != true{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "navBarOnBoard")
+            self.present(controller, animated: true, completion: nil)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

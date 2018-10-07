@@ -424,7 +424,7 @@
         <!--Navigation Controller-->
         <scene sceneID="30t-my-x33">
             <objects>
-                <navigationController id="d35-KA-uBd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navBarOnBoard" id="d35-KA-uBd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X8M-Cm-2Ly">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -435,12 +435,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6O-vB-F5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="-482"/>
+            <point key="canvasLocation" x="1414" y="-296"/>
         </scene>
-        <!--View Controller-->
+        <!--On Boarding View Controller-->
         <scene sceneID="oHS-wq-4aq">
             <objects>
-                <viewController id="AYB-Yh-CJg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onBoardingVC" id="AYB-Yh-CJg" customClass="onBoardingViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="05w-Cp-xhY"/>
                         <viewControllerLayoutGuide type="bottom" id="yRF-ll-Rar"/>
@@ -562,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu1-Qa-w9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="-30.134932533733135"/>
+            <point key="canvasLocation" x="1335" y="403"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="vZJ-K4-9Ib">
@@ -990,9 +990,6 @@
         <image name="Profile_HighDef" width="1200" height="1200"/>
         <image name="Search" width="38" height="38"/>
         <image name="Settings" width="38" height="38"/>
-        <namedColor name="ActionNew">
-            <color red="0.2196078431372549" green="0.31764705882352939" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="ActionNew">
             <color red="0.2196078431372549" green="0.31764705882352939" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
