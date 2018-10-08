@@ -12,6 +12,8 @@ import FirebaseAuth
 class MyPageTableViewController: UITableViewController {
 
     var user : INUser?
+    var image: UIImage?
+    
     //change all INUser.shared to guard statement
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +58,16 @@ class MyPageTableViewController: UITableViewController {
         guard let realUser = user else {
             return
         }
-        if let realUser = realUser.id {
-            
-        PostOffice.manager.requestUserPosts(for:(realUser)) {
-                (success) in
-            self.tableView.reloadData()
-            }
-            
-        tableView.reloadData()
         
+        if realUser.imageRef.length > 0, let data = ImageDownloader.downloader.cache.object(forKey: realUser.imageRef) as? Data {
+            image = UIImage(data: data)
+        }
+        
+        if let realID = realUser.id {
+            PostOffice.manager.requestUserPosts(for:(realID)) { (success) in
+                self.tableView.reloadData()
+            }
+            tableView.reloadData()
         }
         tableView.reloadData()
     }
@@ -100,7 +103,7 @@ class MyPageTableViewController: UITableViewController {
                 cell.profileCellNumberOfFollowing.text = "\(realUser.numFollowing)"
                 if let user = user, INUser.shared.name == user.name {
                     cell.followButtonDesign.isHidden = true }
-                if let image = realUser.image{
+                if let image = self.image {
                     cell.profileCellImage.image = image
                 }
                 return cell
@@ -110,7 +113,10 @@ class MyPageTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCellID", for: indexPath) as? PostTableViewCell
             if let cell = cell {
                 cell.postCellName.text = PostOffice.manager.userPosts[indexPath.row - 1].name as String
-                cell.postPostLabel.text = PostOffice.manager.userPosts[indexPath.row - 1].post as? String
+                cell.postPostLabel.text = PostOffice.manager.userPosts[indexPath.row - 1].post as String
+                if let image = self.image {
+                    cell.postCellImage.image = image
+                }
                 return cell
             }
         }
@@ -139,5 +145,8 @@ class MyPageTableViewController: UITableViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+        
+        PostOffice.manager.feedPosts.removeAll()
+        PostOffice.manager.userPosts.removeAll()
     }
 }

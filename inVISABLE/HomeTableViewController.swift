@@ -59,6 +59,8 @@ class HomeTableViewController: UITableViewController {
             let controller = storyboard.instantiateViewController(withIdentifier: "navBarOnBoard")
             self.present(controller, animated: true, completion: nil)
         }
+        
+        tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,6 +84,12 @@ class HomeTableViewController: UITableViewController {
         if let cell = cell {
             cell.homeNameLabel.text = PostOffice.manager.feedPosts[indexPath.row].name as String
             cell.homePostLabel.text = PostOffice.manager.feedPosts[indexPath.row].post as String
+            if let data = ImageDownloader.downloader.getImageData(for: PostOffice.manager.feedPosts[indexPath.row].userId as String) {
+                let image = UIImage(data: data)
+                cell.homeIconImage.image = image
+            } else {
+                cell.homeIconImage.image = UIImage(named: "Profile_HighDef")
+            }
         }
 
         return cell!
@@ -101,6 +109,9 @@ class HomeTableViewController: UITableViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+        
+        PostOffice.manager.feedPosts.removeAll()
+        PostOffice.manager.userPosts.removeAll()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

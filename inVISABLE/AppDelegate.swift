@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate{
 
@@ -38,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                     return
                 }
                 INUser.shared.update(with: value)
+                ImageDownloader.downloader.hydrateCache()
             })
         }
         

@@ -13,16 +13,16 @@ class PostOffice {
     static var manager = PostOffice()
     
     let ref = FirebaseManager.shared.reference
-    var feedPosts = [Post]()
-    var userPosts = [Post]()
+    var feedPosts = [FeedPost]()
+    var userPosts = [UserPost]()
     
-    func listenToFeedPosts(for userID: String, completion: @escaping (_ newPost: Post) -> Void) {
+    func listenToFeedPosts(for userID: String, completion: @escaping (_ newPost: FeedPost) -> Void) {
         ref.child("feed-posts").child(userID).observe(.childAdded) { (snapshot) in
-            guard let post = snapshot.value as? [AnyHashable: Any], let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString else { return }
+            guard let post = snapshot.value as? [AnyHashable: Any], let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString, let id = post["user"] as? NSString else { return }
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let date = formatter.date(from: dateString as String)
-            let newPost = Post(date: date!, post: text, image: nil, name: name)
+            let newPost = FeedPost(date: date!, post: text, name: name, userId: id)
             self.feedPosts.insert(newPost, at: 0)
             completion(newPost)
         }
@@ -35,11 +35,11 @@ class PostOffice {
         ref.child("feed-posts").child(userID).observeSingleEvent(of: .value) { (snapshot) in
             if let dictionary = snapshot.value as? [AnyHashable: Any], let allFeedPosts = Array(dictionary.values) as? [[AnyHashable: Any]] {
                 for post in allFeedPosts {
-                    guard let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString else { return }
+                    guard let dateString = post["date"] as? NSString, let text = post["text"] as? NSString, let name = post["name"] as? NSString, let id = post["user"] as? NSString else { return }
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     let date = formatter.date(from: dateString as String)
-                    let post = Post(date: date!, post: text, image: nil, name: name)
+                    let post = FeedPost(date: date!, post: text, name: name, userId: id)
                     self.feedPosts.append(post)
                 }
                 
@@ -61,7 +61,7 @@ class PostOffice {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     let date = formatter.date(from: dateString as String)
-                    let post = Post(date: date!, post: text, image: nil, name: name)
+                    let post = UserPost(date: date!, post: text, name: name)
                     self.userPosts.append(post)
                 }
                 

@@ -47,6 +47,7 @@
 		D1639D732112896C00E4AAEF /* RuckSack-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */; };
 		D1639D7B21128F2900E4AAEF /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */; };
 		D1639D7D211291B700E4AAEF /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */; };
+		D180E13B216AB70B00F869A1 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180E13A216AB70B00F869A1 /* ImageDownloader.swift */; };
 		D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */; };
 		E464768C55D13F342B8D36D2 /* Pods_inVISABLETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		D1639D6D2112896C00E4AAEF /* RuckSack-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Book.otf"; sourceTree = "<group>"; };
 		D1639D7A21128F2900E4AAEF /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		D180E13A216AB70B00F869A1 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		D19FA25A200300570060F45A /* ExtendedFormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormTextFieldCell.swift; sourceTree = "<group>"; };
 		E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 				D1639D7C211291B700E4AAEF /* SearchResultTableViewCell.swift */,
 				1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */,
 				1B0C10D02162DA550071FE9A /* onBoardingViewController.swift */,
+				D180E13A216AB70B00F869A1 /* ImageDownloader.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */,
 				1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */,
 				1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */,
+				D180E13B216AB70B00F869A1 /* ImageDownloader.swift in Sources */,
 				1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */,
 				1B36D9132138B174004C511F /* ExtendedFormDateCell.swift in Sources */,
 				1BA9D5EC1FDC477D00D6E512 /* Post.swift in Sources */,

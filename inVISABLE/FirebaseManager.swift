@@ -130,25 +130,28 @@ class FirebaseManager {
         if INUser.shared.imageRef.length > 0 {
             ref = storage.reference().child(INUser.shared.imageRef as String)
         } else {
-            let urlString = "/users/\(user.uid)/profile.img"
+            //Use UUID to determine uniqueness of the images.
+            let urlString = "/users/\(user.uid)/\(UUID().uuidString).img"
             INUser.shared.imageRef = urlString as NSString
             ref = storage.reference().child(urlString)
         }
         
         let _ = ref.putData(imageData, metadata: nil) { (metadata, error) in
             guard let _ = metadata else {
+                print("Error storing images. There is no metadata.")
                 // uh oh error
                 return
             }
             
             ref.downloadURL(completion: { (url, error) in
                 guard let downloadUrl = url else {
+                    print("Error storing images. There is no download url")
                     //uh oh error
                     return
                 }
                 
+                //You should only be able to store your own image.
                 INUser.shared.imageUrl = downloadUrl.absoluteString as NSString
-                
             })
         }
     }
