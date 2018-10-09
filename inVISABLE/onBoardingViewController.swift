@@ -15,15 +15,10 @@ class onBoardingViewController: UIViewController {
     UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
         
         navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
-        navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
-        
-        if let image = UIImage(named: "FinalLogo") {
-            //create a container view with specific frame
-            //insert code below but it in container
-            let view = UIImageView(image: image)
-            view.contentMode = .scaleAspectFit
-            navigationItem.titleView = view
-        }
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(onBoardingViewController.dismissAction))
         // Do any additional setup after loading the view.
         

@@ -449,113 +449,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ECD-3e-J1y">
-                                <rect key="frame" x="39" y="108" width="50" height="450"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xZ7-Tm-IRQ">
+                                <rect key="frame" x="94" y="133.5" width="187.5" height="400"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="rv1-Pv-uO7">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R6o-la-FXK" userLabel="HomeSV">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="rv1-Pv-uO7">
+                                                <rect key="frame" x="0.0" y="13" width="56" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find new posts from the people you follow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHo-9R-WfW">
+                                                <rect key="frame" x="66" y="3" width="121.5" height="58"/>
+                                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Dig-s8-sNA"/>
-                                            <constraint firstAttribute="height" constant="50" id="beD-Rc-7GH"/>
+                                            <constraint firstItem="rv1-Pv-uO7" firstAttribute="width" secondItem="R6o-la-FXK" secondAttribute="width" multiplier="0.3" id="d2B-eN-Ege"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-F2-2zL">
-                                        <rect key="frame" x="0.0" y="100" width="50" height="50"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-L9-acg" userLabel="SearchSV">
+                                        <rect key="frame" x="0.0" y="84" width="187.5" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-F2-2zL">
+                                                <rect key="frame" x="0.0" y="13" width="56.5" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search and follow other spoonies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFL-hV-jzm">
+                                                <rect key="frame" x="66.5" y="3" width="121" height="58"/>
+                                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="KHV-WL-TKS"/>
-                                            <constraint firstAttribute="height" constant="50" id="nW0-Z7-CtS"/>
+                                            <constraint firstItem="eLo-F2-2zL" firstAttribute="width" secondItem="bEY-L9-acg" secondAttribute="width" multiplier="0.3" id="jf2-1J-7HE"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="Jn2-Ra-hiA">
-                                        <rect key="frame" x="0.0" y="200" width="50" height="50"/>
-                                        <color key="tintColor" name="ActionNew"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ypy-dW-yn0" userLabel="ProfSV">
+                                        <rect key="frame" x="0.0" y="168" width="187.5" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Jn2-Ra-hiA">
+                                                <rect key="frame" x="0.0" y="13" width="56.5" height="38"/>
+                                                <color key="tintColor" name="ActionNew"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your personal profile here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vov-mp-N9Z">
+                                                <rect key="frame" x="56.5" y="3" width="131" height="58"/>
+                                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="LKx-qT-wmR"/>
-                                            <constraint firstAttribute="height" constant="50" id="Xg3-gf-jPA"/>
+                                            <constraint firstItem="Jn2-Ra-hiA" firstAttribute="width" secondItem="Ypy-dW-yn0" secondAttribute="width" multiplier="0.3" id="12O-KZ-ubu"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="kDI-Ax-mch">
-                                        <rect key="frame" x="0.0" y="300" width="50" height="50"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-zk-3xq" userLabel="SettingsSV">
+                                        <rect key="frame" x="0.0" y="252" width="187.5" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="kDI-Ax-mch">
+                                                <rect key="frame" x="0.0" y="13" width="56.5" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your profile and app settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvh-3c-eWa">
+                                                <rect key="frame" x="56.5" y="11.5" width="131" height="41"/>
+                                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="0IE-Hj-2p6"/>
-                                            <constraint firstAttribute="height" constant="50" id="hcP-b1-7D5"/>
+                                            <constraint firstItem="kDI-Ax-mch" firstAttribute="width" secondItem="HhU-zk-3xq" secondAttribute="width" multiplier="0.3" id="cwJ-U7-CuS"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="+POST" translatesAutoresizingMaskIntoConstraints="NO" id="Ibv-PL-0Ra">
-                                        <rect key="frame" x="0.0" y="400" width="50" height="50"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZqC-KT-HAi" userLabel="PostSV">
+                                        <rect key="frame" x="0.0" y="336" width="187.5" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="+POST" translatesAutoresizingMaskIntoConstraints="NO" id="Ibv-PL-0Ra">
+                                                <rect key="frame" x="0.0" y="13" width="56.5" height="38"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your first post" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-p8-jBN">
+                                                <rect key="frame" x="56.5" y="13" width="131" height="38.5"/>
+                                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="3M9-77-hat"/>
-                                            <constraint firstAttribute="height" constant="50" id="Z1Z-BA-S1s"/>
+                                            <constraint firstItem="Ibv-PL-0Ra" firstAttribute="width" secondItem="ZqC-KT-HAi" secondAttribute="width" multiplier="0.3" id="tk8-qD-cNb"/>
                                         </constraints>
-                                    </imageView>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="ActionNew"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your first post" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-p8-jBN">
-                                <rect key="frame" x="111" y="526" width="155.5" height="19.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155.5" id="QzO-Ht-VxD"/>
-                                    <constraint firstAttribute="height" constant="19.5" id="yR2-0N-xgg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your personal profile here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vov-mp-N9Z">
-                                <rect key="frame" x="111" y="313" width="216" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="evv-B5-ZJr"/>
-                                    <constraint firstAttribute="width" constant="216" id="pvj-Uf-zRD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search and follow other spoonies" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFL-hV-jzm">
-                                <rect key="frame" x="111" y="205" width="236" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="7rY-LB-ET6"/>
-                                    <constraint firstAttribute="width" constant="236" id="Mcn-Qx-x4P"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your profile and app settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvh-3c-eWa">
-                                <rect key="frame" x="111" y="413" width="256" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Bch-Hq-Jyw"/>
-                                    <constraint firstAttribute="width" constant="256" id="ZbP-oJ-rPj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find new posts from the people you follow" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHo-9R-WfW">
-                                <rect key="frame" x="111" y="108" width="185" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="Smi-Oz-hiT"/>
-                                    <constraint firstAttribute="height" constant="59" id="gBd-a2-Jo6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Light" family="RuckSack" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YFL-hV-jzm" firstAttribute="leading" secondItem="eLo-F2-2zL" secondAttribute="trailing" constant="22" id="AZp-fh-N8e"/>
-                            <constraint firstItem="YFL-hV-jzm" firstAttribute="top" secondItem="gHo-9R-WfW" secondAttribute="bottom" constant="38" id="DqV-SF-ABm"/>
-                            <constraint firstItem="vov-mp-N9Z" firstAttribute="leading" secondItem="Jn2-Ra-hiA" secondAttribute="trailing" constant="22" id="HKS-0s-Pet"/>
-                            <constraint firstItem="ECD-3e-J1y" firstAttribute="leading" secondItem="lLS-J1-1Ja" secondAttribute="leading" constant="39" id="I0j-yz-Z4g"/>
-                            <constraint firstItem="gHo-9R-WfW" firstAttribute="top" secondItem="05w-Cp-xhY" secondAttribute="bottom" constant="44" id="QpR-qr-4CP"/>
-                            <constraint firstItem="gHo-9R-WfW" firstAttribute="leading" secondItem="rv1-Pv-uO7" secondAttribute="trailing" constant="22" id="Ue6-xN-UKq"/>
-                            <constraint firstItem="fvh-3c-eWa" firstAttribute="leading" secondItem="kDI-Ax-mch" secondAttribute="trailing" constant="22" id="Uvd-VL-AFw"/>
-                            <constraint firstItem="ECD-3e-J1y" firstAttribute="centerY" secondItem="lLS-J1-1Ja" secondAttribute="centerY" id="WLR-9I-CqN"/>
-                            <constraint firstItem="ru2-p8-jBN" firstAttribute="top" secondItem="fvh-3c-eWa" secondAttribute="bottom" constant="67" id="aRu-15-diX"/>
-                            <constraint firstItem="vov-mp-N9Z" firstAttribute="top" secondItem="YFL-hV-jzm" secondAttribute="bottom" constant="54" id="ewj-09-oDH"/>
-                            <constraint firstItem="ru2-p8-jBN" firstAttribute="leading" secondItem="Ibv-PL-0Ra" secondAttribute="trailing" constant="22" id="o02-6F-vXn"/>
-                            <constraint firstItem="fvh-3c-eWa" firstAttribute="top" secondItem="vov-mp-N9Z" secondAttribute="bottom" constant="60" id="wuJ-Bb-EU1"/>
+                            <constraint firstItem="xZ7-Tm-IRQ" firstAttribute="centerX" secondItem="lLS-J1-1Ja" secondAttribute="centerX" id="4OF-Er-WSG"/>
+                            <constraint firstItem="xZ7-Tm-IRQ" firstAttribute="width" secondItem="lLS-J1-1Ja" secondAttribute="width" multiplier="0.5" id="bOR-Gs-Emm"/>
+                            <constraint firstItem="xZ7-Tm-IRQ" firstAttribute="centerY" secondItem="lLS-J1-1Ja" secondAttribute="centerY" id="jC0-ah-toD"/>
+                            <constraint firstItem="xZ7-Tm-IRQ" firstAttribute="height" secondItem="lLS-J1-1Ja" secondAttribute="height" multiplier="0.6" id="or6-9Q-FrF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GfA-6p-v56"/>
