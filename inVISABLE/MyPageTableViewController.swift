@@ -48,18 +48,15 @@ class MyPageTableViewController: UITableViewController {
         if let user = user, INUser.shared.name == user.name {
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout)) }
     UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     override func viewDidAppear(_ animated: Bool) {
         guard let realUser = user else {
             return
         }
         
-        if realUser.imageRef.length > 0, let data = ImageDownloader.downloader.cache.object(forKey: realUser.imageRef) as? Data {
+        if let realUserImage = realUser.image {
+            image = realUserImage
+        } else if realUser.imageRef.length > 0, let data = ImageDownloader.downloader.cache.object(forKey: realUser.imageRef) as? Data {
             image = UIImage(data: data)
         }
         

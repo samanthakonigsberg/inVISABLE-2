@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.present(alert, animated: true, completion: nil)
                 }
+                ImageDownloader.downloader.hydrateCache()
             }
         }
         
