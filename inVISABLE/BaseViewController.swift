@@ -10,30 +10,30 @@ import UIKit
 import FirebaseAuth
 
 class BaseViewController: UIViewController {
-
+    
+    var currentViewController: UIViewController?
+    
     override func viewDidLoad() {
-         super.viewDidLoad()
-     
-            let _ = Auth.auth().addStateDidChangeListener() { (auth, user) in
-                if let certainUser = user {
-                    INUser.shared.updateFIRUser(with: certainUser)
-                }
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewcontrollerID: String
-                
-                if INUser.shared.user != nil {
-                    viewcontrollerID = "tabBarVC"
-                } else{
-                    viewcontrollerID = "loginVC"
-                }
-                
-                let controller = storyboard.instantiateViewController(withIdentifier: viewcontrollerID)
-                self.addChildViewController(controller)
-                controller.view.frame = self.view.frame
-                self.view.addSubview(controller.view)
-                controller.didMove(toParentViewController: self)
+        super.viewDidLoad()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+        let _ = Auth.auth().addStateDidChangeListener() { (auth, user) in
+            
+            if let current = self.currentViewController {
+                self.remove(asChildViewController: current)
             }
+            
+            if let certainUser = user {
+                let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
+                self.add(asChildViewController: tabBarVC)
+                INUser.shared.updateFIRUser(with: certainUser)
+                self.currentViewController = tabBarVC
+            } else {
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                self.add(asChildViewController: loginVC)
+                self.currentViewController = loginVC
+            }
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -43,15 +43,19 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func add(asChildViewController viewController: UIViewController) {
+        addChildViewController(viewController)
+        view.addSubview(viewController.view)
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParentViewController: self)
+        
     }
-    */
+    
+    func remove(asChildViewController viewController: UIViewController) {
+        viewController.willMove(toParentViewController: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParentViewController()
+    }
 
 }
