@@ -65,6 +65,17 @@ class FirebaseManager {
                 array = NSArray(array: [currentUser.uid])
             }
             self.reference.child("users").child(userId).updateChildValues(["followers": array])
+            self.reference.child("user-posts").child(userId).observe(.value, with: { (snapshot) in
+                guard let posts = snapshot.value as? NSDictionary else {
+                    return
+                }
+                for k in posts.allKeys {
+                    guard var postInfo = posts[k] as? NSMutableDictionary else { continue }
+                    postInfo["user"] = userId
+                    self.reference.child("feed-posts").child(currentUser.uid).child(k as! String).updateChildValues(postInfo as! [AnyHashable: AnyObject])
+                }
+                
+            })
         }
     }
     

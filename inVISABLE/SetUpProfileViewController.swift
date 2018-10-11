@@ -96,10 +96,7 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
         if let image = profilePicture.image{
             INUser.shared.image = image
         }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
-        self.present(controller, animated: true, completion: nil)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 
