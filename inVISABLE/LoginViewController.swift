@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
 
     @IBOutlet weak var passwordTextField: UITextField!
-    
+  
     
     override func viewDidLoad() {
         loginButton.layer.cornerRadius = 10
@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         forgotPasswordButton.layer.cornerRadius = 10
         super.viewDidLoad()
         self.ref = Database.database().reference()
-
+        passwordTextField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
     
@@ -100,7 +100,7 @@ class LoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-
+    
     
        /*
     // MARK: - Navigation
