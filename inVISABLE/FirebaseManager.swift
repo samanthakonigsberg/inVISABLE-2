@@ -134,6 +134,14 @@ class FirebaseManager {
         }
     }
     
+    func reportUser(_ userId: String) {
+        reference.child("reports").child("users").child(userId)
+    }
+    
+    func reportPost(_ userId: String, post: String) {
+        reference.child("reports").child("posts").childByAutoId().updateChildValues(["user": userId, "post": post])
+    }
+    
     func store(_ image: UIImage) {
         guard let user = INUser.shared.user, let imageData: Data = UIImagePNGRepresentation(image) else { return }
         

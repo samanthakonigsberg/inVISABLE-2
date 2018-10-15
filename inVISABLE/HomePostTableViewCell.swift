@@ -10,16 +10,25 @@ import UIKit
 
 class HomePostTableViewCell: UITableViewCell {
     
+    var post: FeedPost?
+    
     @IBOutlet weak var homeNameLabel: UILabel!
-    
     @IBOutlet weak var homeIconImage: UIImageView!
-    
     @IBOutlet weak var homePostLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         homeIconImage.roundedImage()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let p = post else {
+            return
+        }
+        homeNameLabel.text = p.name as String
+        homePostLabel.text = p.post as String
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -82,8 +82,7 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as?
             HomePostTableViewCell
         if let cell = cell {
-            cell.homeNameLabel.text = PostOffice.manager.feedPosts[indexPath.row].name as String
-            cell.homePostLabel.text = PostOffice.manager.feedPosts[indexPath.row].post as String
+            cell.post = PostOffice.manager.feedPosts[indexPath.row]
             if let data = ImageDownloader.downloader.getImageData(for: PostOffice.manager.feedPosts[indexPath.row].userId as String) {
                 let image = UIImage(data: data)
                 cell.homeIconImage.image = image

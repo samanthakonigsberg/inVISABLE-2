@@ -109,8 +109,7 @@ class MyPageTableViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCellID", for: indexPath) as? PostTableViewCell
             if let cell = cell {
-                cell.postCellName.text = PostOffice.manager.userPosts[indexPath.row - 1].name as String
-                cell.postPostLabel.text = PostOffice.manager.userPosts[indexPath.row - 1].post as String
+                cell.post = PostOffice.manager.userPosts[indexPath.row - 1]
                 if let image = self.image {
                     cell.postCellImage.image = image
                 }
@@ -128,6 +127,7 @@ class MyPageTableViewController: UITableViewController {
             return 120
         }
     }
+    
     @objc fileprivate func presentNewPostVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "NavBarNewPost")

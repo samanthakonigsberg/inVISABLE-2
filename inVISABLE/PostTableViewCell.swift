@@ -10,9 +10,9 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
+    var post: UserPost?
     
     @IBOutlet weak var postCellImage: UIImageView!
-    
 
     @IBOutlet weak var postCellName: UILabel!
     
@@ -22,6 +22,15 @@ class PostTableViewCell: UITableViewCell {
         postCellImage.roundedImage()
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let p = post else {
+            return
+        }
+        postCellName.text = p.name as String
+        postPostLabel.text = p.post as String
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
