@@ -17,6 +17,7 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var profilePicture: UIImageView!
     let picker = UIImagePickerController()
     
+    let defaultText = "Tell us about yourself"
    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
@@ -54,6 +55,14 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
         profilePicture.roundedImage()
         // Do any additional setup after loading the view.
         
+        bioTextView.text = INUser.shared.bio.length > 0 ? INUser.shared.bio as String : defaultText
+        
+        if let user = INUser.shared.user, let imageData = ImageDownloader.downloader.getImageData(for: user.uid) {
+            let image = UIImage(data: imageData)
+            INUser.shared.image = image
+        }
+        profilePicture.image = INUser.shared.image ?? UIImage(named: "Profile_HighDef")
+        
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SetUpProfileViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -88,14 +97,11 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
 
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        if let text = bioTextView.text {
+        if let text = bioTextView.text, text != defaultText {
             INUser.shared.bio = text as NSString
             FirebaseManager.shared.updateAllUserInfo()
         }
-        
-        if let image = profilePicture.image{
-            INUser.shared.image = image
-        }
+
         navigationController?.dismiss(animated: true, completion: nil)
     }
 }
