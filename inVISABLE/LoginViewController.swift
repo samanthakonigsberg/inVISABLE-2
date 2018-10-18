@@ -29,6 +29,15 @@ class LoginViewController: UIViewController {
         self.ref = Database.database().reference()
         passwordTextField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
    override func viewWillAppear(_ animated: Bool) {

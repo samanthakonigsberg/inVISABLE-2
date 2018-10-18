@@ -10,14 +10,31 @@ import UIKit
 import FirebaseDatabase
 
 
-class SetUpProfileViewController: UIViewController, UINavigationControllerDelegate {
+class SetUpProfileViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate {
 
+    @IBOutlet weak var doneDesign: UIButton!
+    @IBOutlet weak var libraryDesign: UIButton!
+    @IBOutlet weak var cameraDesign: UIButton!
     @IBOutlet weak var bioTextView: UITextView!
    
     @IBOutlet weak var profilePicture: UIImageView!
     let picker = UIImagePickerController()
     
-    let defaultText = "Tell us about yourself"
+    let defaultText = "Tell us about yourself. This is your place to display illnesses you want your followers to know about."
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if bioTextView.textColor == UIColor.lightGray {
+            bioTextView.text = nil
+            bioTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if bioTextView.text.isEmpty {
+            bioTextView.text = defaultText
+            bioTextView.textColor = UIColor.lightGray
+        }
+    }
    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
@@ -51,12 +68,20 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        
+       
+        cameraDesign.layer.cornerRadius = 10
+        libraryDesign.layer.cornerRadius = 10
+        doneDesign.layer.cornerRadius = 10
         profilePicture.roundedImage()
         // Do any additional setup after loading the view.
-        
+       
         bioTextView.text = INUser.shared.bio.length > 0 ? INUser.shared.bio as String : defaultText
-        
+        bioTextView.delegate = self
+        bioTextView.layer.borderWidth = 1.0
+        bioTextView.layer.borderColor = UIColor.black.cgColor
+        bioTextView.text = defaultText
+        bioTextView.textColor = UIColor.lightGray
+        profilePicture.roundedImage()
         if let user = INUser.shared.user, let imageData = ImageDownloader.downloader.getImageData(for: user.uid) {
             let image = UIImage(data: imageData)
             INUser.shared.image = image
