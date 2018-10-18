@@ -33,6 +33,7 @@ class SearchResultTableViewCell: UITableViewCell {
             INUser.shared.following = INUser.shared.following.adding(id) as NSArray
             FirebaseManager.shared.updateAllUserInfo()
             FirebaseManager.shared.addUserAsFollowerFor(userId: id)
+            ImageDownloader.downloader.hydrateCache()
             sender.setTitle("Unfollow", for: .normal)
         } else {
             let index = INUser.shared.following.index(of: id)

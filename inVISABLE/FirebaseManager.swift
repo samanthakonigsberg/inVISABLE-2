@@ -143,39 +143,47 @@ class FirebaseManager {
     }
     
     func store(_ image: UIImage) {
-        guard let user = INUser.shared.user, let imageData: Data = UIImagePNGRepresentation(image) else { return }
+        guard let imageData: Data = UIImagePNGRepresentation(image) else { return }
         
-        let oldRef = storage.reference().child(INUser.shared.imageRef as String)
-        oldRef.delete { (error) in
-            if let e = error {
-                print("Error deleting image. Error: \(e)")
-            }
-            let urlString = "/users/\(user.uid)/\(UUID().uuidString).img"
-            INUser.shared.imageRef = urlString as NSString
-            let newRef = self.storage.reference().child(urlString)
-            
-            let _ = newRef.putData(imageData, metadata: nil) { (metadata, error) in
-                guard let _ = metadata else {
-                    print("Error storing images. There is no metadata.")
-                    // uh oh error
-                    return
+        if INUser.shared.imageRef.length > 0 {
+            let oldRef = storage.reference().child(INUser.shared.imageRef as String)
+            oldRef.delete { (error) in
+                if let e = error {
+                    print("Error deleting image. Error: \(e)")
                 }
-                
-                newRef.downloadURL(completion: { (url, error) in
-                    guard let downloadUrl = url else {
-                        print("Error storing images. There is no download url")
-                        //uh oh error
-                        return
-                    }
-                    
-                    //You should only be able to store your own image.
-                    INUser.shared.imageUrl = downloadUrl.absoluteString as NSString
-                    FirebaseManager.shared.updateAllUserInfo()
-                })
+                self.uploadImageData(imageData)
             }
-            
+        } else {
+            self.uploadImageData(imageData)
         }
         
 
+    }
+    
+    func uploadImageData(_ data: Data) {
+        guard let user = INUser.shared.user else { return }
+        let urlString = "/users/\(user.uid)/\(UUID().uuidString).img"
+        INUser.shared.imageRef = urlString as NSString
+        let newRef = self.storage.reference().child(urlString)
+        
+        let _ = newRef.putData(data, metadata: nil) { (metadata, error) in
+            guard let _ = metadata else {
+                print("Error storing images. There is no metadata.")
+                // uh oh error
+                return
+            }
+            
+            newRef.downloadURL(completion: { (url, error) in
+                guard let downloadUrl = url else {
+                    print("Error storing images. There is no download url")
+                    //uh oh error
+                    return
+                }
+                
+                //You should only be able to store your own image.
+                INUser.shared.imageUrl = downloadUrl.absoluteString as NSString
+                FirebaseManager.shared.updateAllUserInfo()
+            })
+        }
     }
 }

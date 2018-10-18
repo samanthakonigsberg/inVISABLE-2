@@ -36,7 +36,7 @@ class ImageDownloader {
                     return
                 }
                 self.manifest[person] = value
-                self.storage.reference().child(value as String).getData(maxSize: 4 * 2560 * 2560, completion: { (data, error) in
+                self.storage.reference().child(value as String).getData(maxSize: 8 * 2560 * 2560, completion: { (data, error) in
                     if let e = error {
                         print(e)
                     }
