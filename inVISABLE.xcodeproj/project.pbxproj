@@ -19,6 +19,7 @@
 		1B36873F1FDC43CD00CC734D /* inVISABLEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36873E1FDC43CD00CC734D /* inVISABLEUITests.swift */; };
 		1B36D9132138B174004C511F /* ExtendedFormDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36D9122138B174004C511F /* ExtendedFormDateCell.swift */; };
 		1B4E7F602139C1F500135F66 /* ExtendedFormSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */; };
+		1B7BA2452179508C0016C395 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7BA2442179508C0016C395 /* PrivacyPolicyViewController.swift */; };
 		1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C41FDC476900D6E512 /* HomePostTableViewCell.swift */; };
 		1BA9D5CD1FDC476900D6E512 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */; };
 		1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */; };
@@ -89,6 +90,7 @@
 		1B3687401FDC43CD00CC734D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B36D9122138B174004C511F /* ExtendedFormDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormDateCell.swift; sourceTree = "<group>"; };
 		1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedFormSelectionCell.swift; sourceTree = "<group>"; };
+		1B7BA2442179508C0016C395 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		1BA9D5C41FDC476900D6E512 /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 		1BA9D5C51FDC476900D6E512 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		1BA9D5C61FDC476900D6E512 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				1B4E7F5F2139C1F500135F66 /* ExtendedFormSelectionCell.swift */,
 				1B0C10D02162DA550071FE9A /* onBoardingViewController.swift */,
 				D180E13A216AB70B00F869A1 /* ImageDownloader.swift */,
+				1B7BA2442179508C0016C395 /* PrivacyPolicyViewController.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */,
 				1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */,
 				1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */,
+				1B7BA2452179508C0016C395 /* PrivacyPolicyViewController.swift in Sources */,
 				1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */,
 				D180E13B216AB70B00F869A1 /* ImageDownloader.swift in Sources */,
 				1BA9D5CC1FDC476900D6E512 /* HomePostTableViewCell.swift in Sources */,
