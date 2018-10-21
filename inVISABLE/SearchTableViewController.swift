@@ -82,7 +82,7 @@ class SearchTableViewController: UITableViewController {
         guard let destination: MyPageTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myPage") as? MyPageTableViewController else { return }
         
         destination.user  = results?[indexPath.row]
-            navigationController?.pushViewController(destination, animated: true)
+        navigationController?.pushViewController(destination, animated: true)
     }
 }
 

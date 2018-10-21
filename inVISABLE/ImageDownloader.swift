@@ -48,7 +48,20 @@ class ImageDownloader {
         }
     }
     
-    func getImageData(for user: String) -> Data? {
+    func getImageData(for person: String, completion: @escaping (_ imageData: Data?) -> Void) {
+        database.reference().child("/users/\(person)/imagePath").observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? NSString, value.length > 0 else { return }
+            self.storage.reference().child(value as String).getData(maxSize: 8 * 2560 * 2560, completion: { (data, error) in
+                if let d = data {
+                    completion(d)
+                } else {
+                    completion(nil)
+                }
+            })
+        }
+    }
+    
+    func getCachedImageData(for user: String) -> Data? {
         guard let path = manifest[user] else { return nil }
         return cache.object(forKey: path) as? Data
     }

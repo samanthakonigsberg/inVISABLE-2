@@ -84,7 +84,7 @@ class HomeTableViewController: UITableViewController {
         if let cell = cell {
             cell.post = PostOffice.manager.feedPosts[indexPath.row]
             cell.nav = self.navigationController
-            if let data = ImageDownloader.downloader.getImageData(for: PostOffice.manager.feedPosts[indexPath.row].userId as String) {
+            if let data = ImageDownloader.downloader.getCachedImageData(for: PostOffice.manager.feedPosts[indexPath.row].userId as String) {
                 let image = UIImage(data: data)
                 cell.homeIconImage.image = image
             } else {

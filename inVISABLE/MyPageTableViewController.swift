@@ -56,7 +56,7 @@ class MyPageTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard let realUser = user else {
+        guard let realUser = user, let realID = realUser.id else {
             return
         }
         
@@ -64,13 +64,17 @@ class MyPageTableViewController: UITableViewController {
             image = realUserImage
         } else if realUser.imageRef.length > 0, let data = ImageDownloader.downloader.cache.object(forKey: realUser.imageRef) as? Data {
             image = UIImage(data: data)
+        } else {
+            ImageDownloader.downloader.getImageData(for: realID) { (data) in
+                if let imageData = data, let downloadedImage = UIImage(data: imageData) {
+                    self.image = downloadedImage
+                    self.tableView.reloadData()
+                }
+            }
         }
         
-        if let realID = realUser.id {
-            PostOffice.manager.requestUserPosts(for:(realID)) { (success) in
-                self.tableView.reloadData()
-            }
-            tableView.reloadData()
+        PostOffice.manager.requestUserPosts(for:(realID)) { (success) in
+            self.tableView.reloadData()
         }
         tableView.reloadData()
     }

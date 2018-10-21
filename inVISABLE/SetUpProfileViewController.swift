@@ -82,7 +82,7 @@ class SetUpProfileViewController: UIViewController, UINavigationControllerDelega
         bioTextView.text = defaultText
         bioTextView.textColor = UIColor.lightGray
         profilePicture.roundedImage()
-        if let user = INUser.shared.user, let imageData = ImageDownloader.downloader.getImageData(for: user.uid) {
+        if let user = INUser.shared.user, let imageData = ImageDownloader.downloader.getCachedImageData(for: user.uid) {
             let image = UIImage(data: imageData)
             INUser.shared.image = image
         }
