@@ -35,9 +35,6 @@ class MyPageTableViewController: UITableViewController {
             navigationItem.titleView = view
         }
         if let imageRight = UIImage(named: "+POST"){
-            
-            //create a container view with specific frame
-            //insert code below but it in container
             navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: imageRight, style: .plain, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
         }
         
@@ -46,9 +43,18 @@ class MyPageTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
         navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
         if let user = user, INUser.shared.name == user.name {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout)) }
-    UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyPageTableViewController.logout))
+            if let imageRight = UIImage(named: "+POST"){
+                navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: imageRight, style: .plain, target: self, action: #selector(MyPageTableViewController.presentNewPostVC))
+            }
+        } else {
+            if let imageRight = UIImage(named: "reportUser") {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: imageRight, style: .plain, target: self, action: #selector(MyPageTableViewController.reportUser))
+            }
+        }
+        UIBarButtonItem.appearance().setTitleTextAttributes([ NSAttributedStringKey.font : UIFont(name: "Rucksack-Medium", size: 16.0) as Any], for: UIControlState.normal)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         guard let realUser = user else {
             return
@@ -94,12 +100,15 @@ class MyPageTableViewController: UITableViewController {
         
             guard let realUser = user else {  return cell!}
             if let cell = cell {
+                cell.user = realUser
                 cell.profileCellBio.text = realUser.bio as String
                 cell.profileCellName.text = realUser.name as String
                 cell.profileCellNumberOfFollowers.text = "\(realUser.numFollowers)"
                 cell.profileCellNumberOfFollowing.text = "\(realUser.numFollowing)"
                 if let user = user, INUser.shared.name == user.name {
-                    cell.followButtonDesign.isHidden = true }
+                    cell.followButtonDesign.isHidden = true
+                }
+                
                 if let image = self.image {
                     cell.profileCellImage.image = image
                 }
@@ -145,5 +154,31 @@ class MyPageTableViewController: UITableViewController {
         
         PostOffice.manager.feedPosts.removeAll()
         PostOffice.manager.userPosts.removeAll()
+    }
+    
+    @objc fileprivate func reportUser() {
+        if let u = user, let id = u.id {
+            let alert = UIAlertController(title: "Report a user", message: "Are you sure you want to report this user?", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Yes", style: .default) { (action) in
+                let secondAlert = UIAlertController(title: "Provide a reason to report user", message: nil, preferredStyle: .alert)
+                secondAlert.addTextField(configurationHandler: { (textField) in
+                    textField.placeholder = "Reason for reporting"
+                })
+                let submitAction = UIAlertAction(title: "Submit", style: .default, handler: { (alert) in
+                    guard let textFields = secondAlert.textFields, let reasonTextField = textFields.first, textFields.count == 1, let text = reasonTextField.text, let currentUser = INUser.shared.user else { return }
+                    FirebaseManager.shared.reportUser(id, reporter: currentUser.uid, reason: text)
+                })
+                let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+                secondAlert.addAction(submitAction)
+                secondAlert.addAction(cancel)
+                self.dismiss(animated: true, completion: nil)
+                self.present(secondAlert, animated: true, completion: nil)
+            }
+            let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+            alert.addAction(action)
+            alert.addAction(cancel)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

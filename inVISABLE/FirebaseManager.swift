@@ -134,12 +134,20 @@ class FirebaseManager {
         }
     }
     
-    func reportUser(_ userId: String) {
-        reference.child("reports").child("users").child(userId)
+    func reportUser(_ reportedUser: String, reporter: String, reason: String) {
+        let report = ["reportFor": reportedUser as NSString,
+                      "reportedBy": reporter as NSString,
+                      "reason": reason as NSString]
+        reference.child("reports").child("users").childByAutoId().updateChildValues(report)
     }
     
-    func reportPost(_ userId: String, post: String) {
-        reference.child("reports").child("posts").childByAutoId().updateChildValues(["user": userId, "post": post])
+    func reportPost(_ reporter: String, post: FeedPost, reason: String) {
+        let report = ["postId": post.postId,
+                      "reportedPost": post.post,
+                      "reportedUser": post.userId,
+                      "reportedBy": reporter as NSString,
+                      "reason": reason as NSString]
+        reference.child("reports").child("posts").childByAutoId().updateChildValues(report)
     }
     
     func store(_ image: UIImage) {

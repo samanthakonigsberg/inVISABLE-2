@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1s-jd-LFw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Pz4-C6-vx0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -384,39 +387,53 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="xYl-U8-Gvt">
-                                            <rect key="frame" x="29" y="10" width="24" height="24"/>
+                                            <rect key="frame" x="20" y="10" width="40" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="fzT-2H-bkz"/>
-                                                <constraint firstAttribute="height" constant="24" id="tax-Qb-2hk"/>
+                                                <constraint firstAttribute="width" constant="40" id="fzT-2H-bkz"/>
+                                                <constraint firstAttribute="height" constant="40" id="tax-Qb-2hk"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-VY-M69">
-                                            <rect key="frame" x="29" y="38" width="346" height="71"/>
+                                            <rect key="frame" x="20" y="54" width="346" height="48.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="71" id="bzi-Qo-tcK"/>
                                                 <constraint firstAttribute="width" constant="346" id="k5D-9U-XqT"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBe-xH-dXc">
-                                            <rect key="frame" x="61" y="16" width="48" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBe-xH-dXc">
+                                            <rect key="frame" x="68" y="22" width="35" height="16"/>
                                             <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cye-vi-1mB">
+                                            <rect key="frame" x="339" y="20" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="8yh-NY-peX"/>
+                                                <constraint firstAttribute="width" secondItem="cye-vi-1mB" secondAttribute="height" multiplier="1:1" id="sIc-4w-TSp"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="flag"/>
+                                            <connections>
+                                                <action selector="reportWasTapped:" destination="8Js-Vm-fJU" eventType="touchUpInside" id="v4B-qu-VmB"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NCf-VY-M69" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="29" id="1z0-Pd-8RF"/>
+                                        <constraint firstItem="NCf-VY-M69" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="20" id="1z0-Pd-8RF"/>
+                                        <constraint firstAttribute="trailing" secondItem="cye-vi-1mB" secondAttribute="trailing" constant="16" id="5qn-67-U3h"/>
+                                        <constraint firstItem="cye-vi-1mB" firstAttribute="centerY" secondItem="xYl-U8-Gvt" secondAttribute="centerY" id="D33-7f-RHe"/>
                                         <constraint firstItem="xYl-U8-Gvt" firstAttribute="top" secondItem="uy7-Mb-2y1" secondAttribute="top" constant="10" id="MgJ-9c-wqU"/>
                                         <constraint firstItem="RBe-xH-dXc" firstAttribute="leading" secondItem="xYl-U8-Gvt" secondAttribute="trailing" constant="8" id="P2N-hR-1At"/>
-                                        <constraint firstItem="RBe-xH-dXc" firstAttribute="top" secondItem="uy7-Mb-2y1" secondAttribute="top" constant="16" id="P7N-MZ-Of5"/>
-                                        <constraint firstItem="xYl-U8-Gvt" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="29" id="doN-zz-b81"/>
+                                        <constraint firstItem="RBe-xH-dXc" firstAttribute="centerY" secondItem="xYl-U8-Gvt" secondAttribute="centerY" id="c6O-2x-UdE"/>
+                                        <constraint firstItem="xYl-U8-Gvt" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="20" id="doN-zz-b81"/>
                                         <constraint firstItem="NCf-VY-M69" firstAttribute="top" secondItem="xYl-U8-Gvt" secondAttribute="bottom" constant="4" id="jHu-WY-64c"/>
+                                        <constraint firstAttribute="bottom" secondItem="NCf-VY-M69" secondAttribute="bottom" constant="10" id="tvd-M6-B3y"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="flagButton" destination="cye-vi-1mB" id="ofH-8A-0PU"/>
                                     <outlet property="homeIconImage" destination="xYl-U8-Gvt" id="t8a-0o-Ndb"/>
                                     <outlet property="homeNameLabel" destination="RBe-xH-dXc" id="JBL-ih-Ehl"/>
                                     <outlet property="homePostLabel" destination="NCf-VY-M69" id="wLo-Pe-lbd"/>
@@ -677,7 +694,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2R-ku-suh">
-                                            <rect key="frame" x="29" y="172.5" width="351" height="70"/>
+                                            <rect key="frame" x="12" y="172.5" width="351" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="PqG-dN-Mkm"/>
                                                 <constraint firstAttribute="width" constant="351" id="U4m-ly-X95"/>
@@ -704,9 +721,8 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JMg-21-TBl">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JMg-21-TBl">
                                             <rect key="frame" x="219" y="54" width="12" height="41"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sue-gd-O3f">
                                                     <rect key="frame" x="0.0" y="0.0" width="12" height="20.5"/>
@@ -722,10 +738,12 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-H2-CX4">
-                                            <rect key="frame" x="219" y="109" width="94" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-H2-CX4">
+                                            <rect key="frame" x="213" y="109" width="100" height="30"/>
                                             <color key="backgroundColor" name="ActionNew"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="2rS-aY-bfx"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="RuckSack-Medium" family="RuckSack" pointSize="15"/>
                                             <state key="normal" title="Follow">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -738,12 +756,16 @@
                                     <constraints>
                                         <constraint firstItem="bRZ-l1-c9U" firstAttribute="leading" secondItem="zHX-kC-YHM" secondAttribute="leadingMargin" constant="13" id="8F9-Wk-oBF"/>
                                         <constraint firstItem="V2R-ku-suh" firstAttribute="top" secondItem="iFR-fV-0Zh" secondAttribute="bottom" constant="8" id="DFx-zt-PzW"/>
+                                        <constraint firstItem="V2R-ku-suh" firstAttribute="centerX" secondItem="zHX-kC-YHM" secondAttribute="centerX" id="Db9-Xh-jE7"/>
                                         <constraint firstItem="HUq-oQ-THK" firstAttribute="leading" secondItem="sue-gd-O3f" secondAttribute="trailing" constant="16" id="Etp-Zv-qpa"/>
+                                        <constraint firstAttribute="trailing" secondItem="oo9-H2-CX4" secondAttribute="trailing" constant="62" id="IHm-hn-hUk"/>
                                         <constraint firstAttribute="trailing" secondItem="HUq-oQ-THK" secondAttribute="trailing" constant="62" id="MLg-xb-sXQ"/>
                                         <constraint firstItem="iFR-fV-0Zh" firstAttribute="top" secondItem="bRZ-l1-c9U" secondAttribute="bottom" constant="8" id="Mb7-KY-nU0"/>
-                                        <constraint firstItem="V2R-ku-suh" firstAttribute="leading" secondItem="zHX-kC-YHM" secondAttribute="leadingMargin" constant="13" id="NUG-WO-4jg"/>
                                         <constraint firstItem="bRZ-l1-c9U" firstAttribute="top" secondItem="zHX-kC-YHM" secondAttribute="top" constant="20" id="Te4-JY-cRq"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iFR-fV-0Zh" secondAttribute="trailingMargin" id="YK3-eP-Raj"/>
                                         <constraint firstItem="vz8-u6-GJ4" firstAttribute="top" secondItem="zHX-kC-YHM" secondAttribute="top" constant="56" id="adv-4Y-HGj"/>
+                                        <constraint firstItem="oo9-H2-CX4" firstAttribute="top" secondItem="JMg-21-TBl" secondAttribute="bottom" constant="14" id="deg-39-4n2"/>
+                                        <constraint firstItem="oo9-H2-CX4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zHX-kC-YHM" secondAttribute="leading" constant="20" symbolic="YES" id="hD5-Or-dPk"/>
                                         <constraint firstItem="iFR-fV-0Zh" firstAttribute="leading" secondItem="zHX-kC-YHM" secondAttribute="leadingMargin" constant="13" id="mRH-4Z-fld"/>
                                         <constraint firstItem="sue-gd-O3f" firstAttribute="top" secondItem="zHX-kC-YHM" secondAttribute="top" constant="54" id="rqU-Au-Dqb"/>
                                     </constraints>
@@ -781,8 +803,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-1C-ddQ">
-                                            <rect key="frame" x="61" y="13" width="47" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-1C-ddQ">
+                                            <rect key="frame" x="61" y="13" width="35" height="16"/>
                                             <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -791,10 +813,11 @@
                                     <constraints>
                                         <constraint firstItem="PAj-rG-JgN" firstAttribute="leading" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" constant="13" id="2q7-lJ-xOj"/>
                                         <constraint firstItem="oDE-1C-ddQ" firstAttribute="leading" secondItem="PAj-rG-JgN" secondAttribute="trailing" constant="8" id="P4c-tF-OlJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="QXw-9s-Gc0" secondAttribute="trailingMargin" constant="8" id="SL9-c7-2VK"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oDE-1C-ddQ" secondAttribute="trailing" constant="20" symbolic="YES" id="aOa-MJ-4Rs"/>
                                         <constraint firstItem="oDE-1C-ddQ" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="top" constant="13" id="dHi-KJ-VC3"/>
                                         <constraint firstItem="QXw-9s-Gc0" firstAttribute="top" secondItem="PAj-rG-JgN" secondAttribute="bottom" constant="6" id="oTj-1B-jrC"/>
-                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="leading" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" constant="13" id="s1S-UQ-Uyz"/>
+                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" id="s1S-UQ-Uyz"/>
                                         <constraint firstItem="PAj-rG-JgN" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="topMargin" constant="-3" id="tuc-Bz-vNt"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -929,7 +952,7 @@ Cgo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">Effective date: October 13, 2018
+                                        <string key="content">Effective date: October 13, 2018
 
 inVISABLE ("us", "we", or "our") operates the website and the inVISABLE mobile application (the “Service").
 
@@ -937,7 +960,7 @@ This page informs you of our policies regarding the collection, use, and disclos
 
 We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -982,15 +1005,7 @@ Cgo
                                     </fragment>
                                     <fragment>
                                         <string key="content">Personal Data
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="13" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="13" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">
+
 While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
      .Email address
      .First name and last name
@@ -998,15 +1013,7 @@ While using our Service, we may ask you to provide us with certain personally id
 
 
 Usage Data
-We may also collect information that your browser sends </mutableString>
-                                        <attributes>
-                                            <font key="NSFont" size="13" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="13" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">whenever you visit our Service or when you access the Service by or through a mobile device ("Usage Data”).
+We may also collect information that your browser sends whenever you visit our Service or when you access the Service by or through a mobile device ("Usage Data”).
 
 This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
 
@@ -1022,7 +1029,7 @@ You can instruct your browser to refuse all cookies or to indicate when a cookie
 
 Examples of Cookies we use:
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1118,15 +1125,8 @@ inVISABLE uses the collected data for various purposes:
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="To notify you about ">
-                                        <attributes>
-                                            <font key="NSFont" size="13" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="13" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
                                     <fragment>
-                                        <string key="content">changes to our Service
+                                        <string key="content">To notify you about changes to our Service
 </string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
@@ -1226,7 +1226,7 @@ Cgo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
 
 If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.
@@ -1235,7 +1235,7 @@ Your consent to this Privacy Policy followed by your submission of such informat
 
 inVISABLE will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1373,9 +1373,9 @@ Cgo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+                                        <string key="content">The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1401,10 +1401,10 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
+                                        <string key="content">We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
 
 These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1601,10 +1601,10 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">We also encourage you to review the Google's policy for safeguarding your data: 
+                                        <string key="content">We also encourage you to review the Google's policy for safeguarding your data: 
 https://support.google.com/analytics/answer/6004245. For more information on what type of information Firebase collects, please visit please visit the Google Privacy &amp; Terms web page:
 https://policies.google.com/privacy?hl=en
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1639,11 +1639,11 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
+                                        <string key="content">Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
 
 We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1667,11 +1667,11 @@ Cgo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">Our Service does not address anyone under the age of 18 (“Children").
+                                        <string key="content">Our Service does not address anyone under the age of 18 (“Children").
 
 We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1686,7 +1686,7 @@ We do not knowingly collect personally identifiable information from anyone unde
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
 
@@ -1694,7 +1694,7 @@ We will let you know via email and/or a prominent notice on our Service, prior t
 
 You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="13" name="Helvetica"/>
@@ -1881,6 +1881,7 @@ By visiting this page on our website: https://www.invisablewestand.com</string>
         <image name="Profile_HighDef" width="1200" height="1200"/>
         <image name="Search" width="38" height="38"/>
         <image name="Settings" width="38" height="38"/>
+        <image name="flag" width="1200" height="1200"/>
         <namedColor name="ActionNew">
             <color red="0.2196078431372549" green="0.31764705882352939" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -16,6 +16,7 @@ struct UserPost {
 }
 
 struct FeedPost {
+    var postId: NSString
     var date: Date
     var post: NSString
     var name: NSString

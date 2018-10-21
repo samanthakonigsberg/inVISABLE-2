@@ -11,6 +11,7 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
     var user : INUser?
+    var navController: UINavigationController?
    
     @IBAction func followButton(_ sender: UIButton) {
         if let u = user, let id = u.id {
