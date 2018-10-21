@@ -20,6 +20,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
   
+    @IBAction func privacyButton(_ sender: Any) {
+       
+    }
     
     override func viewDidLoad() {
         loginButton.layer.cornerRadius = 10
