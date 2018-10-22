@@ -803,24 +803,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" translatesAutoresizingMaskIntoConstraints="NO" id="PAj-rG-JgN">
-                                            <rect key="frame" x="29" y="8" width="24" height="24"/>
+                                            <rect key="frame" x="29" y="21" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="VlR-q2-ZVj"/>
-                                                <constraint firstAttribute="height" constant="24" id="k9w-Cc-8p4"/>
+                                                <constraint firstAttribute="width" constant="35" id="VlR-q2-ZVj" userLabel="width = 40"/>
+                                                <constraint firstAttribute="width" secondItem="PAj-rG-JgN" secondAttribute="height" multiplier="1:1" id="Wbc-ea-C2i"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXw-9s-Gc0">
-                                            <rect key="frame" x="29" y="38" width="346" height="71"/>
+                                            <rect key="frame" x="28.5" y="56" width="318.5" height="71"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="71" id="JPJ-yp-U88"/>
-                                                <constraint firstAttribute="width" constant="346" id="Utz-E4-tYC"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-1C-ddQ">
-                                            <rect key="frame" x="61" y="13" width="35" height="16"/>
+                                            <rect key="frame" x="72" y="30.5" width="35" height="16"/>
                                             <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -828,13 +827,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="PAj-rG-JgN" firstAttribute="leading" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" constant="13" id="2q7-lJ-xOj"/>
+                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="centerX" secondItem="Mr9-Cp-Jff" secondAttribute="centerX" id="NkX-Zf-nbB"/>
+                                        <constraint firstItem="oDE-1C-ddQ" firstAttribute="centerY" secondItem="PAj-rG-JgN" secondAttribute="centerY" id="OCf-mB-Sur"/>
                                         <constraint firstItem="oDE-1C-ddQ" firstAttribute="leading" secondItem="PAj-rG-JgN" secondAttribute="trailing" constant="8" id="P4c-tF-OlJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="QXw-9s-Gc0" secondAttribute="trailingMargin" constant="8" id="SL9-c7-2VK"/>
+                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="width" secondItem="Mr9-Cp-Jff" secondAttribute="width" multiplier="0.85" id="XyI-2A-ntz"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oDE-1C-ddQ" secondAttribute="trailing" constant="20" symbolic="YES" id="aOa-MJ-4Rs"/>
-                                        <constraint firstItem="oDE-1C-ddQ" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="top" constant="13" id="dHi-KJ-VC3"/>
-                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="top" secondItem="PAj-rG-JgN" secondAttribute="bottom" constant="6" id="oTj-1B-jrC"/>
-                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mr9-Cp-Jff" secondAttribute="leadingMargin" id="s1S-UQ-Uyz"/>
-                                        <constraint firstItem="PAj-rG-JgN" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="topMargin" constant="-3" id="tuc-Bz-vNt"/>
+                                        <constraint firstItem="QXw-9s-Gc0" firstAttribute="top" secondItem="PAj-rG-JgN" secondAttribute="bottom" id="oTj-1B-jrC"/>
+                                        <constraint firstItem="PAj-rG-JgN" firstAttribute="top" secondItem="Mr9-Cp-Jff" secondAttribute="topMargin" constant="10" id="tuc-Bz-vNt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
