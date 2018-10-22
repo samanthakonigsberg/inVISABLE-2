@@ -115,9 +115,15 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row ==  PostOffice.manager.feedPosts.count {
-            //presentNewPostVC()
-        }
+        let post = PostOffice.manager.feedPosts[indexPath.row]
+        var u = INUser.init()
+        u.id = post.userId as String
+        u.name = post.name
+        
+        guard let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myPage") as? MyPageTableViewController
+            else { return }
+        destination.user = u
+        navigationController?.pushViewController(destination, animated: true)
     }
     
    
