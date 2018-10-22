@@ -21,7 +21,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
   
     @IBAction func privacyButton(_ sender: Any) {
-       
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "privacyPolicyNav")
+        self.present(controller, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

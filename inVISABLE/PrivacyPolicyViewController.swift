@@ -16,8 +16,10 @@ class PrivacyPolicyViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor(named: "ActionNew")
         navigationController?.navigationBar.barTintColor = UIColor(white: 1.0, alpha: 1.0)
-        // Do any additional setup after loading the view.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(PrivacyPolicyViewController.dismissVC))
+        
+        if let p = parent, p.isBeingPresented {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(PrivacyPolicyViewController.dismissVC))
+        }
         
     }
     @objc fileprivate func dismissVC() {

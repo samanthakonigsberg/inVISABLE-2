@@ -17,3 +17,11 @@ class ExtendedFormSelectionCell: FormSelectorCell {
 
     }
 }
+
+class ExtendedFormButtonCell: FormButtonCell {
+    override func update() {
+        super.update()
+        titleLabel.font = UIFont(name: "Rucksack-Bold", size: 18.0)
+        titleLabel.textColor = UIColor(named: "ActionNew")
+    }
+}

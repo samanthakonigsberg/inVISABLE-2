@@ -39,6 +39,8 @@
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
 		D11216102009ACCE00794D00 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112160F2009ACCE00794D00 /* FirebaseManager.swift */; };
+		D1371882217D51F800850C07 /* UpdateNamePasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1371881217D51F800850C07 /* UpdateNamePasswordTableViewController.swift */; };
+		D1371884217D60B300850C07 /* ConfirmCurrentFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1371883217D60B300850C07 /* ConfirmCurrentFormTextFieldCell.swift */; };
 		D140EE88201C2286006A3883 /* PostOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140EE87201C2286006A3883 /* PostOffice.swift */; };
 		D1639D6E2112896C00E4AAEF /* RuskSack-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D682112896B00E4AAEF /* RuskSack-Bold.otf */; };
 		D1639D6F2112896C00E4AAEF /* RuckSack-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1639D692112896B00E4AAEF /* RuckSack-Medium.otf */; };
@@ -115,6 +117,8 @@
 		C70A4B75900710227E56B562 /* Pods-inVISABLETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLETests/Pods-inVISABLETests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD6062F53D8004B0C3A44FCE /* Pods-inVISABLETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLETests/Pods-inVISABLETests.release.xcconfig"; sourceTree = "<group>"; };
 		D112160F2009ACCE00794D00 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		D1371881217D51F800850C07 /* UpdateNamePasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNamePasswordTableViewController.swift; sourceTree = "<group>"; };
+		D1371883217D60B300850C07 /* ConfirmCurrentFormTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCurrentFormTextFieldCell.swift; sourceTree = "<group>"; };
 		D140EE87201C2286006A3883 /* PostOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOffice.swift; sourceTree = "<group>"; };
 		D1639D682112896B00E4AAEF /* RuskSack-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuskSack-Bold.otf"; sourceTree = "<group>"; };
 		D1639D692112896B00E4AAEF /* RuckSack-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuckSack-Medium.otf"; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				1B0C10D02162DA550071FE9A /* onBoardingViewController.swift */,
 				D180E13A216AB70B00F869A1 /* ImageDownloader.swift */,
 				1B7BA2442179508C0016C395 /* PrivacyPolicyViewController.swift */,
+				D1371881217D51F800850C07 /* UpdateNamePasswordTableViewController.swift */,
+				D1371883217D60B300850C07 /* ConfirmCurrentFormTextFieldCell.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 				D1639D7D211291B700E4AAEF /* SearchResultTableViewCell.swift in Sources */,
 				1B161FA120261B3900DA4752 /* BaseViewController.swift in Sources */,
 				D1639D7B21128F2900E4AAEF /* SearchTableViewController.swift in Sources */,
+				D1371882217D51F800850C07 /* UpdateNamePasswordTableViewController.swift in Sources */,
 				1BFB73312152DFB000EF79C8 /* ViewController.swift in Sources */,
 				1B36871F1FDC43CD00CC734D /* AppDelegate.swift in Sources */,
 				D140EE88201C2286006A3883 /* PostOffice.swift in Sources */,
@@ -533,6 +540,7 @@
 				D11216102009ACCE00794D00 /* FirebaseManager.swift in Sources */,
 				1BA9D5E91FDC477D00D6E512 /* User.swift in Sources */,
 				1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */,
+				D1371884217D60B300850C07 /* ConfirmCurrentFormTextFieldCell.swift in Sources */,
 				1BA9D5EA1FDC477D00D6E512 /* NewPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
