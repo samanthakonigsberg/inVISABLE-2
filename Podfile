@@ -11,7 +11,7 @@ target 'inVISABLE' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'SwiftForms', '~> 1.8'
-  pod 'NVActivityIndicatorView'
+  
 
   target 'inVISABLETests' do
     inherit! :search_paths

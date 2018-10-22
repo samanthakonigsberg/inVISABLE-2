@@ -26,7 +26,9 @@ class LoginViewController: UIViewController {
         self.present(controller, animated: true, completion: nil)
     }
     
+  
     override func viewDidLoad() {
+        
         loginButton.layer.cornerRadius = 10
         signUpButton.layer.cornerRadius = 10
         forgotPasswordButton.layer.cornerRadius = 10
