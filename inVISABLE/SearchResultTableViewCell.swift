@@ -20,6 +20,14 @@ class SearchResultTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let u = user, let id = u.id else { return }
+        if INUser.shared.following.contains(id) {
+            followButtonDesign.setTitle("Unfollow", for: .normal)
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
        
