@@ -282,9 +282,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Picture:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCN-YR-5dq">
                                 <rect key="frame" x="117.5" y="257" width="140" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="dR9-dd-Rd5"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="RuckSack-Bold" family="RuckSack" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -299,14 +296,24 @@
                                     <constraint firstAttribute="height" constant="183" id="VMx-V4-SE4"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4tx-Y9-faa">
-                                <rect key="frame" x="128" y="489" width="119" height="69"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-RJ-VMl">
+                                <rect key="frame" x="67.5" y="114" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="FXI-7n-8XP"/>
+                                    <constraint firstAttribute="height" constant="128" id="IEk-uj-fsT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mn2-NN-KGT">
+                                <rect key="frame" x="75" y="477" width="225" height="72"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="feP-vx-gpI">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N4L-KA-UCe">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPq-Xy-OVS">
-                                                <rect key="frame" x="0.0" y="0.0" width="57" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="32"/>
                                                 <color key="backgroundColor" name="ActionNew"/>
                                                 <fontDescription key="fontDescription" name="RuckSack-Medium" family="RuckSack" pointSize="16"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -318,7 +325,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-CR-5P0">
-                                                <rect key="frame" x="62" y="0.0" width="57" height="32"/>
+                                                <rect key="frame" x="117" y="0.0" width="108" height="32"/>
                                                 <color key="backgroundColor" name="ActionNew"/>
                                                 <fontDescription key="fontDescription" name="RuckSack-Medium" family="RuckSack" pointSize="16"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -330,9 +337,12 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Qr5-CR-5P0" firstAttribute="width" secondItem="N4L-KA-UCe" secondAttribute="width" multiplier="0.48" id="vgs-8q-3pY"/>
+                                        </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-Lf-vEO">
-                                        <rect key="frame" x="0.0" y="37" width="119" height="32"/>
+                                        <rect key="frame" x="0.0" y="40" width="225" height="32"/>
                                         <color key="backgroundColor" name="ActionNew"/>
                                         <fontDescription key="fontDescription" name="RuckSack-Medium" family="RuckSack" pointSize="16"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -345,34 +355,26 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="2Pc-Lf-vEO" firstAttribute="width" secondItem="feP-vx-gpI" secondAttribute="width" id="TUF-D8-HeH"/>
-                                    <constraint firstAttribute="height" constant="69" id="e4T-9w-eSs"/>
+                                    <constraint firstItem="2Pc-Lf-vEO" firstAttribute="width" secondItem="mn2-NN-KGT" secondAttribute="width" id="cTW-Ry-F1K"/>
+                                    <constraint firstItem="N4L-KA-UCe" firstAttribute="width" secondItem="mn2-NN-KGT" secondAttribute="width" id="kYw-xL-jI2"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-RJ-VMl">
-                                <rect key="frame" x="67.5" y="114" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="FXI-7n-8XP"/>
-                                    <constraint firstAttribute="height" constant="128" id="IEk-uj-fsT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mn2-NN-KGT" firstAttribute="top" secondItem="kOg-pY-F7Z" secondAttribute="bottom" constant="8" id="2XG-t1-sju"/>
                             <constraint firstItem="bCN-YR-5dq" firstAttribute="centerX" secondItem="hFf-O2-cyh" secondAttribute="centerX" id="6ON-fc-LKv"/>
-                            <constraint firstItem="kOg-pY-F7Z" firstAttribute="top" secondItem="bCN-YR-5dq" secondAttribute="bottom" constant="5" id="80Z-WJ-leB"/>
-                            <constraint firstItem="4tx-Y9-faa" firstAttribute="top" secondItem="kOg-pY-F7Z" secondAttribute="bottom" constant="20" id="Bek-kn-cSI"/>
-                            <constraint firstItem="bCN-YR-5dq" firstAttribute="top" secondItem="k1z-RJ-VMl" secondAttribute="bottom" constant="15" id="EkC-8Z-VUU"/>
+                            <constraint firstItem="mn2-NN-KGT" firstAttribute="centerX" secondItem="hFf-O2-cyh" secondAttribute="centerX" id="Ca0-p9-Zac"/>
+                            <constraint firstItem="N4L-KA-UCe" firstAttribute="top" secondItem="kOg-pY-F7Z" secondAttribute="bottom" constant="8" id="G1C-dh-IIK"/>
+                            <constraint firstItem="09n-FM-0jw" firstAttribute="top" secondItem="2Pc-Lf-vEO" secondAttribute="bottom" constant="25" id="GkG-55-Y9D"/>
                             <constraint firstItem="k1z-RJ-VMl" firstAttribute="centerX" secondItem="hFf-O2-cyh" secondAttribute="centerX" id="LdJ-pi-aZG"/>
-                            <constraint firstItem="oth-gd-7ia" firstAttribute="top" secondItem="zaE-B0-gDJ" secondAttribute="bottom" constant="18" id="QvM-SL-J8y"/>
                             <constraint firstItem="kOg-pY-F7Z" firstAttribute="centerX" secondItem="hFf-O2-cyh" secondAttribute="centerX" id="SVI-id-XUD"/>
-                            <constraint firstItem="k1z-RJ-VMl" firstAttribute="top" secondItem="oth-gd-7ia" secondAttribute="bottom" constant="8" id="YaM-xZ-QIk"/>
+                            <constraint firstItem="oth-gd-7ia" firstAttribute="top" secondItem="zaE-B0-gDJ" secondAttribute="bottom" constant="18" id="Ykc-Sn-38D"/>
+                            <constraint firstItem="kOg-pY-F7Z" firstAttribute="top" secondItem="bCN-YR-5dq" secondAttribute="bottom" constant="5" id="ZnE-WS-cB1"/>
+                            <constraint firstItem="k1z-RJ-VMl" firstAttribute="top" secondItem="oth-gd-7ia" secondAttribute="bottom" constant="8" id="aBL-wW-0fO"/>
                             <constraint firstItem="oth-gd-7ia" firstAttribute="centerX" secondItem="hFf-O2-cyh" secondAttribute="centerX" id="bOK-Ip-4A0"/>
-                            <constraint firstItem="4tx-Y9-faa" firstAttribute="centerX" secondItem="hFf-O2-cyh" secondAttribute="centerX" id="cy0-J4-dJA"/>
-                            <constraint firstItem="09n-FM-0jw" firstAttribute="top" secondItem="4tx-Y9-faa" secondAttribute="bottom" constant="16" id="mr6-2F-eTh"/>
+                            <constraint firstAttribute="trailing" secondItem="2Pc-Lf-vEO" secondAttribute="trailing" constant="75" id="hUz-cT-Wzi"/>
+                            <constraint firstItem="mn2-NN-KGT" firstAttribute="width" secondItem="hFf-O2-cyh" secondAttribute="width" multiplier="0.6" id="ueV-Eb-l15"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -639,8 +641,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-o6-nnq">
-                                            <rect key="frame" x="16" y="11.5" width="45" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="16" y="12" width="46" height="20"/>
+                                            <fontDescription key="fontDescription" name="RuckSack-Demi" family="RuckSack" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -682,7 +684,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goi-ia-Ggq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2373.5999999999999" y="-880.20989505247383"/>
+            <point key="canvasLocation" x="2281" y="-880"/>
         </scene>
         <!--Search-->
         <scene sceneID="oUV-if-M3N">
@@ -1933,6 +1935,9 @@ By visiting this page on our website: https://www.invisablewestand.com</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7uH-sk-B0Z" kind="show" id="jjB-hB-d26"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1979,6 +1984,22 @@ By visiting this page on our website: https://www.invisablewestand.com</string>
             </objects>
             <point key="canvasLocation" x="5540" y="-944"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NOE-dn-W4g">
+            <objects>
+                <navigationController id="7uH-sk-B0Z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ao3-z7-Vyj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dm7-iE-AZT" kind="relationship" relationship="rootViewController" id="FEK-c7-rNO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OS-WR-ab7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5279" y="-128"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="kfk-av-frV">
             <objects>
@@ -2014,6 +2035,67 @@ By visiting this page on our website: https://www.invisablewestand.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZE-nN-MtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414.4000000000001" y="-1704.6476761619192"/>
+        </scene>
+        <!--Acknowledgements View Controller-->
+        <scene sceneID="Juw-Tb-gS4">
+            <objects>
+                <viewController id="Dm7-iE-AZT" customClass="AcknowledgementsViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1tZ-FJ-FHM"/>
+                        <viewControllerLayoutGuide type="bottom" id="noK-na-feJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="soM-An-kUe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VY0-k7-7Zt">
+                                <rect key="frame" x="0.0" y="87" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VY0-k7-7Zt" secondAttribute="height" multiplier="15:8" id="QWQ-lr-nkC"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="SwiftForms                                                               ">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                            <font key="NSOriginalFont" size="18" name="Helvetica"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">The MIT License (MIT)
+
+Copyright (c) 2014 Xmartlabs ( http://xmartlabs.com )
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="18" name="Helvetica"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Copyright (c) 2014 Miguel Ángel Ortuño ( ortuman@gmail.com )
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="18" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VY0-k7-7Zt" firstAttribute="top" secondItem="1tZ-FJ-FHM" secondAttribute="bottom" constant="23" id="SAF-L0-pQ0"/>
+                            <constraint firstItem="VY0-k7-7Zt" firstAttribute="centerX" secondItem="soM-An-kUe" secondAttribute="centerX" id="bsr-Ft-99g"/>
+                            <constraint firstItem="VY0-k7-7Zt" firstAttribute="width" secondItem="soM-An-kUe" secondAttribute="width" id="cDc-Gx-wEl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k0l-rH-hGj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIN-3x-qRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6005.6000000000004" y="-128.18590704647679"/>
         </scene>
     </scenes>
     <resources>

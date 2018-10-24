@@ -36,6 +36,7 @@
 		1BA9D5EF1FDC4A8500D6E512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */; };
 		1BA9D5F31FE582B900D6E512 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */; };
 		1BFB73312152DFB000EF79C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB73302152DFB000EF79C8 /* ViewController.swift */; };
+		1BFFAC4B217FDB170050196B /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFFAC4A217FDB170050196B /* AcknowledgementsViewController.swift */; };
 		9EEFEBB2302F760D43BA3D84 /* Pods_inVISABLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE3514805C908EEDF003207 /* Pods_inVISABLEUITests.framework */; };
 		C86BD1FF4F160EBB991A9E3F /* Pods_inVISABLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B93F0C7E99CBA646137AD3 /* Pods_inVISABLE.framework */; };
 		D11216102009ACCE00794D00 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112160F2009ACCE00794D00 /* FirebaseManager.swift */; };
@@ -109,6 +110,7 @@
 		1BA9D5EE1FDC4A8500D6E512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1BA9D5F21FE582B900D6E512 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		1BFB73302152DFB000EF79C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1BFFAC4A217FDB170050196B /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
 		25AC987BCC7A679E4DCC545A /* Pods_inVISABLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inVISABLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9D314021ABB467C0C8E1F1 /* Pods-inVISABLEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		43F81FE53000DD4942E30B22 /* Pods-inVISABLEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inVISABLEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inVISABLEUITests/Pods-inVISABLEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				1B7BA2442179508C0016C395 /* PrivacyPolicyViewController.swift */,
 				D1371881217D51F800850C07 /* UpdateNamePasswordTableViewController.swift */,
 				D1371883217D60B300850C07 /* ConfirmCurrentFormTextFieldCell.swift */,
+				1BFFAC4A217FDB170050196B /* AcknowledgementsViewController.swift */,
 			);
 			path = inVISABLE;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				1B0C10D12162DA550071FE9A /* onBoardingViewController.swift in Sources */,
 				D19FA25B200300570060F45A /* ExtendedFormTextFieldCell.swift in Sources */,
 				1BA9D5ED1FDC477D00D6E512 /* SetUpProfileViewController.swift in Sources */,
+				1BFFAC4B217FDB170050196B /* AcknowledgementsViewController.swift in Sources */,
 				1BA9D5CE1FDC476900D6E512 /* LoginViewController.swift in Sources */,
 				1B7BA2452179508C0016C395 /* PrivacyPolicyViewController.swift in Sources */,
 				1BA9D5D31FDC476900D6E512 /* MyPageTableViewController.swift in Sources */,
