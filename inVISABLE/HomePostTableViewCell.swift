@@ -17,7 +17,8 @@ class HomePostTableViewCell: UITableViewCell {
     @IBOutlet weak var homeNameLabel: UILabel!
     @IBOutlet weak var homeIconImage: UIImageView!
     @IBOutlet weak var homePostLabel: UILabel!
-
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         homeIconImage.roundedImage()
@@ -31,6 +32,16 @@ class HomePostTableViewCell: UITableViewCell {
         }
         homeNameLabel.text = p.name as String
         homePostLabel.text = p.post as String
+        
+        if Calendar.current.isDate(Date(), inSameDayAs: p.date) {
+            dateLabel.text = "Today".uppercased()
+        } else {
+            let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "MMMM d"
+            dateLabel.text = dateformatter.string(from: p.date).uppercased()
+        }
+        dateLabel.textColor = UIColor(white: 0.5, alpha: 1.0)
+        
         if var image = UIImage(named: "flag") {
             image = image.withRenderingMode(.alwaysTemplate)
             flagButton.imageView?.image = image
