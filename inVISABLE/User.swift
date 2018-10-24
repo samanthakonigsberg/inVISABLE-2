@@ -28,8 +28,12 @@ struct INUser {
     var imageRef: NSString
     var imageUrl: NSString
     var bio: NSString
-    var numFollowers: Int
-    var numFollowing: Int
+    var numFollowers: Int {
+        return followers.count
+    }
+    var numFollowing: Int {
+        return following.count
+    }
     var followers: NSArray
     var following: NSArray
     var illnesses: NSArray
@@ -45,8 +49,6 @@ struct INUser {
         imageRef = ""
         imageUrl = ""
         bio = ""
-        numFollowers = 0
-        numFollowing = 0
         followers = []
         following = []
         mutablePosts = []
@@ -76,8 +78,6 @@ struct INUser {
         self.mutablePosts = NSMutableArray(array: postsDictionary.allValues as NSArray)
         self.followers = dictionary[followersKey] as? NSArray ?? []
         self.following = dictionary[followingKey] as? NSArray ?? []
-        self.numFollowers = self.followers.count
-        self.numFollowing = self.following.count
         self.illnesses = dictionary[illnessesKey] as? NSArray ?? []
         self.interests = dictionary[interestsKey] as? NSArray ?? []
         self.name = dictionary[nameKey] as? NSString ?? ""
@@ -99,10 +99,3 @@ struct INUser {
          ]
     }
 }
-
-
-
-
-//class methods
-//instance methods
-//static function

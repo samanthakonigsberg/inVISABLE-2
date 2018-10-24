@@ -56,6 +56,11 @@ class MyPageTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if tabBarController?.selectedIndex == 2{
+            user = INUser.shared
+            user?.id = INUser.shared.user?.uid
+        }
+        
         guard let realUser = user, let realID = realUser.id else {
             return
         }
