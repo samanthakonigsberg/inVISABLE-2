@@ -275,7 +275,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oth-gd-7ia">
-                                <rect key="frame" x="170" y="82" width="35" height="24"/>
+
+                                <rect key="frame" x="170.5" y="82" width="35" height="24"/>
+
                                 <fontDescription key="fontDescription" name="RuckSack-Bold" family="RuckSack" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -395,16 +397,16 @@
         <scene sceneID="QKX-12-EQc">
             <objects>
                 <tableViewController id="rRC-LW-BbL" customClass="HomeTableViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" id="YNl-gE-KgW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="YNl-gE-KgW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HomePostCellID" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="113" id="8Js-Vm-fJU" customClass="HomePostTableViewCell" customModule="inVISABLE" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="113"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HomePostCellID" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="140" id="8Js-Vm-fJU" customClass="HomePostTableViewCell" customModule="inVISABLE" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Js-Vm-fJU" id="uy7-Mb-2y1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYl-U8-Gvt">
@@ -418,7 +420,11 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-VY-M69">
+<<<<<<< HEAD
                                             <rect key="frame" x="68" y="50.5" width="287" height="17"/>
+=======
+                                            <rect key="frame" x="68" y="46" width="287" height="17"/>
+>>>>>>> 517e51c2d1efffe00fa6bad30ef6d386fa63d876
                                             <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -441,7 +447,11 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBI-3G-I1X">
+<<<<<<< HEAD
                                             <rect key="frame" x="68" y="88" width="26" height="14.5"/>
+=======
+                                            <rect key="frame" x="68" y="115" width="26" height="14.5"/>
+>>>>>>> 517e51c2d1efffe00fa6bad30ef6d386fa63d876
                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -459,7 +469,7 @@
                                         <constraint firstItem="RBe-xH-dXc" firstAttribute="centerY" secondItem="xYl-U8-Gvt" secondAttribute="centerY" id="c6O-2x-UdE"/>
                                         <constraint firstItem="xYl-U8-Gvt" firstAttribute="leading" secondItem="uy7-Mb-2y1" secondAttribute="leading" constant="20" id="doN-zz-b81"/>
                                         <constraint firstAttribute="bottom" secondItem="wBI-3G-I1X" secondAttribute="bottom" constant="10" id="fSL-hA-bcN"/>
-                                        <constraint firstItem="NCf-VY-M69" firstAttribute="top" secondItem="RBe-xH-dXc" secondAttribute="bottom" constant="10" id="jHu-WY-64c"/>
+                                        <constraint firstItem="NCf-VY-M69" firstAttribute="top" secondItem="RBe-xH-dXc" secondAttribute="bottom" constant="5" id="jHu-WY-64c"/>
                                         <constraint firstAttribute="trailing" secondItem="NCf-VY-M69" secondAttribute="trailing" constant="20" id="yyY-Jm-bSR"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -715,7 +725,7 @@
         <scene sceneID="fhT-Zc-evk">
             <objects>
                 <tableViewController storyboardIdentifier="myPage" id="nu5-Ub-sFE" customClass="MyPageTableViewController" customModule="inVISABLE" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pne-FC-wKi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="pne-FC-wKi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -826,11 +836,19 @@
                                     <outlet property="profileCellNumberOfFollowing" destination="sue-gd-O3f" id="P0W-hq-Uta"/>
                                 </connections>
                             </tableViewCell>
+<<<<<<< HEAD
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellID" rowHeight="158" id="nfX-rv-MRY" customClass="PostTableViewCell" customModule="inVISABLE">
                                 <rect key="frame" x="0.0" y="296" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nfX-rv-MRY" id="Mr9-Cp-Jff">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
+=======
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCellID" rowHeight="150" id="nfX-rv-MRY" customClass="PostTableViewCell" customModule="inVISABLE">
+                                <rect key="frame" x="0.0" y="296" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nfX-rv-MRY" id="Mr9-Cp-Jff">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+>>>>>>> 517e51c2d1efffe00fa6bad30ef6d386fa63d876
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAj-rG-JgN">
@@ -856,7 +874,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVs-gR-iib" userLabel="Date">
+<<<<<<< HEAD
                                             <rect key="frame" x="72" y="132.5" width="26" height="15"/>
+=======
+                                            <rect key="frame" x="72" y="124.5" width="26" height="15"/>
+>>>>>>> 517e51c2d1efffe00fa6bad30ef6d386fa63d876
                                             <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -933,8 +955,8 @@
                                 <fontDescription key="fontDescription" name="RuckSack-Book" family="RuckSack" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Profile_HighDef" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-cu-MGV">
-                                <rect key="frame" x="66" y="104" width="40" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_HighDef" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-cu-MGV">
+                                <rect key="frame" x="52" y="104" width="40" height="40"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -943,9 +965,17 @@
                                     <constraint firstAttribute="width" constant="40" id="vBp-pc-eEs"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Z-BF-EUz">
+                                <rect key="frame" x="53" y="152" width="38.5" height="17"/>
+                                <fontDescription key="fontDescription" name="RuckSack-Bold" family="RuckSack" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="j0Z-BF-EUz" firstAttribute="top" secondItem="ETK-cu-MGV" secondAttribute="bottom" constant="8" id="1bR-dr-xrn"/>
+                            <constraint firstItem="j0Z-BF-EUz" firstAttribute="centerX" secondItem="ETK-cu-MGV" secondAttribute="centerX" id="D8x-6Q-gFw"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="40" id="FFh-DV-SmD"/>
                             <constraint firstItem="ETK-cu-MGV" firstAttribute="top" secondItem="C9e-5I-ywP" secondAttribute="bottom" constant="40" id="GCR-xk-Tpt"/>
                             <constraint firstItem="xfU-yr-AlO" firstAttribute="centerX" secondItem="CBy-14-RXp" secondAttribute="centerX" id="eHd-t0-Ktd"/>
@@ -955,6 +985,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Sq-m4-ANr"/>
                     <connections>
+                        <outlet property="countLabel" destination="j0Z-BF-EUz" id="jYW-Ah-Hyb"/>
                         <outlet property="newPostTextView" destination="xfU-yr-AlO" id="jVc-5g-2d0"/>
                         <outlet property="profilePicture" destination="ETK-cu-MGV" id="VIg-zU-RsP"/>
                     </connections>

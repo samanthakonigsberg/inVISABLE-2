@@ -10,10 +10,9 @@ import UIKit
 
 class NewPostViewController: UIViewController, UITextViewDelegate {
     
-    
     @IBOutlet weak var newPostTextView: UITextView!
-    
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var countLabel: UILabel!
     
     override func viewDidLoad() {
         
@@ -29,7 +28,18 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         newPostTextView.delegate = self
         newPostTextView.text = "What's on your mind?"
         newPostTextView.textColor = UIColor.lightGray
+        countLabel.textColor = UIColor.lightGray
+        countLabel.text = "140"
         profilePicture.roundedImage()
+        
+        if let realUserImage = INUser.shared.image {
+            profilePicture.image = realUserImage
+        } else if INUser.shared.imageRef.length > 0, let data = ImageDownloader.downloader.cache.object(forKey: INUser.shared.imageRef) as? Data {
+            profilePicture.image = UIImage(data: data)
+        } else {
+            profilePicture.image = UIImage(named: "Profile_HiDef")
+        }
+        
    
         super.viewDidLoad()
         
@@ -61,18 +71,28 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         INUser.shared.add(newPostTextView.text as NSString)
         dismiss(animated: true, completion: nil)
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let remainingChar = 140 - textView.text.count
+        countLabel.text = "\(remainingChar)"
+        if remainingChar < 20 {
+            countLabel.textColor = .red
+        } else {
+            countLabel.textColor = .lightGray
+        }
+    }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
         if newPostTextView.textColor == UIColor.lightGray {
-        newPostTextView.text = nil
-        newPostTextView.textColor = UIColor.black
+            newPostTextView.text = nil
+            newPostTextView.textColor = UIColor.black
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if newPostTextView.text.isEmpty {
-        newPostTextView.text = "What's on your mind?"
-        newPostTextView.textColor = UIColor.lightGray
+            newPostTextView.text = "What's on your mind?"
+            newPostTextView.textColor = UIColor.lightGray
         }
     }
 
@@ -80,7 +100,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
         let numberOfChars = newText.count
-        return numberOfChars < 178
+        return numberOfChars <= 140
     }
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
