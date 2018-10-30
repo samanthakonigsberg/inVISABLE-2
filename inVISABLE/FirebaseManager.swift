@@ -83,10 +83,12 @@ class FirebaseManager {
         guard let currentUser = INUser.shared.user else { return }
         reference.child("users").child(userId).child("followers").observeSingleEvent(of: .value) { (snapshot) in
             if let arr = snapshot.value as? NSArray {
-                let index = arr.index(of: currentUser.uid)
-                let mutableArr = NSMutableArray(array: arr)
-                mutableArr.removeObject(at: index)
-                self.reference.child("users").child(userId).updateChildValues(["followers": mutableArr as NSArray])
+                if arr.contains(currentUser.uid) {
+                    let index = arr.index(of: currentUser.uid)
+                    let mutableArr = NSMutableArray(array: arr)
+                    mutableArr.removeObject(at: index)
+                    self.reference.child("users").child(userId).updateChildValues(["followers": mutableArr as NSArray])
+                }
             }
         }
     }
@@ -123,7 +125,7 @@ class FirebaseManager {
             
             var results: [INUser] = []
             for key in value.allKeys {
-                guard let userInfo = value[key] as? NSDictionary, let k = key as? String else { continue }
+                guard let userInfo = value[key] as? NSDictionary, let k = key as? String, !INUser.shared.blocked.contains(k) else { continue }
                 var user = INUser()
                 user.update(with: userInfo)
                 user.id = k
@@ -148,6 +150,35 @@ class FirebaseManager {
                       "reportedBy": reporter as NSString,
                       "reason": reason as NSString]
         reference.child("reports").child("posts").childByAutoId().updateChildValues(report)
+    }
+    
+    func block(_ user: String) {
+        guard let currentId = INUser.shared.user?.uid, let mutableFollowing = INUser.shared.following as? NSMutableArray else { return }
+        
+        //Update current user's blocked and following
+        INUser.shared.blocked = INUser.shared.blocked.adding(user) as NSArray
+        if mutableFollowing.contains(user) {
+            mutableFollowing.remove(user)
+        }
+        INUser.shared.following = mutableFollowing as NSArray
+        reference.child("users").child(currentId).updateChildValues([blockedKey: INUser.shared.blocked, followingKey: INUser.shared.following])
+        removeUserAsFollowerFor(userId: user)
+        
+        reference.child("users").child(user).child("blocked").observeSingleEvent(of: .value) { (snapshot) in
+            let newArr = NSMutableArray(array: [currentId])
+            if let arr = snapshot.value as? [Any] {
+                newArr.addObjects(from: arr)
+            }
+            self.reference.child("users").child(user).updateChildValues(["blocked": newArr])
+        }
+        
+        PostOffice.manager.feedPosts = PostOffice.manager.feedPosts.filter( { $0.userId as String != user } )
+        PostOffice.manager.update(PostOffice.manager.feedPosts, for: currentId)
+        PostOffice.manager.requestFeedPosts(for: user) { (success, posts) in
+            guard var p = posts else { return }
+            p = p.filter({ $0.userId as String != currentId })
+            PostOffice.manager.update(p, for: user)
+        }
     }
     
     func store(_ image: UIImage) {

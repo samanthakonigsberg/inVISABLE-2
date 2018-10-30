@@ -39,6 +39,7 @@ struct INUser {
     var illnesses: NSArray
     var interests: NSArray
     var name: NSString
+    var blocked: NSArray
     
     private var mutableUser : User?
     private var mutablePosts: NSMutableArray
@@ -51,6 +52,7 @@ struct INUser {
         bio = ""
         followers = []
         following = []
+        blocked = []
         mutablePosts = []
         illnesses = []
         interests = []
@@ -80,6 +82,7 @@ struct INUser {
         self.following = dictionary[followingKey] as? NSArray ?? []
         self.illnesses = dictionary[illnessesKey] as? NSArray ?? []
         self.interests = dictionary[interestsKey] as? NSArray ?? []
+        self.blocked = dictionary[blockedKey] as? NSArray ?? []
         self.name = dictionary[nameKey] as? NSString ?? ""
         self.imageRef = dictionary[imageRefKey] as? NSString ?? ""
         self.imageUrl = dictionary[imageUrlKey] as? NSString ?? ""
@@ -90,6 +93,7 @@ struct INUser {
          bioKey: bio,
          followersKey: followers,
          followingKey: following,
+         blockedKey: blocked,
          postsKey: posts,
          illnessesKey: illnesses,
          interestsKey: interests,

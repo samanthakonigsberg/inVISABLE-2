@@ -44,6 +44,12 @@ class SearchTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.results = self.results?.filter({ !INUser.shared.blocked.contains($0.id!) })
+        self.tableView.reloadData()
+    }
 
     
     override func didReceiveMemoryWarning() {

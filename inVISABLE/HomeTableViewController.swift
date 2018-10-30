@@ -47,7 +47,7 @@ class HomeTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(HomeTableViewController.logout))
         
         guard let userId = INUser.shared.user?.uid else { return }
-        PostOffice.manager.listenToFeedPosts(for: userId) { (newPost) in
+        PostOffice.manager.listenToNewFeedPosts(for: userId) { (newPost) in
             self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
         }
     }
