@@ -29,7 +29,13 @@ class CreateAccountTableViewController: FormViewController, UIImagePickerControl
         //we will load form here
         self.loadForm()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+         if UserDefaults.standard.bool(forKey: "didAgree") != true{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "EULAvc")
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue", style: .plain, target: self, action: #selector(submit(_sender: )))
