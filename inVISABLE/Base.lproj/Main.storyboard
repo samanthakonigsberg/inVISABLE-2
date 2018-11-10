@@ -789,8 +789,11 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-H2-CX4">
-                                            <rect key="frame" x="267" y="109" width="46" height="30"/>
+                                            <rect key="frame" x="213" y="109" width="100" height="30"/>
                                             <color key="backgroundColor" name="ActionNew"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="1La-Ko-adf"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="RuckSack-Medium" family="RuckSack" pointSize="15"/>
                                             <state key="normal" title="Follow">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

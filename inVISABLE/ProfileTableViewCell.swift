@@ -19,7 +19,6 @@ class ProfileTableViewCell: UITableViewCell {
             FirebaseManager.shared.updateAllUserInfo()
         }
         sender.setTitle("Unfollow", for: .normal)
-        
     }
     
     @IBOutlet weak var followButtonDesign: UIButton!
@@ -38,8 +37,14 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         followButtonDesign.layer.cornerRadius = 10
         profileCellImage.roundedImage()
-       
-        // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let u = user, let id = u.id else { return }
+        if INUser.shared.following.contains(id) {
+            followButtonDesign.setTitle("Unfollow", for: .normal)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

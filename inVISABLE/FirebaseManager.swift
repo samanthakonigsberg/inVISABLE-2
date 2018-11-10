@@ -117,7 +117,7 @@ class FirebaseManager {
     }
     
     func findUser(with name: String, completion: @escaping (_ success: Bool, _ error: Error?, _ results: [INUser]?) -> Void) -> Void {
-        reference.child("users").queryStarting(atValue: name).queryOrdered(byChild: "name").observeSingleEvent(of: .value) { (snapshot) in
+        reference.child("users").queryStarting(atValue: name).queryEnding(atValue: name + "\u{f8ff}").queryOrdered(byChild: "name").observeSingleEvent(of: .value) { (snapshot) in
             guard let value = snapshot.value as? NSDictionary, value.allKeys.count > 0 else {
                 completion(false, nil, nil)
                 return
